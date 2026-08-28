@@ -1,0 +1,180 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-primary: #1e3a2b;       /* Verde Olivo Bosque Profundo */
+  --color-primary-light: #2c533e;
+  --color-primary-dark: #12241b;
+  --color-accent: #c98a4b;        /* Tono Dorado / Madera Cálida */
+  --color-accent-hover: #b37537;
+  --color-accent-light: #f7ede2;
+  --color-dark: #151917;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8f7f4;
+  --color-border: #e6e3da;
+  --color-text-main: #1f2923;
+  --color-text-muted: #59655f;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background-color: #faf9f6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1efe9;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c533e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a2b;
+}
+
+/* Glassmorphism */
+.glass-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(230, 227, 218, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 227, 218, 0.9);
+}
+
+.glass-dark {
+  background: rgba(21, 25, 23, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hero Background Pattern */
+.hero-pattern {
+  background-color: #16261d;
+  background-image: radial-gradient(rgba(201, 138, 75, 0.14) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Animations */
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Stepper & Cotizador Options */
+.option-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 2px solid var(--color-border);
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+
+.option-card:hover {
+  border-color: #2c533e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(30, 58, 43, 0.1);
+}
+
+.option-card.selected {
+  border-color: #1e3a2b;
+  background-color: #f0f7f3;
+  box-shadow: 0 0 0 1px #1e3a2b, 0 12px 24px -6px rgba(30, 58, 43, 0.18);
+}
+
+.option-card.selected .check-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.check-badge {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Steps Transition */
+.step-pane {
+  display: none;
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.step-pane.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Custom Image Upload Drag Area */
+.drag-drop-area {
+  border: 2px dashed #cfc9be;
+  transition: all 0.2s ease;
+}
+
+.drag-drop-area:hover, .drag-drop-area.drag-over {
+  border-color: #1e3a2b;
+  background-color: #f0f7f3;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08) translateY(-4px);
+}
+
+/* Portfolio Hover Effects */
+.portfolio-img-wrapper {
+  overflow: hidden;
+}
+
+.portfolio-img-wrapper img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .portfolio-img-wrapper img {
+  transform: scale(1.05);
+}
