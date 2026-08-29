@@ -1,232 +1,174 @@
-// App JS - Diego Armando Muebles
-// Handles UI, Lightbox Modal, Filter tabs, Mobile Menu, and FAQ accordions
 
 document.addEventListener('DOMContentLoaded', () => {
-  initMobileMenu();
-  initPortfolioFilters();
-  initFaqAccordion();
-  initSmoothScroll();
-});
-
-// Mobile Navigation Toggle
-function initMobileMenu() {
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-      });
-    });
-  }
-}
-
-// Portfolio Filter Logic
-function initPortfolioFilters() {
-  const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
-  const projectCards = document.querySelectorAll('.portfolio-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      filterBtns.forEach(b => {
-        b.classList.remove('bg-[#e0b142]', 'text-black', 'font-extrabold');
-        b.classList.add('bg-[#1a1d1b]', 'text-gray-300', 'hover:text-white', 'border', 'border-white/15');
-      });
-      btn.classList.add('bg-[#e0b142]', 'text-black', 'font-extrabold');
-      btn.classList.remove('bg-[#1a1d1b]', 'text-gray-300', 'hover:text-white', 'border', 'border-white/15');
-
-      projectCards.forEach(card => {
-        const category = card.dataset.category;
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 50);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.95)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 200);
-        }
-      });
-    });
-  });
-}
-
-// FAQ Accordion
-function initFaqAccordion() {
-  const items = document.querySelectorAll('.faq-item');
-
-  items.forEach(item => {
-    const trigger = item.querySelector('.faq-trigger');
-    const answer = item.querySelector('.faq-answer');
-    const icon = item.querySelector('.faq-icon');
-
-    if (trigger && answer) {
-      trigger.addEventListener('click', () => {
-        const isOpen = !answer.classList.contains('hidden');
-
-        document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
-        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
-
-        if (!isOpen) {
-          answer.classList.remove('hidden');
-          if (icon) icon.style.transform = 'rotate(180deg)';
-        }
-      });
+  // --- Header Scroll Effect ---
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
   });
-}
 
-// Smooth scroll helper
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const targetElem = document.querySelector(targetId);
-      if (targetElem) {
-        e.preventDefault();
-        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // --- Scroll Reveal ---
+  const reveals = document.querySelectorAll('.reveal-up, .reveal-fade');
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    const elementVisible = 100;
+    reveals.forEach(reveal => {
+      const elementTop = reveal.getBoundingClientRect().top;
+      if (elementTop < windowHeight - elementVisible) {
+        reveal.classList.add('active');
       }
     });
-  });
-}
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // Trigger on load
+});
 
-// Lightbox Modal for Project Details
-const PROJECT_MODAL_DATA = {
-  'cocina-algarrobo': {
-    title: 'Cocina Verde Olivo con Granito Negro',
-    location: 'Algarrobo, V Región',
-    category: 'Cocinas a Medida',
-    image: 'assets/images/cocina_verde_algarrobo.png',
-    description: 'Fabricación integral de muebles base y aéreos en acabado verde olivo mate con tiradores negros de perfilería continua. Cubierta de granito natural negro pulido con zócalos y salpicadero blanco tipo metro.',
-    specs: [
-      'Material: Melamina 18mm con cantos PVC sellados',
-      'Cubierta: Granito Negro San Gabriel con rebaje para encimera',
-      'Quincallería: Bisagras cierre suave y rieles telescópicos pesados',
-      'Instalación: Montaje milimétrico en Algarrobo'
-    ],
-    projectType: 'cocina'
+// --- Services Interaction ---
+const serviceData = {
+  cocinas: {
+    title: 'COCINAS INTEGRALES',
+    img: 'assets/images/cocina_verde_algarrobo.png',
+    desc: 'Diseño de base, aéreos e islas. Optimizamos el flujo de trabajo (triángulo de trabajo) y utilizamos quincallería de tráfico pesado.'
   },
-  'cocina-providencia': {
-    title: 'Cocina Alto Brillo con Cava Integrada',
-    location: 'Providencia, Santiago',
-    category: 'Cocinas a Medida',
-    image: 'assets/images/cocina_alto_brillo.png',
-    description: 'Diseño en esquina en acabado High Gloss blanco espejo. Incluye botellero / cava vertical de suelo a cielo para 14 botellas y nicho para horno microondas.',
-    specs: [
-      'Material: Melamina Alto Brillo (High Gloss) blanca',
-      'Detalles: Cava vertical con repisas ranuradas',
-      'Distribución: Módulo esquinero con máximo almacenamiento',
-      'Garantía: Estructura y montaje de taller garantizados'
-    ],
-    projectType: 'cocina'
+  closets: {
+    title: 'CLÓSETS & VESTIDORES',
+    img: 'assets/images/closet_empotrado.png',
+    desc: 'Armarios a medida de piso a cielo. Optimizamos el almacenaje con zapateros, cajoneras profundas y perfilería de aluminio.'
   },
-  'closet-santiago': {
-    title: 'Clóset Empotrado con Puertas Correderas',
-    location: 'Puente Alto / Santiago',
-    category: 'Clósets & Vestidores',
-    image: 'assets/images/closet_empotrado.png',
-    description: 'Clóset a medida instalado de piso a cielo con riel superior e inferior de aluminio. Distribución interior con zapatero lateral vertical de 8 niveles, 5 cajoneras reforzadas y repisas regulables.',
-    specs: [
-      'Material: Melamina blanca 18mm reforzada',
-      'Sistema de puertas: Correderas sobre rieles de aluminio',
-      'Cajoneras: Rieles telescópicos de carga pesada',
-      'Instalación: Ajuste exacto a muros y cielo'
-    ],
-    projectType: 'closet'
+  cubiertas: {
+    title: 'CUBIERTAS DE PIEDRA',
+    img: 'assets/images/cocina_alto_brillo.png', // Using available image
+    desc: 'Instalación de Granito natural y Cuarzo. Cortes a medida, rebajes para encimeras y zócalos sellados.'
   },
-  'tv-puente-alto': {
-    title: 'Mueble de Televisor Flotante con Repisas',
-    location: 'Puente Alto, Santiago',
-    category: 'Muebles de TV & Hogar',
-    image: 'assets/images/mueble_tv_puente_alto.png',
-    description: 'Centro de entretenimiento mural flotante en melamina tono madera nórdica. Repisas aéreas decorativas simétricas y módulo inferior con 2 cajoneras y tiradores de aluminio.',
-    specs: [
-      'Diseño: Panel mural con pasacables oculto',
-      'Repisas: 4 repisas flotantes de soporte reforzado',
-      'Cajones: 2 amplios cajones con correderas telescópicas',
-      'Fijación: Anclaje de alta resistencia a muro'
-    ],
-    projectType: 'mueble_tv'
+  muebles_tv: {
+    title: 'MUEBLES DE SALÓN',
+    img: 'assets/images/mueble_tv_puente_alto.png',
+    desc: 'Paneles flotantes, racks de TV y bibliotecas. Diseño limpio con ocultamiento inteligente de cables (pasacables).'
   },
-  'flyer-oficial': {
-    title: 'Taller & Servicios Diego Armando Muebles',
-    location: 'Santiago y Región Metropolitana',
-    category: 'Servicios Integrales',
-    image: 'assets/images/flyer_brand.png',
-    description: 'Diseño, Creación, Instalación y Reparación de muebles a medida. Trato directo con el maestro mueblista, materiales seleccionados y quincallería de primera.',
-    specs: [
-      'Contacto directo: +569 9231 7042',
-      'Instagram: @diegoarmandomuebles',
-      'Cobertura: Santiago, Providencia, Puente Alto, Algarrobo y alrededores',
-      'Calidad, durabilidad y acabados que marcan la diferencia'
-    ],
-    projectType: 'cocina'
+  reparaciones: {
+    title: 'MANTENCIÓN TÉCNICA',
+    img: 'assets/images/flyer_brand.png', // Using available image
+    desc: 'Ajuste de bisagras, cambio de rieles telescópicos, escuadre de puertas y mantención general de quincallería.'
   }
 };
 
-function openProjectModal(projectId) {
-  const data = PROJECT_MODAL_DATA[projectId];
-  if (!data) return;
+window.updateServiceView = (key) => {
+  const data = serviceData[key];
+  if(!data) return;
+  
+  document.getElementById('service-view-title').innerText = data.title;
+  const imgEl = document.getElementById('service-view-img');
+  imgEl.style.opacity = 0;
+  setTimeout(() => {
+    imgEl.src = data.img;
+    imgEl.style.opacity = 1;
+  }, 150);
+  document.getElementById('service-view-desc').innerText = data.desc;
+  
+  document.querySelectorAll('.service-item-hover').forEach(el => el.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+};
 
+// --- Modal Case Study ---
+const caseStudies = {
+  'cocina-algarrobo': {
+    category: 'Cocina a Medida',
+    title: 'PROYECTO ALGARROBO',
+    img: 'assets/images/cocina_verde_algarrobo.png',
+    desc: 'Diseño e instalación de cocina integral en la V Región. Se requería maximizar el espacio de guardado manteniendo una estética limpia y moderna que conversara con el entorno natural.',
+    specs: [
+      'Materialidad: Melamina Verde Olivo 18mm',
+      'Cubierta: Granito Negro Absoluto',
+      'Tiradores: Perfil Gola Negro Mate',
+      'Quincallería: Bisagras cierre suave marca Ducasse'
+    ]
+  },
+  'cocina-providencia': {
+    category: 'Cocina Alto Brillo',
+    title: 'PROYECTO PROVIDENCIA',
+    img: 'assets/images/cocina_alto_brillo.png',
+    desc: 'Renovación completa de cocina en departamento. El cliente solicitó un acabado reflectante para amplificar la luz natural, incorporando una cava de vinos vertical a medida.',
+    specs: [
+      'Materialidad: Tablero High Gloss Blanco',
+      'Distribución: Diseño en L con península',
+      'Detalle: Cava vertical para 14 botellas',
+      'Iluminación: Cinta LED bajo muebles aéreos'
+    ]
+  },
+  'closet-puente-alto': {
+    category: 'Clóset Empotrado',
+    title: 'PROYECTO PUENTE ALTO',
+    img: 'assets/images/closet_empotrado.png',
+    desc: 'Fabricación de clóset de muro a muro y de piso a cielo. El desafío fue aprovechar la altura total de la habitación para maleteros, dejando un área inferior altamente funcional.',
+    specs: [
+      'Configuración: 3 puertas correderas de aluminio',
+      'Interior: 5 cajones con riel telescópico',
+      'Distribución: Barras dobles de colgar y zapatero vertical',
+      'Acabado: Melamina textura lino'
+    ]
+  },
+  'tv-puente-alto': {
+    category: 'Mueble de Salón',
+    title: 'PANEL TV FLOTANTE',
+    img: 'assets/images/mueble_tv_puente_alto.png',
+    desc: 'Centro de entretenimiento moderno y suspendido. Se diseñó un panel mural que oculta todo el cableado eléctrico y de red, manteniendo una estética minimalista.',
+    specs: [
+      'Estructura: Panel flotante reforzado',
+      'Funcionalidad: Pasacables ocultos traseros',
+      'Almacenamiento: 4 cajones inferiores sin tirador (push-to-open)',
+      'Diseño: Contraste madera/negro mate'
+    ]
+  }
+};
+
+window.openProjectModal = (id) => {
+  const data = caseStudies[id];
+  if(!data) return;
+  
+  document.getElementById('modal-img').src = data.img;
+  document.getElementById('modal-category').innerText = data.category;
+  document.getElementById('modal-title').innerText = data.title;
+  document.getElementById('modal-desc').innerText = data.desc;
+  
+  const specsList = document.getElementById('modal-specs');
+  specsList.innerHTML = '';
+  data.specs.forEach(spec => {
+    const li = document.createElement('li');
+    li.innerHTML = '<span class="text-[#d4a034] mr-2">•</span> ' + spec;
+    specsList.appendChild(li);
+  });
+  
   const modal = document.getElementById('project-modal');
-  const modalImg = document.getElementById('modal-img');
-  const modalTitle = document.getElementById('modal-title');
-  const modalLocation = document.getElementById('modal-location');
-  const modalCategory = document.getElementById('modal-category');
-  const modalDesc = document.getElementById('modal-description');
-  const modalSpecs = document.getElementById('modal-specs');
-  const modalCotizarBtn = document.getElementById('modal-cotizar-btn');
+  const backdrop = document.getElementById('project-modal-backdrop');
+  const content = document.getElementById('project-modal-content');
+  
+  modal.classList.remove('hidden');
+  
+  // Trigger animation
+  setTimeout(() => {
+    backdrop.style.opacity = '1';
+    content.style.opacity = '1';
+    content.style.transform = 'translateY(0)';
+  }, 10);
+};
 
-  if (modalImg) modalImg.src = data.image;
-  if (modalTitle) modalTitle.textContent = data.title;
-  if (modalLocation) modalLocation.textContent = `📍 ${data.location}`;
-  if (modalCategory) modalCategory.textContent = data.category;
-  if (modalDesc) modalDesc.textContent = data.description;
+window.closeProjectModal = () => {
+  const backdrop = document.getElementById('project-modal-backdrop');
+  const content = document.getElementById('project-modal-content');
+  
+  backdrop.style.opacity = '0';
+  content.style.opacity = '0';
+  content.style.transform = 'translateY(32px)';
+  
+  setTimeout(() => {
+    document.getElementById('project-modal').classList.add('hidden');
+  }, 400);
+};
 
-  if (modalSpecs) {
-    modalSpecs.innerHTML = data.specs.map(spec => `
-      <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-300">
-        <span class="text-[#e0b142] font-bold">✓</span>
-        <span>${spec}</span>
-      </li>
-    `).join('');
-  }
-
-  if (modalCotizarBtn) {
-    modalCotizarBtn.onclick = () => {
-      closeProjectModal();
-      startCotizarWithService(data.projectType);
-    };
-  }
-
-  if (modal) {
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeProjectModal() {
-  const modal = document.getElementById('project-modal');
-  if (modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeProjectModal();
-  }
-});
+window.quoteSimilarProject = () => {
+  closeProjectModal();
+  document.getElementById('cotizador').scrollIntoView({behavior: 'smooth'});
+};

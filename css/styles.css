@@ -1,21 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --color-bg-dark: #111312;       /* Negro Taller */
-  --color-bg-panel: #171a18;      /* Fondo de paneles y tarjetas */
-  --color-bg-panel-2: #1e2220;
-  --color-olive: #384431;         /* Verde Oliva Militar */
-  --color-olive-dark: #273022;
-  --color-olive-light: #4c5c43;
-  --color-gold: #e0b142;          /* Amarillo Dorado de la gráfica */
-  --color-gold-hover: #f0c242;
-  --color-gold-muted: #caa035;
-  --color-border-gold: rgba(224, 177, 66, 0.4);
-  --color-border-dark: rgba(255, 255, 255, 0.12);
-  --color-text-white: #ffffff;
-  --color-text-muted: #b8c0b5;
+  /* Taller Premium Palette */
+  --color-bg-dark: #0c0d0c;
+  --color-bg-panel: #121412;
+  --color-bg-panel-2: #181b18;
+  --color-olive: #2d3826;
+  --color-olive-dark: #222a1c;
+  --color-gold: #d4a034;
+  --color-gold-hover: #e2b042;
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-gold: rgba(212, 160, 52, 0.25);
+  
+  --color-text-white: #fcfbf9;
+  --color-text-muted: #9ba399;
+  
   --font-heading: 'Oswald', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-tech: 'Space Mono', monospace;
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,145 +32,304 @@ body {
   color: var(--color-text-white);
   background-color: var(--color-bg-dark);
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading);
-  letter-spacing: 0.03em;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+  letter-spacing: 0.05em;
 }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #111312;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-dark); }
 ::-webkit-scrollbar-thumb {
   background: var(--color-olive);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* ==========================================================================
+   ARCHITECTURAL ELEMENTS
+   ========================================================================== */
+/* Technical Blueprint Grid */
+.bg-blueprint {
+  background-image: 
+    linear-gradient(var(--color-border-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-dark) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+/* Technical Lines & Markers */
+.tech-border-bottom {
+  position: relative;
+}
+.tech-border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--color-border-gold);
+}
+.tech-border-bottom::before {
+  content: '+';
+  position: absolute;
+  bottom: -9px; left: -4px;
+  color: var(--color-gold);
+  font-family: var(--font-tech);
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.tech-marker {
+  position: absolute;
+  font-family: var(--font-tech);
+  font-size: 10px;
+  color: var(--color-gold);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cota-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.cota-line::before, .cota-line::after {
+  content: '';
+  height: 1px;
+  background: var(--color-gold);
+  flex-grow: 1;
+  opacity: 0.3;
+}
+.cota-line::before { width: 20px; flex-grow: 0; }
+.cota-line::after { width: 100px; }
+
+/* ==========================================================================
+   BUTTONS & CTAs
+   ========================================================================== */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+.btn-premium:hover::after {
+  left: 100%;
+}
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.btn-outline-tech {
   border: 1px solid var(--color-border-gold);
-  border-radius: 4px;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold-muted);
-}
-
-/* Borders & Dividers inspired by the Flyer */
-.gold-border {
-  border: 1px solid var(--color-border-gold);
-}
-
-.gold-border-2 {
-  border: 2px solid var(--color-gold-muted);
+.btn-outline-tech:hover {
+  background: var(--color-gold);
+  color: #000 !important;
+  border-color: var(--color-gold);
 }
 
-.gold-divider {
-  border-color: rgba(224, 177, 66, 0.35);
+/* ==========================================================================
+   HEADER SCROLL
+   ========================================================================== */
+#main-header {
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#main-header.scrolled {
+  background-color: rgba(12, 13, 12, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-gold);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.olive-gradient {
-  background: linear-gradient(180deg, #384431 0%, #273022 100%);
+/* ==========================================================================
+   PORTFOLIO & INTERACTIVE CARDS
+   ========================================================================== */
+.editorial-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border-dark);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--color-bg-panel);
+}
+.editorial-card img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-card:hover {
+  border-color: var(--color-border-gold);
+}
+.editorial-card:hover img {
+  transform: scale(1.05);
+}
+.editorial-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.5s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+.editorial-card:hover::before {
+  border-color: rgba(212, 160, 52, 0.1);
+  inset: 4px;
 }
 
-.dark-gradient {
-  background: linear-gradient(180deg, #171a18 0%, #111312 100%);
+.service-item-hover {
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.service-item-hover:hover, .service-item-hover.active {
+  border-left-color: var(--color-gold);
+  padding-left: 1.5rem;
+  background: linear-gradient(90deg, rgba(212, 160, 52, 0.05) 0%, transparent 100%);
+}
+.service-item-hover:hover .service-icon, .service-item-hover.active .service-icon {
+  color: var(--color-gold);
 }
 
-/* Stepper & Cotizador Options */
+/* ==========================================================================
+   COTIZADOR WIZARD APP-LIKE
+   ========================================================================== */
+.stepper-line {
+  position: absolute;
+  top: 14px; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-border-dark);
+  z-index: 0;
+}
+.stepper-progress {
+  position: absolute;
+  top: 0; left: 0; height: 100%;
+  background: var(--color-gold);
+  transition: width 0.4s ease;
+}
+
+.step-circle {
+  transition: all 0.3s ease;
+  font-family: var(--font-tech);
+}
+.step-circle.active {
+  background: var(--color-gold);
+  color: var(--color-bg-dark);
+  box-shadow: 0 0 0 4px rgba(212, 160, 52, 0.2);
+}
+.step-circle.completed {
+  background: var(--color-olive);
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+}
+
 .option-card {
-  transition: all 0.2s ease;
-  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  transition: all 0.25s ease;
+  border: 1px solid var(--color-border-dark);
   background-color: var(--color-bg-panel);
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
-
 .option-card:hover {
-  border-color: var(--color-gold);
-  background-color: #1f2521;
+  border-color: var(--color-border-gold);
+  transform: translateY(-2px);
 }
-
 .option-card.selected {
   border-color: var(--color-gold);
-  background-color: #273325;
-  box-shadow: 0 0 0 1px var(--color-gold);
+  background-color: var(--color-olive-dark);
 }
-
-.option-card.selected .check-badge {
-  opacity: 1;
-  transform: scale(1);
+.option-card.selected::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--color-gold);
 }
-
 .check-badge {
-  opacity: 0;
-  transform: scale(0.4);
-  transition: all 0.2s ease;
+  opacity: 0; transform: scale(0.5); transition: all 0.25s ease;
+}
+.option-card.selected .check-badge {
+  opacity: 1; transform: scale(1);
 }
 
-/* Steps Transition */
 .step-pane {
   display: none;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-
 .step-pane.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Drag & Drop Area */
 .drag-drop-area {
-  border: 2px dashed rgba(224, 177, 66, 0.4);
-  background-color: #171a18;
-  transition: all 0.2s ease;
+  border: 1px dashed var(--color-border-gold);
+  background-color: rgba(212, 160, 52, 0.03);
+  transition: all 0.3s ease;
 }
-
 .drag-drop-area:hover, .drag-drop-area.drag-over {
   border-color: var(--color-gold);
-  background-color: #232c21;
+  background-color: rgba(212, 160, 52, 0.08);
 }
 
-/* Floating WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  transition: transform 0.2s ease;
+/* ==========================================================================
+   MODAL CASE STUDY
+   ========================================================================== */
+#project-modal-backdrop {
+  backdrop-filter: blur(8px);
+  transition: opacity 0.4s ease;
+}
+#project-modal-content {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.05);
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Subtle Pulse */
-@keyframes gold-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 177, 66, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(224, 177, 66, 0); }
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.reveal-fade.active {
+  opacity: 1;
 }
 
-.animate-gold-glow {
-  animation: gold-glow 2.5s infinite;
-}
-
-/* Portfolio Image Frames */
-.portfolio-frame {
-  border: 1px solid rgba(224, 177, 66, 0.3);
-  transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-.portfolio-frame:hover {
-  border-color: var(--color-gold);
-  transform: translateY(-2px);
-}
-
-.location-badge {
-  background-color: rgba(17, 19, 18, 0.88);
-  border: 1px solid var(--color-border-gold);
-  color: var(--color-gold);
-}
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
