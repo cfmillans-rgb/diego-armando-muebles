@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth bg-[#0c0d0c]">
+<html lang="es-CL" class="scroll-smooth bg-[#0c0d0c]">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diego Armando Muebles | Manufactura a Medida & Arquitectura Interior</title>
-  <meta name="description" content="Diseño, fabricación e instalación de muebles a medida, cocinas, clósets empotrados y cubiertas de granito en Santiago y V Región.">
-  
+  <title>Diego Armando Muebles | Manufactura a Medida en Santiago</title>
+  <meta name="description" content="Diseño, fabricación e instalación de muebles a medida, cocinas, clósets empotrados y cubiertas de granito en la Región Metropolitana y litoral central.">
+  <meta name="theme-color" content="#0c0d0c">
+  <link rel="canonical" href="https://cfmillans-rgb.github.io/diego-armando-muebles/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪚</text></svg>">
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cfmillans-rgb.github.io/diego-armando-muebles/">
+  <meta property="og:title" content="Diego Armando Muebles | Manufactura a Medida">
+  <meta property="og:description" content="Cocinas integrales, clósets empotrados y cubiertas de granito fabricadas a medida en Santiago y V Región. Cotiza directo por WhatsApp.">
+  <meta property="og:image" content="https://cfmillans-rgb.github.io/diego-armando-muebles/assets/images/cocina_verde_algarrobo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Diego Armando Muebles",
+    "image": "https://cfmillans-rgb.github.io/diego-armando-muebles/assets/images/cocina_verde_algarrobo.png",
+    "@id": "https://cfmillans-rgb.github.io/diego-armando-muebles/",
+    "url": "https://cfmillans-rgb.github.io/diego-armando-muebles/",
+    "telephone": "+56992317042",
+    "areaServed": ["Santiago", "Región Metropolitana", "Valparaíso", "Algarrobo"],
+    "description": "Taller especializado en diseño y fabricación de cocinas integrales, clósets empotrados, vanitorios y muebles a medida."
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN (Versión fija recomendada para producción, aquí simulada con script) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,21 +55,29 @@
     }
   </script>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons (Versión fija para evitar roturas) -->
+  <script src="https://unpkg.com/lucide@0.344.0"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="text-white antialiased selection:bg-[#d4a034] selection:text-black">
 
-  <!-- TOP BAR ARCHITECTURAL -->
-  <div class="bg-[#0c0d0c] text-[#9ba399] text-[10px] sm:text-xs py-2 px-4 border-b border-[#d4a034]/20 font-tech uppercase tracking-widest flex justify-between items-center z-50 relative">
+  <!-- Skip to content for Accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#d4a034] text-black px-4 py-2 z-[100] font-bold">
+    Saltar al contenido principal
+  </a>
+
+  <!-- TOP BAR -->
+  <div class="bg-[#0c0d0c] text-[#9ba399] text-[10px] sm:text-xs py-2 px-4 border-b border-[#d4a034]/20 font-tech uppercase flex justify-between items-center z-50 relative">
     <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
       <div class="flex items-center gap-4">
-        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#d4a034] animate-pulse"></span> STGO / V REGIÓN</span>
-        <span class="hidden sm:inline border-l border-[#d4a034]/20 pl-4">100% FABRICACIÓN A MEDIDA</span>
+        <span>Santiago / V Región</span>
+        <span class="hidden sm:inline border-l border-[#d4a034]/20 pl-4">Fabricación a Medida</span>
       </div>
       <div class="flex items-center gap-4 text-[#d4a034]">
-        <a href="https://instagram.com/diegoarmandomuebles" target="_blank" class="hover:text-white transition flex items-center gap-1.5">
-          <i data-lucide="instagram" class="w-3.5 h-3.5"></i> @diegoarmandomuebles
+        <a href="https://instagram.com/diegoarmandomuebles" target="_blank" rel="noopener" class="hover:text-white transition flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-[#d4a034]">
+          <i data-lucide="instagram" class="w-3.5 h-3.5" aria-hidden="true"></i>
+          <span class="sr-only">Instagram de Diego Armando Muebles</span>
+          @diegoarmandomuebles
         </a>
       </div>
     </div>
@@ -51,10 +87,9 @@
   <header id="main-header" class="fixed top-8 w-full z-40 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       
-      <!-- Brand Logo Circular -->
-      <a href="#" class="flex items-center gap-4 group">
-        <div class="w-12 h-12 rounded-full border border-[#d4a034]/40 bg-[#0c0d0c] shadow-lg flex items-center justify-center p-1 group-hover:border-[#d4a034] transition duration-500">
-          <svg viewBox="0 0 100 100" class="w-full h-full text-[#d4a034]">
+      <a href="#" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-[#d4a034]">
+        <div class="w-12 h-12 rounded-full border border-[#d4a034]/40 bg-[#0c0d0c] flex items-center justify-center p-1 group-hover:border-[#d4a034] transition duration-500">
+          <svg viewBox="0 0 100 100" class="w-full h-full text-[#d4a034]" aria-hidden="true">
             <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" />
             <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1" />
             <path d="M36 36 L64 64 M64 36 L36 64" stroke="currentColor" stroke-width="2" stroke-linecap="square" />
@@ -65,516 +100,376 @@
           <span class="block font-heading text-xl font-bold tracking-widest text-white group-hover:text-[#d4a034] transition">
             DIEGO ARMANDO
           </span>
-          <span class="block font-tech text-[9px] text-[#9ba399] uppercase tracking-[0.2em] mt-0.5">
+          <span class="block font-tech text-[10px] text-[#9ba399] uppercase mt-0.5">
             Taller de Mobiliario
           </span>
         </div>
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 font-tech text-[10px] uppercase tracking-widest text-[#9ba399]">
-        <a href="#servicios" class="hover:text-[#d4a034] transition">Especialidades</a>
-        <a href="#trabajos" class="hover:text-[#d4a034] transition">Portafolio</a>
-        <a href="#proceso" class="hover:text-[#d4a034] transition">Proceso</a>
+      <nav class="hidden md:flex items-center gap-8 font-tech text-[11px] uppercase text-[#9ba399]">
+        <a href="#servicios" class="hover:text-[#d4a034] transition focus:outline-none focus:ring-2 focus:ring-[#d4a034]">Especialidades</a>
+        <a href="#trabajos" class="hover:text-[#d4a034] transition focus:outline-none focus:ring-2 focus:ring-[#d4a034]">Portafolio</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="#cotizador" class="btn-premium px-6 py-3 border border-[#d4a034] text-[#d4a034] font-tech text-[10px] font-bold uppercase tracking-widest hover:bg-[#d4a034] hover:text-[#0c0d0c] transition-all flex items-center gap-2">
-          <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Iniciar Configuración
+        <a href="#cotizador" class="btn-premium px-6 py-3 border border-[#d4a034] text-[#d4a034] font-tech text-[11px] font-bold uppercase hover:bg-[#d4a034] hover:text-[#0c0d0c] transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-white">
+          <i data-lucide="calculator" class="w-3.5 h-3.5" aria-hidden="true"></i> Cotizar proyecto
         </a>
       </div>
 
       <!-- Mobile Toggle -->
-      <button id="mobile-menu-btn" class="md:hidden text-[#d4a034]">
-        <i data-lucide="menu" class="w-6 h-6"></i>
+      <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-[#d4a034] p-2 focus:outline-none focus:ring-2 focus:ring-[#d4a034]" aria-label="Abrir menú">
+        <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
       </button>
+    </div>
+
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#121412] border-b border-[#d4a034]/20 shadow-lg" role="navigation" aria-label="Menú móvil">
+      <div class="flex flex-col p-4 font-tech text-xs uppercase text-center space-y-4">
+        <a href="#servicios" class="mobile-link text-[#9ba399] hover:text-[#d4a034] py-2">Especialidades</a>
+        <a href="#trabajos" class="mobile-link text-[#9ba399] hover:text-[#d4a034] py-2">Portafolio</a>
+        <a href="#cotizador" class="mobile-link bg-[#d4a034] text-black font-bold py-3 rounded-sm">Cotizar proyecto</a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION EDITORIAL -->
-  <section class="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-blueprint">
-    <div class="absolute inset-0 z-0">
-      <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina Verde Olivo" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0c0d0c] via-[#0c0d0c]/80 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0c0d0c] via-transparent to-[#0c0d0c]/50"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full reveal-up">
-      <!-- Grid Framework -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <div class="lg:col-span-8 flex flex-col justify-center">
-          <div class="font-tech text-[#d4a034] text-[11px] tracking-widest mb-6 flex items-center gap-4">
-            <span>[ 01 // FABRICACIÓN A MEDIDA ]</span>
-            <div class="h-px w-12 bg-[#d4a034]/40"></div>
-          </div>
-          
-          <h1 class="font-heading text-5xl sm:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] text-white tracking-tight mb-8">
-            MOBILIARIO <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#d4a034] to-[#f0c242]">A MEDIDA.</span>
-          </h1>
-          
-          <p class="font-tech text-xs sm:text-sm text-[#9ba399] max-w-lg leading-relaxed mb-10 border-l border-[#d4a034]/30 pl-4">
-            Diseño de precisión, manufactura en taller propio e instalación garantizada. Cocinas, clósets y vanitorios pensados para el espacio real.
-          </p>
-          
-          <div class="flex flex-col sm:flex-row items-center gap-5">
-            <a href="#cotizador" class="btn-premium w-full sm:w-auto px-8 py-4 bg-[#d4a034] text-[#0c0d0c] font-tech text-[11px] font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-3">
-              Cotizar Proyecto <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="#trabajos" class="w-full sm:w-auto px-8 py-4 border border-[#d4a034]/40 text-white font-tech text-[11px] uppercase tracking-[0.15em] hover:border-[#d4a034] transition flex items-center justify-center gap-3">
-              Ver Portafolio
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4 hidden lg:flex flex-col justify-end">
-          <div class="border border-[#d4a034]/20 p-5 backdrop-blur-sm bg-[#0c0d0c]/60">
-            <div class="font-tech text-[9px] text-[#9ba399] uppercase tracking-widest mb-3 cota-line">Fotografía en Terreno</div>
-            <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina a medida Algarrobo" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-700">
-            <div class="flex justify-between items-center mt-3 font-tech text-[9px] text-[#d4a034]">
-              <span>PROYECTO: ALGARROBO</span>
-              <span>DIM: 3200×2400</span>
-            </div>
-          </div>
-        </div>
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center pt-24 pb-12 overflow-hidden bg-[#121412]">
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina integral verde olivo instalada en Algarrobo" width="1920" height="1080" class="w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0c0d0c] via-[#0c0d0c]/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0c0d0c] via-transparent to-[#0c0d0c]/50"></div>
       </div>
-    </div>
-
-    <!-- Technical decorations -->
-    <div class="absolute bottom-10 left-10 tech-marker hidden md:block">COORD: 33°27'S 70°40'W</div>
-    <div class="absolute bottom-10 right-10 tech-marker hidden md:block">ESCALA: 1:100</div>
-  </section>
-
-  <!-- QUÉ HACEMOS (ESPECIALIDADES ASIMÉTRICO) -->
-  <section id="servicios" class="py-24 bg-[#0c0d0c] relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 tech-border-bottom pb-6 reveal-up">
-        <div>
-          <span class="font-tech text-[10px] text-[#d4a034] tracking-[0.2em] block mb-3">[ 02 // ESPECIALIDADES ]</span>
-          <h2 class="font-heading text-4xl sm:text-5xl font-bold">LÍNEAS DE PRODUCCIÓN</h2>
-        </div>
-        <p class="font-tech text-xs text-[#9ba399] max-w-sm mt-4 md:mt-0 text-right">
-          Manufactura técnica y acabados de primera categoría para cada área de tu hogar.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 reveal-up stagger-1">
-        
-        <!-- Interactive List -->
-        <div class="lg:col-span-5 flex flex-col justify-center space-y-2">
-          <div class="service-item-hover active p-4 cursor-pointer" onmouseover="updateServiceView('cocinas')">
-            <div class="flex justify-between items-center">
-              <h3 class="font-heading text-2xl font-bold">COCINAS INTEGRALES</h3>
-              <i data-lucide="utensils" class="w-5 h-5 service-icon text-white/40"></i>
-            </div>
-            <p class="font-tech text-[10px] text-[#9ba399] mt-2 uppercase">Melaminas, Herrajes cierre suave, Cubiertas</p>
-          </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full reveal-up">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          <div class="service-item-hover p-4 cursor-pointer" onmouseover="updateServiceView('closets')">
-            <div class="flex justify-between items-center">
-              <h3 class="font-heading text-2xl font-bold">CLÓSETS & VESTIDORES</h3>
-              <i data-lucide="door-closed" class="w-5 h-5 service-icon text-white/40"></i>
+          <div class="lg:col-span-8 flex flex-col justify-center">
+            <div class="font-tech text-[#d4a034] text-xs mb-6 flex items-center gap-4 uppercase">
+              <span>Fabricación a medida</span>
+              <div class="h-px w-12 bg-[#d4a034]/40" aria-hidden="true"></div>
             </div>
-            <p class="font-tech text-[10px] text-[#9ba399] mt-2 uppercase">Empotrados, Puertas correderas, Cajoneras</p>
-          </div>
-          
-          <div class="service-item-hover p-4 cursor-pointer" onmouseover="updateServiceView('cubiertas')">
-            <div class="flex justify-between items-center">
-              <h3 class="font-heading text-2xl font-bold">CUBIERTAS DE PIEDRA</h3>
-              <i data-lucide="layers" class="w-5 h-5 service-icon text-white/40"></i>
-            </div>
-            <p class="font-tech text-[10px] text-[#9ba399] mt-2 uppercase">Granito, Cuarzo, Marmol</p>
-          </div>
-          
-          <div class="service-item-hover p-4 cursor-pointer" onmouseover="updateServiceView('muebles_tv')">
-            <div class="flex justify-between items-center">
-              <h3 class="font-heading text-2xl font-bold">MUEBLES DE SALÓN</h3>
-              <i data-lucide="tv" class="w-5 h-5 service-icon text-white/40"></i>
-            </div>
-            <p class="font-tech text-[10px] text-[#9ba399] mt-2 uppercase">Racks, Paneles Flotantes, Bibliotecas</p>
-          </div>
-          
-          <div class="service-item-hover p-4 cursor-pointer" onmouseover="updateServiceView('reparaciones')">
-            <div class="flex justify-between items-center">
-              <h3 class="font-heading text-2xl font-bold">MANTENCIÓN TÉCNICA</h3>
-              <i data-lucide="wrench" class="w-5 h-5 service-icon text-white/40"></i>
-            </div>
-            <p class="font-tech text-[10px] text-[#9ba399] mt-2 uppercase">Bisagras, Rieles, Ajustes de puertas</p>
-          </div>
-        </div>
-
-        <!-- Featured View -->
-        <div class="lg:col-span-7">
-          <div class="border border-[#d4a034]/20 p-2 bg-[#121412] relative h-full min-h-[400px]">
-            <div class="absolute top-6 right-6 z-10 flex items-center gap-2 font-tech text-[10px] bg-[#0c0d0c]/80 px-3 py-1.5 border border-[#d4a034]/30 backdrop-blur">
-              <i data-lucide="maximize" class="w-3 h-3 text-[#d4a034]"></i> <span id="service-view-title">COCINAS INTEGRALES</span>
-            </div>
-            <img id="service-view-img" src="assets/images/cocina_verde_algarrobo.png" class="w-full h-full object-cover grayscale-[0.3] transition duration-500">
             
-            <div class="absolute bottom-6 left-6 right-6 bg-[#0c0d0c]/90 backdrop-blur p-5 border border-[#d4a034]/20 flex justify-between items-end">
-              <div>
-                <p id="service-view-desc" class="font-tech text-xs text-[#9ba399] max-w-sm leading-relaxed">
-                  Diseño de base, aéreos e islas. Optimizamos el flujo de trabajo (triángulo de trabajo) y utilizamos quincallería de tráfico pesado.
-                </p>
-              </div>
-              <a href="#cotizador" class="text-[#d4a034] font-tech text-[10px] uppercase font-bold hover:text-white transition flex items-center gap-1">
-                Cotizar <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-none text-white mb-6">
+              Mobiliario a medida
+            </h1>
+            
+            <p class="font-tech text-sm text-[#9ba399] max-w-lg leading-relaxed mb-8 border-l border-[#d4a034]/30 pl-4">
+              Diseño de precisión, manufactura en taller propio e instalación garantizada. Cocinas, clósets y vanitorios fabricados para tu espacio real.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 bg-[#d4a034] text-[#0c0d0c] font-tech text-xs font-bold uppercase hover:bg-white transition flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-white">
+                Cotizar proyecto <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+              </a>
+              <a href="#trabajos" class="w-full sm:w-auto px-8 py-4 border border-[#d4a034]/40 text-white font-tech text-xs uppercase hover:border-[#d4a034] transition flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#d4a034]">
+                Ver portafolio
               </a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- QUÉ HACEMOS -->
+    <section id="servicios" class="py-20 bg-[#0c0d0c] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO CASE STUDIES -->
-  <section id="trabajos" class="py-24 bg-[#121412] relative border-t border-[#d4a034]/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 tech-border-bottom pb-6 reveal-up">
-        <div>
-          <span class="font-tech text-[10px] text-[#d4a034] tracking-[0.2em] block mb-3">[ 03 // CASE STUDIES ]</span>
-          <h2 class="font-heading text-4xl sm:text-5xl font-bold">ARCHIVO DE PROYECTOS</h2>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10">
-        
-        <!-- Case 1 -->
-        <div class="editorial-card cursor-pointer group reveal-up stagger-1" onclick="openProjectModal('cocina-algarrobo')">
-          <div class="h-80 relative overflow-hidden bg-[#0c0d0c]">
-            <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina Algarrobo" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 font-tech text-[9px] bg-[#0c0d0c] text-white px-2 py-1 uppercase tracking-widest border border-white/20">
-              C-01
-            </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#d4a034]/20 pb-4 reveal-up">
+          <div>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white uppercase">Especialidades</h2>
           </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <span class="font-tech text-[10px] text-[#d4a034] uppercase tracking-widest block mb-1">Cocina a Medida</span>
-                <h3 class="font-heading text-2xl font-bold group-hover:text-[#d4a034] transition">PROYECTO ALGARROBO</h3>
+          <p class="font-tech text-xs text-[#9ba399] max-w-sm mt-4 md:mt-0 md:text-right">
+            Líneas de manufactura técnica y acabados duraderos para cada área de tu hogar.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 reveal-up stagger-1">
+          <!-- Interactive List -->
+          <div class="lg:col-span-5 flex flex-col justify-center space-y-2" role="tablist" aria-label="Especialidades del taller">
+            <button class="service-tab active w-full text-left p-4 cursor-pointer border-l-2 border-transparent hover:border-[#d4a034] focus:outline-none focus:border-[#d4a034]" role="tab" aria-selected="true" aria-controls="service-panel" data-key="cocinas">
+              <div class="flex justify-between items-center">
+                <h3 class="font-heading text-xl font-bold text-white uppercase">Cocinas integrales</h3>
               </div>
-              <i data-lucide="arrow-up-right" class="w-6 h-6 text-[#9ba399] group-hover:text-[#d4a034] transition"></i>
-            </div>
-            <div class="flex flex-wrap gap-3 font-tech text-[9px] text-[#9ba399] uppercase">
-              <span class="px-2 py-1 border border-white/10">Verde Olivo</span>
-              <span class="px-2 py-1 border border-white/10">Granito Negro</span>
-              <span class="px-2 py-1 border border-white/10">Quincallería Cierre Suave</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 2 -->
-        <div class="editorial-card cursor-pointer group reveal-up stagger-2" onclick="openProjectModal('cocina-providencia')">
-          <div class="h-80 relative overflow-hidden bg-[#0c0d0c]">
-            <img src="assets/images/cocina_alto_brillo.png" alt="Cocina Providencia" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 font-tech text-[9px] bg-[#0c0d0c] text-white px-2 py-1 uppercase tracking-widest border border-white/20">
-              C-02
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <span class="font-tech text-[10px] text-[#d4a034] uppercase tracking-widest block mb-1">Cocina Alto Brillo</span>
-                <h3 class="font-heading text-2xl font-bold group-hover:text-[#d4a034] transition">PROYECTO PROVIDENCIA</h3>
-              </div>
-              <i data-lucide="arrow-up-right" class="w-6 h-6 text-[#9ba399] group-hover:text-[#d4a034] transition"></i>
-            </div>
-            <div class="flex flex-wrap gap-3 font-tech text-[9px] text-[#9ba399] uppercase">
-              <span class="px-2 py-1 border border-white/10">High Gloss Blanco</span>
-              <span class="px-2 py-1 border border-white/10">Cava Integrada</span>
-              <span class="px-2 py-1 border border-white/10">Mesón Isla</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 3 -->
-        <div class="editorial-card cursor-pointer group reveal-up stagger-1" onclick="openProjectModal('closet-puente-alto')">
-          <div class="h-80 relative overflow-hidden bg-[#0c0d0c]">
-            <img src="assets/images/closet_empotrado.png" alt="Clóset Puente Alto" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 font-tech text-[9px] bg-[#0c0d0c] text-white px-2 py-1 uppercase tracking-widest border border-white/20">
-              V-01
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <span class="font-tech text-[10px] text-[#d4a034] uppercase tracking-widest block mb-1">Clóset Empotrado</span>
-                <h3 class="font-heading text-2xl font-bold group-hover:text-[#d4a034] transition">PROYECTO PUENTE ALTO</h3>
-              </div>
-              <i data-lucide="arrow-up-right" class="w-6 h-6 text-[#9ba399] group-hover:text-[#d4a034] transition"></i>
-            </div>
-            <div class="flex flex-wrap gap-3 font-tech text-[9px] text-[#9ba399] uppercase">
-              <span class="px-2 py-1 border border-white/10">Piso a Cielo</span>
-              <span class="px-2 py-1 border border-white/10">Puertas Correderas</span>
-              <span class="px-2 py-1 border border-white/10">Zapatero Vertical</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 4 -->
-        <div class="editorial-card cursor-pointer group reveal-up stagger-2" onclick="openProjectModal('tv-puente-alto')">
-          <div class="h-80 relative overflow-hidden bg-[#0c0d0c]">
-            <img src="assets/images/mueble_tv_puente_alto.png" alt="Mueble TV Puente Alto" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 font-tech text-[9px] bg-[#0c0d0c] text-white px-2 py-1 uppercase tracking-widest border border-white/20">
-              M-01
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <span class="font-tech text-[10px] text-[#d4a034] uppercase tracking-widest block mb-1">Mueble de Salón</span>
-                <h3 class="font-heading text-2xl font-bold group-hover:text-[#d4a034] transition">PANEL TV FLOTANTE</h3>
-              </div>
-              <i data-lucide="arrow-up-right" class="w-6 h-6 text-[#9ba399] group-hover:text-[#d4a034] transition"></i>
-            </div>
-            <div class="flex flex-wrap gap-3 font-tech text-[9px] text-[#9ba399] uppercase">
-              <span class="px-2 py-1 border border-white/10">Panel Mural</span>
-              <span class="px-2 py-1 border border-white/10">Pasacables Oculto</span>
-              <span class="px-2 py-1 border border-white/10">Cajoneras Inferiores</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONFIGURADOR (COTIZADOR PREMIUM) -->
-  <section id="cotizador" class="py-24 bg-blueprint relative border-t border-[#d4a034]/20">
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0c0d0c] to-transparent"></div>
-    
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="text-center mb-16 reveal-up">
-        <span class="font-tech text-[10px] text-[#d4a034] tracking-[0.2em] block mb-3">[ 04 // HERRAMIENTA TÉCNICA ]</span>
-        <h2 class="font-heading text-4xl sm:text-5xl font-bold uppercase mb-4">Configurador de Proyecto</h2>
-        <p class="font-tech text-xs text-[#9ba399] max-w-xl mx-auto">
-          Especifica tu requerimiento. Nuestro sistema generará una hoja de ruta técnica que se enviará directamente a nuestro taller vía WhatsApp.
-        </p>
-      </div>
-
-      <div class="bg-[#0c0d0c] border border-[#d4a034]/30 p-6 sm:p-10 relative reveal-up stagger-1 shadow-2xl">
-        <!-- Stepper -->
-        <div class="relative max-w-2xl mx-auto mb-12">
-          <div class="stepper-line">
-            <div class="stepper-progress" id="stepper-progress" style="width: 0%"></div>
-          </div>
-          <div class="flex justify-between relative z-10">
-            <div class="flex flex-col items-center gap-2">
-              <div id="step-circle-1" class="step-circle active w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-[#d4a034] text-[#0c0d0c]">1</div>
-              <span class="font-tech text-[9px] uppercase tracking-widest hidden sm:block text-[#9ba399]">Tipo</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <div id="step-circle-2" class="step-circle w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-[#121412] border border-[#d4a034]/30 text-[#9ba399]">2</div>
-              <span class="font-tech text-[9px] uppercase tracking-widest hidden sm:block text-[#9ba399]">Medidas</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <div id="step-circle-3" class="step-circle w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-[#121412] border border-[#d4a034]/30 text-[#9ba399]">3</div>
-              <span class="font-tech text-[9px] uppercase tracking-widest hidden sm:block text-[#9ba399]">Material</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-              <div id="step-circle-4" class="step-circle w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-[#121412] border border-[#d4a034]/30 text-[#9ba399]">4</div>
-              <span class="font-tech text-[9px] uppercase tracking-widest hidden sm:block text-[#9ba399]">Análisis</span>
-            </div>
-          </div>
-        </div>
-
-        <h3 id="step-current-title" class="font-heading text-xl font-bold mb-8 pb-4 border-b border-white/10 uppercase tracking-widest">
-          1. ¿QUÉ NECESITAMOS FABRICAR?
-        </h3>
-
-        <!-- STEP 1: TIPO -->
-        <div id="step-pane-1" class="step-pane active">
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div class="option-card p-5 selected" data-type="cocina">
-              <i data-lucide="utensils" class="w-6 h-6 text-[#d4a034] mb-4"></i>
-              <h4 class="font-heading text-lg font-bold">COCINA</h4>
-              <p class="font-tech text-[9px] text-[#9ba399] uppercase">Mobiliario & Isla</p>
-              <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-            </div>
-            <div class="option-card p-5" data-type="closet">
-              <i data-lucide="door-closed" class="w-6 h-6 text-[#d4a034] mb-4"></i>
-              <h4 class="font-heading text-lg font-bold">CLÓSET</h4>
-              <p class="font-tech text-[9px] text-[#9ba399] uppercase">Empotrado / Vestidor</p>
-              <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-            </div>
-            <div class="option-card p-5" data-type="vanitorio">
-              <i data-lucide="bath" class="w-6 h-6 text-[#d4a034] mb-4"></i>
-              <h4 class="font-heading text-lg font-bold">VANITORIO</h4>
-              <p class="font-tech text-[9px] text-[#9ba399] uppercase">Mueble de Baño</p>
-              <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-            </div>
-            <div class="option-card p-5" data-type="mueble_tv">
-              <i data-lucide="tv" class="w-6 h-6 text-[#d4a034] mb-4"></i>
-              <h4 class="font-heading text-lg font-bold">MUEBLE TV</h4>
-              <p class="font-tech text-[9px] text-[#9ba399] uppercase">Rack / Panel Mural</p>
-              <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-            </div>
-            <div class="option-card p-5" data-type="cubierta">
-              <i data-lucide="layers" class="w-6 h-6 text-[#d4a034] mb-4"></i>
-              <h4 class="font-heading text-lg font-bold">CUBIERTA</h4>
-              <p class="font-tech text-[9px] text-[#9ba399] uppercase">Granito / Cuarzo</p>
-              <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-            </div>
-            <div class="option-card p-5" data-type="reparacion">
-              <i data-lucide="wrench" class="w-6 h-6 text-[#d4a034] mb-4"></i>
-              <h4 class="font-heading text-lg font-bold">REPARACIÓN</h4>
-              <p class="font-tech text-[9px] text-[#9ba399] uppercase">Mantención</p>
-              <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 2: MEDIDAS -->
-        <div id="step-pane-2" class="step-pane">
-          <div class="mb-6">
-            <p class="font-tech text-[10px] text-[#9ba399] uppercase mb-4 tracking-widest">Valores aproximados en centímetros (CM)</p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div>
-                <label class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2">Ancho Lineal</label>
-                <div class="relative">
-                  <input type="number" id="dim-width" value="240" class="w-full bg-[#121412] border border-[#d4a034]/30 focus:border-[#d4a034] p-4 text-white font-tech outline-none">
-                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#9ba399] font-tech text-xs">CM</span>
-                </div>
-              </div>
-              <div>
-                <label class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2">Altura Muro</label>
-                <div class="relative">
-                  <input type="number" id="dim-height" value="220" class="w-full bg-[#121412] border border-[#d4a034]/30 focus:border-[#d4a034] p-4 text-white font-tech outline-none">
-                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#9ba399] font-tech text-xs">CM</span>
-                </div>
-              </div>
-              <div>
-                <label class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2">Profundidad</label>
-                <div class="relative">
-                  <input type="number" id="dim-depth" value="60" class="w-full bg-[#121412] border border-[#d4a034]/30 focus:border-[#d4a034] p-4 text-white font-tech outline-none">
-                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#9ba399] font-tech text-xs">CM</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="mt-6 flex items-start gap-3 p-4 bg-[#2d3826]/30 border border-[#2d3826]">
-              <input type="checkbox" id="dim-unknown" class="mt-1 accent-[#d4a034]">
-              <label for="dim-unknown" class="font-tech text-[10px] text-[#9ba399] uppercase leading-relaxed cursor-pointer">
-                <span class="text-[#d4a034] font-bold">Solicitar visita técnica de rectificación.</span> 
-                No estoy seguro de las medidas exactas; prefiero que Diego Armando mida en terreno.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 3: MATERIAL -->
-        <div id="step-pane-3" class="step-pane">
-          <div id="step3-dynamic-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <!-- Dynamic based on step 1 (Appended by JS) -->
-          </div>
-        </div>
-
-        <!-- STEP 4: RESULTADO -->
-        <div id="step-pane-4" class="step-pane">
-          <div class="bg-[#121412] border border-[#d4a034]/30 p-6 sm:p-8">
-            <h4 class="font-tech text-[10px] text-[#d4a034] uppercase tracking-widest mb-4">Estimación Preliminar (CLP)</h4>
-            <div class="font-heading text-4xl sm:text-5xl font-bold text-white mb-6" id="price-result">
-              $850.000 - $1.200.000
-            </div>
-            
-            <div class="space-y-4 mb-8">
-              <p class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest border-b border-[#d4a034]/10 pb-2">
-                <span class="text-[#d4a034]">PROYECTO:</span> <span id="summary-type">COCINA A MEDIDA</span>
-              </p>
-              <p class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest border-b border-[#d4a034]/10 pb-2">
-                <span class="text-[#d4a034]">DIMENSIONES:</span> <span id="summary-dim">240x220x60 CM</span>
-              </p>
-              <p class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest pb-2">
-                <span class="text-[#d4a034]">DETALLES:</span> <span id="summary-mat">Melamina Maderada</span>
-              </p>
-            </div>
-            
-            <button onclick="sendWhatsApp()" class="w-full btn-premium py-4 bg-[#25D366] text-black font-tech text-[11px] font-bold uppercase tracking-[0.1em] flex items-center justify-center gap-3">
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
-              Enviar Especificaciones por WhatsApp
+              <p class="font-tech text-[11px] text-[#9ba399] mt-1">Melaminas, Herrajes, Cubiertas</p>
             </button>
-            <p class="text-center font-tech text-[9px] text-[#9ba399] mt-4 uppercase">Directo con el taller (+569 9231 7042)</p>
-          </div>
-        </div>
+            
+            <button class="service-tab w-full text-left p-4 cursor-pointer border-l-2 border-transparent hover:border-[#d4a034] focus:outline-none focus:border-[#d4a034]" role="tab" aria-selected="false" aria-controls="service-panel" data-key="closets">
+              <div class="flex justify-between items-center">
+                <h3 class="font-heading text-xl font-bold text-white uppercase">Clósets y vestidores</h3>
+              </div>
+              <p class="font-tech text-[11px] text-[#9ba399] mt-1">Empotrados, Cajoneras</p>
+            </button>
+            
+            <button class="service-tab w-full text-left p-4 cursor-pointer border-l-2 border-transparent hover:border-[#d4a034] focus:outline-none focus:border-[#d4a034]" role="tab" aria-selected="false" aria-controls="service-panel" data-key="cubiertas">
+              <div class="flex justify-between items-center">
+                <h3 class="font-heading text-xl font-bold text-white uppercase">Cubiertas de piedra</h3>
+              </div>
+              <p class="font-tech text-[11px] text-[#9ba399] mt-1">Granito, Cuarzo, Mármol</p>
+            </button>
 
-        <!-- Controls -->
-        <div class="mt-10 flex justify-between border-t border-[#d4a034]/20 pt-6">
-          <button id="btn-prev" onclick="prevStep()" class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest hover:text-white transition hidden flex items-center gap-2">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Volver
-          </button>
-          <div class="flex-1"></div>
-          <button id="btn-next" onclick="nextStep()" class="btn-outline-tech px-8 py-3 text-[#d4a034] font-tech text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
-            Continuar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </button>
+            <button class="service-tab w-full text-left p-4 cursor-pointer border-l-2 border-transparent hover:border-[#d4a034] focus:outline-none focus:border-[#d4a034]" role="tab" aria-selected="false" aria-controls="service-panel" data-key="muebles_tv">
+              <div class="flex justify-between items-center">
+                <h3 class="font-heading text-xl font-bold text-white uppercase">Muebles de salón</h3>
+              </div>
+              <p class="font-tech text-[11px] text-[#9ba399] mt-1">Racks, Paneles Flotantes</p>
+            </button>
+            
+            <button class="service-tab w-full text-left p-4 cursor-pointer border-l-2 border-transparent hover:border-[#d4a034] focus:outline-none focus:border-[#d4a034]" role="tab" aria-selected="false" aria-controls="service-panel" data-key="reparaciones">
+              <div class="flex justify-between items-center">
+                <h3 class="font-heading text-xl font-bold text-white uppercase">Mantención técnica</h3>
+              </div>
+              <p class="font-tech text-[11px] text-[#9ba399] mt-1">Bisagras, Rieles, Ajustes</p>
+            </button>
+          </div>
+
+          <!-- Featured View -->
+          <div class="lg:col-span-7">
+            <div id="service-panel" role="tabpanel" class="border border-[#d4a034]/20 p-2 bg-[#121412] relative h-full min-h-[350px]">
+              <div class="absolute top-4 right-4 z-10 bg-[#0c0d0c] px-3 py-1.5 border border-[#d4a034]/30">
+                <span id="service-view-title" class="font-tech text-[10px] text-[#d4a034] uppercase">Cocinas integrales</span>
+              </div>
+              <img id="service-view-img" src="assets/images/cocina_verde_algarrobo.png" alt="Vista previa de Cocinas integrales" width="800" height="600" loading="lazy" class="w-full h-full object-cover transition-opacity duration-300">
+              
+              <div class="absolute bottom-4 left-4 right-4 bg-[#0c0d0c]/95 p-4 border border-[#d4a034]/20">
+                <p id="service-view-desc" class="font-tech text-xs text-[#9ba399] leading-relaxed">
+                  Diseño de base, aéreos e islas. Optimizamos el flujo de trabajo y utilizamos quincallería de tráfico pesado.
+                </p>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MODAL CASE STUDY -->
-  <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6">
-    <div id="project-modal-backdrop" class="absolute inset-0 bg-[#0c0d0c]/90 opacity-0" onclick="closeProjectModal()"></div>
+    <!-- PORTAFOLIO -->
+    <section id="trabajos" class="py-20 bg-[#121412] border-t border-[#d4a034]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-10 border-b border-[#d4a034]/20 pb-4 reveal-up">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white uppercase">Portafolio</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <button class="editorial-card text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] reveal-up stagger-1 group" onclick="openProjectModal('cocina-algarrobo')" aria-label="Ver detalles de Proyecto Algarrobo">
+            <div class="h-72 relative bg-[#0c0d0c] overflow-hidden">
+              <img src="assets/images/cocina_verde_algarrobo.png" alt="Fotografía de cocina con muebles verde olivo y cubierta de granito" width="800" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="font-tech text-[10px] text-[#d4a034] uppercase block mb-1">Cocina a Medida</span>
+              <h3 class="font-heading text-2xl font-bold text-white mb-2">Proyecto Algarrobo</h3>
+              <p class="font-tech text-xs text-[#9ba399]">[VERIFICAR CON EL CLIENTE]</p>
+            </div>
+          </button>
+
+          <button class="editorial-card text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] reveal-up stagger-2 group" onclick="openProjectModal('cocina-providencia')" aria-label="Ver detalles de Proyecto Providencia">
+            <div class="h-72 relative bg-[#0c0d0c] overflow-hidden">
+              <img src="assets/images/cocina_alto_brillo.png" alt="Cocina de alto brillo blanco instalada en departamento" width="800" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="font-tech text-[10px] text-[#d4a034] uppercase block mb-1">Cocina Alto Brillo</span>
+              <h3 class="font-heading text-2xl font-bold text-white mb-2">Proyecto Providencia</h3>
+              <p class="font-tech text-xs text-[#9ba399]">[VERIFICAR CON EL CLIENTE]</p>
+            </div>
+          </button>
+
+          <button class="editorial-card text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] reveal-up stagger-1 group" onclick="openProjectModal('closet-puente-alto')" aria-label="Ver detalles de Clóset Empotrado">
+            <div class="h-72 relative bg-[#0c0d0c] overflow-hidden">
+              <img src="assets/images/closet_empotrado.png" alt="Clóset empotrado de piso a cielo con puertas abiertas" width="800" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="font-tech text-[10px] text-[#d4a034] uppercase block mb-1">Clóset Empotrado</span>
+              <h3 class="font-heading text-2xl font-bold text-white mb-2">Proyecto Puente Alto</h3>
+              <p class="font-tech text-xs text-[#9ba399]">[VERIFICAR CON EL CLIENTE]</p>
+            </div>
+          </button>
+
+          <button class="editorial-card text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] reveal-up stagger-2 group" onclick="openProjectModal('tv-puente-alto')" aria-label="Ver detalles de Mueble de Salón">
+            <div class="h-72 relative bg-[#0c0d0c] overflow-hidden">
+              <img src="assets/images/mueble_tv_puente_alto.png" alt="Mueble de televisión flotante en sala de estar" width="800" height="600" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="font-tech text-[10px] text-[#d4a034] uppercase block mb-1">Mueble de Salón</span>
+              <h3 class="font-heading text-2xl font-bold text-white mb-2">Panel TV Flotante</h3>
+              <p class="font-tech text-xs text-[#9ba399]">[VERIFICAR CON EL CLIENTE]</p>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIGURADOR (COTIZADOR PREMIUM) -->
+    <section id="cotizador" class="py-20 bg-[#121412] relative border-t border-[#d4a034]/20">
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center mb-12 reveal-up">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white uppercase mb-4">Cotizador en línea</h2>
+          <p class="font-tech text-sm text-[#9ba399] max-w-xl mx-auto">
+            Selecciona los detalles de tu proyecto. El sistema generará una solicitud pre-formateada que podrás enviar directamente a nuestro WhatsApp para evaluación.
+          </p>
+        </div>
+
+        <div class="bg-[#0c0d0c] border border-[#d4a034]/30 p-6 sm:p-8 relative reveal-up stagger-1">
+          
+          <h3 id="step-current-title" class="font-heading text-xl font-bold mb-6 pb-4 border-b border-white/10 uppercase" aria-live="polite">
+            1. ¿Qué mueble necesitas?
+          </h3>
+
+          <div id="step-pane-1" class="step-pane active">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <button class="option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] selected" data-type="cocina" aria-pressed="true">
+                <h4 class="font-heading text-base font-bold text-white">Cocina</h4>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Mobiliario a medida</p>
+              </button>
+              <button class="option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034]" data-type="closet" aria-pressed="false">
+                <h4 class="font-heading text-base font-bold text-white">Clóset</h4>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Empotrado / Vestidor</p>
+              </button>
+              <button class="option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034]" data-type="vanitorio" aria-pressed="false">
+                <h4 class="font-heading text-base font-bold text-white">Vanitorio</h4>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Mueble de Baño</p>
+              </button>
+              <button class="option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034]" data-type="mueble_tv" aria-pressed="false">
+                <h4 class="font-heading text-base font-bold text-white">Mueble TV</h4>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Rack / Panel</p>
+              </button>
+              <button class="option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034]" data-type="cubierta" aria-pressed="false">
+                <h4 class="font-heading text-base font-bold text-white">Cubierta</h4>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Piedra natural</p>
+              </button>
+              <button class="option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034]" data-type="reparacion" aria-pressed="false">
+                <h4 class="font-heading text-base font-bold text-white">Reparación</h4>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Ajustes / Bisagras</p>
+              </button>
+            </div>
+          </div>
+
+          <div id="step-pane-2" class="step-pane hidden">
+            <div class="mb-6">
+              <fieldset>
+                <legend class="font-tech text-xs text-[#9ba399] mb-4 uppercase">Valores aproximados en centímetros (CM)</legend>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div>
+                    <label for="dim-width" class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2">Ancho Lineal</label>
+                    <input type="number" id="dim-width" value="240" class="w-full bg-[#121412] border border-[#d4a034]/30 focus:border-[#d4a034] p-3 text-white font-tech outline-none">
+                  </div>
+                  <div>
+                    <label for="dim-height" class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2">Altura Muro</label>
+                    <input type="number" id="dim-height" value="220" class="w-full bg-[#121412] border border-[#d4a034]/30 focus:border-[#d4a034] p-3 text-white font-tech outline-none">
+                  </div>
+                  <div>
+                    <label for="dim-depth" class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2">Profundidad</label>
+                    <input type="number" id="dim-depth" value="60" class="w-full bg-[#121412] border border-[#d4a034]/30 focus:border-[#d4a034] p-3 text-white font-tech outline-none">
+                  </div>
+                </div>
+              </fieldset>
+              
+              <div class="mt-6 flex items-start gap-3 p-4 bg-[#2d3826]/30 border border-[#2d3826]">
+                <input type="checkbox" id="dim-unknown" class="mt-1 accent-[#d4a034]" aria-label="No conozco las medidas exactas">
+                <label for="dim-unknown" class="font-tech text-[11px] text-white leading-relaxed cursor-pointer">
+                  No conozco las medidas exactas. Solicito que el taller evalúe los requerimientos de rectificación en terreno.
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="step-pane-3" class="step-pane hidden">
+            <div id="step3-dynamic-content" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Creado por JS -->
+            </div>
+          </div>
+
+          <div id="step-pane-4" class="step-pane hidden">
+            <div class="bg-[#121412] border border-[#d4a034]/30 p-6">
+              <h4 class="font-tech text-[11px] text-white uppercase mb-4 border-b border-white/10 pb-2">Resumen de solicitud</h4>
+              <div class="space-y-3 mb-6">
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase">Proyecto: <span id="summary-type" class="text-white ml-2">Cocina</span></p>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase">Dimensiones: <span id="summary-dim" class="text-white ml-2">240x220x60 CM</span></p>
+                <p class="font-tech text-[10px] text-[#9ba399] uppercase">Material: <span id="summary-mat" class="text-white ml-2">Melamina Estándar</span></p>
+              </div>
+              
+              <button onclick="sendWhatsApp()" class="w-full py-4 bg-[#25D366] text-black font-tech text-[11px] font-bold uppercase hover:bg-white transition flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-white">
+                Enviar mensaje a WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Controles de navegación -->
+          <div class="mt-8 flex justify-between">
+            <button id="btn-prev" onclick="prevStep()" class="font-tech text-[11px] text-[#9ba399] uppercase hover:text-white transition hidden px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white">
+              Volver
+            </button>
+            <div class="flex-1"></div>
+            <button id="btn-next" onclick="nextStep()" class="bg-[#d4a034] text-black px-6 py-2 font-tech text-[11px] font-bold uppercase hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-white">
+              Continuar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL CASE STUDY (Accesible) -->
+  <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="project-modal-backdrop" class="absolute inset-0 bg-[#0c0d0c]/90 opacity-0 transition-opacity" aria-hidden="true"></div>
     
-    <div id="project-modal-content" class="relative bg-[#121412] border border-[#d4a034]/30 w-full max-w-4xl max-h-[90vh] overflow-y-auto opacity-0 translate-y-8 shadow-2xl flex flex-col md:flex-row">
-      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center bg-[#0c0d0c] border border-[#d4a034]/40 text-[#d4a034] hover:bg-[#d4a034] hover:text-black transition">
-        <i data-lucide="x" class="w-4 h-4"></i>
+    <div id="project-modal-content" class="relative bg-[#121412] border border-[#d4a034]/30 w-full max-w-4xl max-h-[90vh] overflow-y-auto opacity-0 translate-y-8 shadow-xl flex flex-col md:flex-row transition-all" tabindex="-1">
+      <button id="close-modal-btn" class="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-[#0c0d0c] text-white border border-[#d4a034]/40 hover:bg-[#d4a034] hover:text-black transition focus:outline-none focus:ring-2 focus:ring-[#d4a034]" aria-label="Cerrar modal">
+        <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
       </button>
       
-      <!-- Image Side -->
       <div class="w-full md:w-1/2 bg-[#0c0d0c]">
-        <img id="modal-img" src="" alt="Proyecto" class="w-full h-64 md:h-full object-cover">
+        <img id="modal-img" src="" alt="" class="w-full h-64 md:h-full object-cover">
       </div>
       
-      <!-- Content Side -->
-      <div class="w-full md:w-1/2 p-8 flex flex-col">
-        <span class="font-tech text-[10px] text-[#d4a034] uppercase tracking-widest block mb-2" id="modal-category">CATEGORÍA</span>
-        <h3 class="font-heading text-3xl font-bold mb-6" id="modal-title">TÍTULO DEL PROYECTO</h3>
+      <div class="w-full md:w-1/2 p-6 sm:p-8 flex flex-col">
+        <span class="font-tech text-[10px] text-[#d4a034] uppercase block mb-2" id="modal-category">Categoría</span>
+        <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4 text-white" id="modal-title">Título del Proyecto</h3>
         
-        <div class="space-y-4 mb-8 flex-1">
+        <div class="space-y-6 flex-1 mb-6">
           <div>
-            <h4 class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest border-b border-[#d4a034]/10 pb-1 mb-2">Desafío Técnico</h4>
-            <p class="font-tech text-xs leading-relaxed" id="modal-desc">Descripción del proyecto...</p>
+            <h4 class="font-tech text-[11px] text-[#9ba399] uppercase border-b border-[#d4a034]/10 pb-1 mb-2">Desafío Técnico</h4>
+            <p class="font-tech text-xs text-white leading-relaxed" id="modal-desc"></p>
           </div>
           <div>
-            <h4 class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest border-b border-[#d4a034]/10 pb-1 mb-2">Especificaciones</h4>
-            <ul class="font-tech text-xs space-y-2" id="modal-specs">
-              <!-- Specs generated by JS -->
-            </ul>
+            <h4 class="font-tech text-[11px] text-[#9ba399] uppercase border-b border-[#d4a034]/10 pb-1 mb-2">Especificaciones</h4>
+            <ul class="font-tech text-xs text-white space-y-2" id="modal-specs"></ul>
           </div>
         </div>
         
-        <button onclick="quoteSimilarProject()" class="w-full border border-[#d4a034] py-3 text-[#d4a034] hover:bg-[#d4a034] hover:text-black font-tech text-[10px] font-bold uppercase tracking-widest transition flex items-center justify-center gap-2">
-          <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Cotizar Proyecto Similar
+        <button onclick="quoteSimilarProject()" class="w-full border border-[#d4a034] py-3 text-[#d4a034] hover:bg-[#d4a034] hover:text-black font-tech text-[11px] font-bold uppercase transition focus:outline-none focus:ring-2 focus:ring-[#d4a034]">
+          Cotizar Proyecto Similar
         </button>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER EDITORIAL -->
-  <footer class="bg-[#0c0d0c] pt-16 pb-8 border-t border-[#d4a034]/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-8 md:mb-0 text-center md:text-left">
-        <span class="font-heading text-2xl font-bold tracking-widest text-white">DIEGO ARMANDO</span>
-        <p class="font-tech text-[10px] text-[#9ba399] uppercase tracking-widest mt-1">Taller de Mobiliario a Medida</p>
+  <footer class="bg-[#0c0d0c] pt-12 pb-8 border-t border-[#d4a034]/20" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <span class="font-heading text-xl font-bold text-white">DIEGO ARMANDO</span>
+        <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">Taller de Mobiliario a Medida</p>
       </div>
-      <div class="flex flex-col items-center md:items-end font-tech text-[10px] text-[#9ba399] uppercase tracking-widest space-y-2">
-        <a href="https://wa.me/56992317042" class="hover:text-[#d4a034] transition">+569 9231 7042</a>
-        <a href="https://instagram.com/diegoarmandomuebles" class="hover:text-[#d4a034] transition">@diegoarmandomuebles</a>
-        <span class="opacity-50">Santiago, Chile</span>
+      <div class="flex flex-col items-center md:items-end font-tech text-xs text-[#9ba399] space-y-2">
+        <a href="https://wa.me/56992317042" class="hover:text-[#d4a034] transition focus:outline-none focus:underline">+569 9231 7042</a>
+        <a href="https://instagram.com/diegoarmandomuebles" class="hover:text-[#d4a034] transition focus:outline-none focus:underline">@diegoarmandomuebles</a>
       </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/5 text-center font-tech text-[9px] text-[#9ba399] uppercase tracking-widest">
-      &copy; 2026 Diego Armando Muebles. Todos los derechos reservados.
     </div>
   </footer>
 
   <script src="js/app.js"></script>
   <script src="js/cotizador.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    // Inicializar iconos de forma segura si la librería cargó
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
