@@ -1,4 +1,3 @@
-
 let currentStep = 1;
 const totalSteps = 4;
 let projectData = {
@@ -15,26 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.option-card').forEach(card => {
     card.addEventListener('click', function() {
       // Remove selected from siblings
-      this.parentNode.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      this.parentNode.querySelectorAll('.option-card').forEach(c => {
+        c.classList.remove('selected');
+        c.setAttribute('aria-pressed', 'false');
+      });
       // Select this
       this.classList.add('selected');
+      this.setAttribute('aria-pressed', 'true');
       projectData.type = this.dataset.type;
     });
   });
 
   // Dimension inputs
-  document.getElementById('dim-width').addEventListener('input', (e) => projectData.dim_width = e.target.value);
-  document.getElementById('dim-height').addEventListener('input', (e) => projectData.dim_height = e.target.value);
-  document.getElementById('dim-depth').addEventListener('input', (e) => projectData.dim_depth = e.target.value);
+  const dimWidth = document.getElementById('dim-width');
+  const dimHeight = document.getElementById('dim-height');
+  const dimDepth = document.getElementById('dim-depth');
   
-  document.getElementById('dim-unknown').addEventListener('change', (e) => {
-    projectData.dim_unknown = e.target.checked;
-    const inputs = ['dim-width', 'dim-height', 'dim-depth'];
-    inputs.forEach(id => {
-      document.getElementById(id).disabled = e.target.checked;
-      document.getElementById(id).style.opacity = e.target.checked ? '0.5' : '1';
+  if (dimWidth) dimWidth.addEventListener('input', (e) => projectData.dim_width = e.target.value);
+  if (dimHeight) dimHeight.addEventListener('input', (e) => projectData.dim_height = e.target.value);
+  if (dimDepth) dimDepth.addEventListener('input', (e) => projectData.dim_depth = e.target.value);
+  
+  const dimUnknown = document.getElementById('dim-unknown');
+  if (dimUnknown) {
+    dimUnknown.addEventListener('change', (e) => {
+      projectData.dim_unknown = e.target.checked;
+      const inputs = ['dim-width', 'dim-height', 'dim-depth'];
+      inputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.disabled = e.target.checked;
+          el.style.opacity = e.target.checked ? '0.5' : '1';
+        }
+      });
     });
-  });
+  }
 });
 
 window.nextStep = () => {
@@ -47,17 +60,21 @@ window.nextStep = () => {
     }
     
     // Hide current
-    document.getElementById('step-pane-' + currentStep).classList.remove('active');
-    document.getElementById('step-circle-' + currentStep).classList.remove('active');
-    document.getElementById('step-circle-' + currentStep).classList.add('completed');
+    const currentPane = document.getElementById('step-pane-' + currentStep);
+    if (currentPane) {
+      currentPane.classList.remove('active');
+      currentPane.classList.add('hidden');
+    }
     
     currentStep++;
     
     // Show next
-    document.getElementById('step-pane-' + currentStep).classList.add('active');
-    document.getElementById('step-circle-' + currentStep).classList.add('active');
+    const nextPane = document.getElementById('step-pane-' + currentStep);
+    if (nextPane) {
+      nextPane.classList.remove('hidden');
+      nextPane.classList.add('active');
+    }
     
-    updateProgress();
     updateControls();
     updateTitle();
   }
@@ -66,88 +83,98 @@ window.nextStep = () => {
 window.prevStep = () => {
   if (currentStep > 1) {
     // Hide current
-    document.getElementById('step-pane-' + currentStep).classList.remove('active');
-    document.getElementById('step-circle-' + currentStep).classList.remove('active');
+    const currentPane = document.getElementById('step-pane-' + currentStep);
+    if (currentPane) {
+      currentPane.classList.remove('active');
+      currentPane.classList.add('hidden');
+    }
     
     currentStep--;
     
     // Show previous
-    document.getElementById('step-pane-' + currentStep).classList.add('active');
-    document.getElementById('step-circle-' + currentStep).classList.remove('completed');
-    document.getElementById('step-circle-' + currentStep).classList.add('active');
+    const prevPane = document.getElementById('step-pane-' + currentStep);
+    if (prevPane) {
+      prevPane.classList.remove('hidden');
+      prevPane.classList.add('active');
+    }
     
-    updateProgress();
     updateControls();
     updateTitle();
   }
 };
 
-function updateProgress() {
-  const percent = ((currentStep - 1) / (totalSteps - 1)) * 100;
-  document.getElementById('stepper-progress').style.width = percent + '%';
-}
-
 function updateControls() {
   const btnPrev = document.getElementById('btn-prev');
   const btnNext = document.getElementById('btn-next');
   
-  if (currentStep === 1) {
-    btnPrev.classList.add('hidden');
-  } else {
-    btnPrev.classList.remove('hidden');
+  if (btnPrev) {
+    if (currentStep === 1) {
+      btnPrev.classList.add('hidden');
+    } else {
+      btnPrev.classList.remove('hidden');
+    }
   }
   
-  if (currentStep === totalSteps) {
-    btnNext.classList.add('hidden');
-  } else {
-    btnNext.classList.remove('hidden');
+  if (btnNext) {
+    if (currentStep === totalSteps) {
+      btnNext.classList.add('hidden');
+    } else {
+      btnNext.classList.remove('hidden');
+    }
   }
 }
 
 function updateTitle() {
   const titles = [
-    '1. ¿QUÉ NECESITAMOS FABRICAR?',
-    '2. ESPECIFICACIONES DIMENSIONALES',
-    '3. SELECCIÓN DE MATERIALIDAD',
-    '4. HOJA DE RUTA & COTIZACIÓN'
+    '1. ¿Qué mueble necesitas?',
+    '2. Dimensiones referenciales',
+    '3. Selección de materialidad',
+    '4. Hoja de ruta para taller'
   ];
-  document.getElementById('step-current-title').innerText = titles[currentStep - 1];
+  const titleEl = document.getElementById('step-current-title');
+  if (titleEl) {
+    titleEl.innerText = titles[currentStep - 1];
+  }
 }
 
 function generateMaterialStep() {
   const content = document.getElementById('step3-dynamic-content');
+  if (!content) return;
   content.innerHTML = '';
   
   const options = [
-    { name: 'Melamina Estándar', desc: 'Blanco / Colores sólidos básicos', priceMod: 1 },
-    { name: 'Melamina Maderada', desc: 'Texturas de madera nativa', priceMod: 1.2 },
-    { name: 'High Gloss / Pet', desc: 'Acabado brillante o mate antihuellas', priceMod: 1.5 },
+    { name: 'Melamina Estándar', desc: 'Blanco / Colores sólidos básicos' },
+    { name: 'Melamina Maderada', desc: 'Texturas de madera nativa' },
+    { name: 'High Gloss / Pet', desc: 'Acabado brillante o mate antihuellas' },
   ];
   
   if(projectData.type === 'cubierta') {
     options.length = 0;
-    options.push({ name: 'Granito', desc: 'Piedra natural de alta dureza', priceMod: 1 });
-    options.push({ name: 'Cuarzo Silestone', desc: 'Colores puros, antibacteriano', priceMod: 1.4 });
+    options.push({ name: 'Granito', desc: 'Piedra natural de alta dureza' });
+    options.push({ name: 'Cuarzo Silestone', desc: 'Colores puros, antibacteriano' });
   }
   
   options.forEach((opt, idx) => {
-    const div = document.createElement('div');
-    div.className = `option-card p-5 ${idx === 0 ? 'selected' : ''}`;
-    div.onclick = function() {
-      document.querySelectorAll('#step3-dynamic-content .option-card').forEach(c => c.classList.remove('selected'));
+    const btn = document.createElement('button');
+    btn.className = \`option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] \${idx === 0 ? 'selected' : ''}\`;
+    btn.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
+    btn.onclick = function() {
+      document.querySelectorAll('#step3-dynamic-content .option-card').forEach(c => {
+        c.classList.remove('selected');
+        c.setAttribute('aria-pressed', 'false');
+      });
       this.classList.add('selected');
+      this.setAttribute('aria-pressed', 'true');
       projectData.material = opt.name;
     };
     if (idx === 0) projectData.material = opt.name;
     
-    div.innerHTML = `
-      <h4 class="font-heading text-lg font-bold">${opt.name}</h4>
-      <p class="font-tech text-[9px] text-[#9ba399] uppercase mt-1">${opt.desc}</p>
-      <div class="check-badge absolute top-4 right-4 text-[#d4a034]"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-    `;
-    content.appendChild(div);
+    btn.innerHTML = \`
+      <h4 class="font-heading text-base font-bold text-white">\${opt.name}</h4>
+      <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">\${opt.desc}</p>
+    \`;
+    content.appendChild(btn);
   });
-  lucide.createIcons();
 }
 
 function generateSummary() {
@@ -160,36 +187,20 @@ function generateSummary() {
     'reparacion': 'MANTENCIÓN TÉCNICA'
   };
   
-  document.getElementById('summary-type').innerText = typeMap[projectData.type] || 'PROYECTO';
+  const typeEl = document.getElementById('summary-type');
+  if (typeEl) typeEl.innerText = typeMap[projectData.type] || 'PROYECTO';
   
-  if(projectData.dim_unknown) {
-    document.getElementById('summary-dim').innerText = 'PENDIENTE (RECTIFICACIÓN TALLER)';
-  } else {
-    document.getElementById('summary-dim').innerText = `${projectData.dim_width}W x ${projectData.dim_height}H x ${projectData.dim_depth}D CM`;
+  const dimEl = document.getElementById('summary-dim');
+  if (dimEl) {
+    if(projectData.dim_unknown) {
+      dimEl.innerText = 'PENDIENTE (RECTIFICACIÓN TALLER)';
+    } else {
+      dimEl.innerText = \`\${projectData.dim_width}W x \${projectData.dim_height}H x \${projectData.dim_depth}D CM\`;
+    }
   }
   
-  document.getElementById('summary-mat').innerText = projectData.material.toUpperCase();
-  
-  // Calculate fake price for demo
-  let basePrice = 300000;
-  if(projectData.type === 'cocina') basePrice = 800000;
-  if(projectData.type === 'closet') basePrice = 450000;
-  if(projectData.type === 'reparacion') basePrice = 50000;
-  
-  let mod = 1;
-  if(projectData.material.includes('Maderada')) mod = 1.2;
-  if(projectData.material.includes('Gloss') || projectData.material.includes('Cuarzo')) mod = 1.5;
-  
-  const minPrice = Math.round((basePrice * mod) / 1000) * 1000;
-  const maxPrice = Math.round((basePrice * mod * 1.3) / 1000) * 1000;
-  
-  const formatter = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
-  
-  if(projectData.type === 'reparacion') {
-    document.getElementById('price-result').innerText = 'Visita desde ' + formatter.format(30000);
-  } else {
-    document.getElementById('price-result').innerText = `${formatter.format(minPrice)} - ${formatter.format(maxPrice)}`;
-  }
+  const matEl = document.getElementById('summary-mat');
+  if (matEl) matEl.innerText = projectData.material.toUpperCase();
 }
 
 window.sendWhatsApp = () => {
@@ -203,16 +214,16 @@ window.sendWhatsApp = () => {
     'reparacion': 'Reparación / Mantención'
   };
   
-  let msg = `Hola Diego Armando, me gustaría cotizar un proyecto.\n\n*Detalles del Proyecto:*\n- Tipo: ${typeMap[projectData.type]}\n`;
+  let msg = \`Hola Diego Armando, me gustaría cotizar un proyecto.\\n\\n*Detalles del Proyecto:*\\n- Tipo: \${typeMap[projectData.type]}\\n\`;
   
   if (projectData.dim_unknown) {
-    msg += `- Dimensiones: No estoy seguro, necesito rectificación.\n`;
+    msg += \`- Dimensiones: No estoy seguro, necesito rectificación.\\n\`;
   } else {
-    msg += `- Dimensiones aprox: ${projectData.dim_width}cm ancho x ${projectData.dim_height}cm alto x ${projectData.dim_depth}cm prof.\n`;
+    msg += \`- Dimensiones aprox: \${projectData.dim_width}cm ancho x \${projectData.dim_height}cm alto x \${projectData.dim_depth}cm prof.\\n\`;
   }
   
-  msg += `- Materialidad: ${projectData.material}\n\nQuedo atento(a) para coordinar.`;
+  msg += \`- Materialidad: \${projectData.material}\\n\\nQuedo atento(a) para coordinar.\`;
   
   const encodedMsg = encodeURIComponent(msg);
-  window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
+  window.open(\`https://wa.me/\${phone}?text=\${encodedMsg}\`, '_blank');
 };
