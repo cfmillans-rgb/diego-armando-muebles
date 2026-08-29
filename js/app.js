@@ -18,7 +18,6 @@ function initMobileMenu() {
       menu.classList.toggle('hidden');
     });
 
-    // Close mobile menu on link click
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.add('hidden');
@@ -36,15 +35,13 @@ function initPortfolioFilters() {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
 
-      // Update button active state
       filterBtns.forEach(b => {
-        b.classList.remove('bg-[#1e3a2b]', 'text-white', 'shadow-md');
-        b.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+        b.classList.remove('bg-[#e0b142]', 'text-black', 'font-extrabold');
+        b.classList.add('bg-[#1a1d1b]', 'text-gray-300', 'hover:text-white', 'border', 'border-white/15');
       });
-      btn.classList.add('bg-[#1e3a2b]', 'text-white', 'shadow-md');
-      btn.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+      btn.classList.add('bg-[#e0b142]', 'text-black', 'font-extrabold');
+      btn.classList.remove('bg-[#1a1d1b]', 'text-gray-300', 'hover:text-white', 'border', 'border-white/15');
 
-      // Filter cards
       projectCards.forEach(card => {
         const category = card.dataset.category;
         if (filter === 'all' || category === filter) {
@@ -78,7 +75,6 @@ function initFaqAccordion() {
       trigger.addEventListener('click', () => {
         const isOpen = !answer.classList.contains('hidden');
 
-        // Close all
         document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
         document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
 
@@ -111,28 +107,28 @@ const PROJECT_MODAL_DATA = {
   'cocina-algarrobo': {
     title: 'Cocina Verde Olivo con Granito Negro',
     location: 'Algarrobo, V Región',
-    category: 'Cocinas Integrales',
+    category: 'Cocinas a Medida',
     image: 'assets/images/cocina_verde_algarrobo.png',
-    description: 'Fabricación completa de muebles base y aéreos en tono verde olivo mate con tiradores de perfilería negra. Cubierta de granito negro pulido con rebaje para encimera vitrocerámica y revestimiento cerámico tipo metro blanco.',
+    description: 'Fabricación integral de muebles base y aéreos en acabado verde olivo mate con tiradores negros de perfilería continua. Cubierta de granito natural negro pulido con zócalos y salpicadero blanco tipo metro.',
     specs: [
-      'Material: Melamina 18mm con cantos PVC 2mm',
-      'Cubierta: Granito Negro San Gabriel con zócalo',
-      'Bisagras y Rieles: Cierre suave telescópicos',
-      'Tiempo de fabricación e instalación: 12 días hábiles'
+      'Material: Melamina 18mm con cantos PVC sellados',
+      'Cubierta: Granito Negro San Gabriel con rebaje para encimera',
+      'Quincallería: Bisagras cierre suave y rieles telescópicos pesados',
+      'Instalación: Montaje milimétrico en Algarrobo'
     ],
     projectType: 'cocina'
   },
   'cocina-providencia': {
-    title: 'Cocina Alto Brillo con Cava Vertical',
+    title: 'Cocina Alto Brillo con Cava Integrada',
     location: 'Providencia, Santiago',
-    category: 'Cocinas Integrales',
+    category: 'Cocinas a Medida',
     image: 'assets/images/cocina_alto_brillo.png',
-    description: 'Diseño ultra-moderno en esquina con acabado High Gloss blanco espejo. Incluye botellero / cava vertical integrada de piso a cielo, espacio empotrado para horno microondas y muebles modulares de alta capacidad.',
+    description: 'Diseño en esquina en acabado High Gloss blanco espejo. Incluye botellero / cava vertical de suelo a cielo para 14 botellas y nicho para horno microondas.',
     specs: [
       'Material: Melamina Alto Brillo (High Gloss) blanca',
-      'Detalles: Cava vertical para 14 botellas',
-      'Distribución: Módulo esquinero de máximo aprovechamiento',
-      'Garantía: 1 año en estructura e instalación'
+      'Detalles: Cava vertical con repisas ranuradas',
+      'Distribución: Módulo esquinero con máximo almacenamiento',
+      'Garantía: Estructura y montaje de taller garantizados'
     ],
     projectType: 'cocina'
   },
@@ -141,12 +137,12 @@ const PROJECT_MODAL_DATA = {
     location: 'Puente Alto / Santiago',
     category: 'Clósets & Vestidores',
     image: 'assets/images/closet_empotrado.png',
-    description: 'Clóset a medida instalado de piso a cielo con sistema de puertas correderas de suave desplazamiento. Distribución interior optimizada con zapatero vertical lateral de 8 niveles, 5 amplios cajones y repisas regulables.',
+    description: 'Clóset a medida instalado de piso a cielo con riel superior e inferior de aluminio. Distribución interior con zapatero lateral vertical de 8 niveles, 5 cajoneras reforzadas y repisas regulables.',
     specs: [
       'Material: Melamina blanca 18mm reforzada',
-      'Rieles: Sistema corredero superior e inferior de aluminio',
-      'Cajoneras: Rieles telescópicos metálicos de carga pesada',
-      'Instalación: Ajuste preciso a muros y nivelación'
+      'Sistema de puertas: Correderas sobre rieles de aluminio',
+      'Cajoneras: Rieles telescópicos de carga pesada',
+      'Instalación: Ajuste exacto a muros y cielo'
     ],
     projectType: 'closet'
   },
@@ -155,12 +151,12 @@ const PROJECT_MODAL_DATA = {
     location: 'Puente Alto, Santiago',
     category: 'Muebles de TV & Hogar',
     image: 'assets/images/mueble_tv_puente_alto.png',
-    description: 'Centro de entretenimiento flotante con panel mural texturado tono madera nórdica y repisas aéreas simétricas. Módulo inferior suspendido con 2 cajones amplios y tiradores metálicos de aluminio.',
+    description: 'Centro de entretenimiento mural flotante en melamina tono madera nórdica. Repisas aéreas decorativas simétricas y módulo inferior con 2 cajoneras y tiradores de aluminio.',
     specs: [
-      'Diseño: Panel de fondo con pasacables oculto',
-      'Repisas: Repisas flotantes dobles para decoración y audio',
-      'Cajones: 2 módulos de guardado con tiradores ergonómicos',
-      'Anclaje: Fijación reforzada a muro de concreto'
+      'Diseño: Panel mural con pasacables oculto',
+      'Repisas: 4 repisas flotantes de soporte reforzado',
+      'Cajones: 2 amplios cajones con correderas telescópicas',
+      'Fijación: Anclaje de alta resistencia a muro'
     ],
     projectType: 'mueble_tv'
   },
@@ -169,11 +165,11 @@ const PROJECT_MODAL_DATA = {
     location: 'Santiago y Región Metropolitana',
     category: 'Servicios Integrales',
     image: 'assets/images/flyer_brand.png',
-    description: 'Servicio integral de carpintería y diseño a medida: Cocinas, Clósets, Vanitorios, Cubiertas de Granito/Cuarzo/Mármol y Reparación general de muebles existentes con atención personalizada por Diego Armando.',
+    description: 'Diseño, Creación, Instalación y Reparación de muebles a medida. Trato directo con el maestro mueblista, materiales seleccionados y quincallería de primera.',
     specs: [
       'Contacto directo: +569 9231 7042',
       'Instagram: @diegoarmandomuebles',
-      'Cobertura: Santiago, Providencia, Puente Alto, Algarrobo y más',
+      'Cobertura: Santiago, Providencia, Puente Alto, Algarrobo y alrededores',
       'Calidad, durabilidad y acabados que marcan la diferencia'
     ],
     projectType: 'cocina'
@@ -201,8 +197,8 @@ function openProjectModal(projectId) {
 
   if (modalSpecs) {
     modalSpecs.innerHTML = data.specs.map(spec => `
-      <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-        <span class="text-[#1e3a2b] font-bold">✓</span>
+      <li class="flex items-start gap-2 text-xs sm:text-sm text-gray-300">
+        <span class="text-[#e0b142] font-bold">✓</span>
         <span>${spec}</span>
       </li>
     `).join('');
@@ -229,7 +225,6 @@ function closeProjectModal() {
   }
 }
 
-// Close modal on escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeProjectModal();

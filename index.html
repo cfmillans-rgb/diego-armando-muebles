@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diego Armando Muebles | Muebles a Medida, Cocinas, Clósets y Reparaciones</title>
-  <meta name="description" content="Fabricación e instalación de cocinas a medida, clósets empotrados, vanitorios, cubiertas de granito y cuarzo, y reparaciones en Santiago y V Región. Cotiza online en pocos pasos y recibe tu presupuesto por WhatsApp.">
+  <meta name="description" content="Diseño, fabricación e instalación de muebles a medida, cocinas, clósets empotrados, vanitorios, cubiertas de granito y reparaciones en Santiago y V Región.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,18 +13,16 @@
       theme: {
         extend: {
           colors: {
-            forest: {
-              50: '#f2f7f4',
-              100: '#e1ede6',
-              600: '#2c533e',
-              800: '#1e3a2b',
-              900: '#12241b',
-            },
-            wood: {
-              400: '#e5a968',
-              500: '#c98a4b',
-              600: '#b37537',
-              700: '#8c5523',
+            taller: {
+              black: '#111312',
+              panel: '#171a18',
+              panel2: '#1e2220',
+              olive: '#384431',
+              oliveDark: '#273022',
+              oliveLight: '#4c5c43',
+              gold: '#e0b142',
+              goldDark: '#caa035',
+              goldHover: '#f0c242'
             }
           }
         }
@@ -35,176 +33,196 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Custom Styles -->
+  <!-- Custom Styles (Paleta Oficial) -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-[#faf9f6] text-[#1f2923] antialiased">
+<body class="bg-[#111312] text-white antialiased selection:bg-[#e0b142] selection:text-black">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-[#12241b] text-gray-200 text-xs py-2 px-4 border-b border-white/10">
+  <!-- TOP BAR (Negro y Verde Oliva con detalles dorados) -->
+  <div class="bg-[#1b221a] text-gray-300 text-xs py-2.5 px-4 border-b border-[#e0b142]/30">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
       <div class="flex items-center gap-2 text-center sm:text-left">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>Atención directa en <strong>Santiago, Providencia, Puente Alto, Algarrobo</strong> y Regiones</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-[#e0b142] animate-pulse"></span>
+        <span class="tracking-wide">Atención en <strong>Santiago, Puente Alto, Providencia, Algarrobo</strong> y Regiones</span>
       </div>
-      <div class="flex items-center gap-4 text-xs">
-        <a href="https://instagram.com/diegoarmandomuebles" target="_blank" class="hover:text-amber-400 transition flex items-center gap-1">
-          <i data-lucide="instagram" class="w-3.5 h-3.5"></i> @diegoarmandomuebles
+      <div class="flex items-center gap-5 text-xs">
+        <a href="https://instagram.com/diegoarmandomuebles" target="_blank" class="hover:text-[#e0b142] transition flex items-center gap-1.5 font-medium">
+          <i data-lucide="instagram" class="w-3.5 h-3.5 text-[#e0b142]"></i> @diegoarmandomuebles
         </a>
-        <span class="text-gray-500">|</span>
-        <a href="https://wa.me/56992317042" target="_blank" class="hover:text-emerald-400 font-semibold transition flex items-center gap-1">
-          <i data-lucide="phone" class="w-3.5 h-3.5"></i> +569 9231 7042
+        <span class="text-white/20">|</span>
+        <a href="https://wa.me/56992317042" target="_blank" class="hover:text-emerald-400 font-bold transition flex items-center gap-1.5 text-[#e0b142]">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +569 9231 7042
         </a>
       </div>
     </div>
   </div>
 
   <!-- NAVIGATION HEADER -->
-  <header class="sticky top-0 z-50 glass-header">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-[#111312]/95 backdrop-blur-md border-b border-[#e0b142]/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 rounded-full bg-[#1e3a2b] text-amber-300 flex items-center justify-center font-black text-xl shadow-md border border-amber-400/40 group-hover:scale-105 transition">
-          DA
+      <!-- Brand Logo Circular Oficial -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <!-- SVG Circular Emblem -->
+        <div class="w-14 h-14 rounded-full bg-[#1e241c] border-2 border-[#e0b142] p-1 shadow-md group-hover:border-[#f0c242] transition flex items-center justify-center relative overflow-hidden">
+          <svg viewBox="0 0 100 100" class="w-full h-full text-[#e0b142]">
+            <!-- Outer circle -->
+            <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="3 2" />
+            <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1.2" />
+            <!-- Crossed Tools Icon -->
+            <path d="M36 36 L64 64 M64 36 L36 64" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="50" cy="50" r="8" fill="#111312" stroke="currentColor" stroke-width="2" />
+            <rect x="47" y="24" width="6" height="12" fill="currentColor" rx="1" />
+            <rect x="47" y="64" width="6" height="12" fill="currentColor" rx="1" />
+            <rect x="24" y="47" width="12" height="6" fill="currentColor" rx="1" />
+            <rect x="64" y="47" width="12" height="6" fill="currentColor" rx="1" />
+          </svg>
         </div>
+
         <div>
-          <span class="block font-heading font-extrabold text-lg sm:text-xl tracking-tight text-[#12241b] group-hover:text-[#2c533e] transition">
+          <span class="block font-heading text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-[#e0b142] transition">
             DIEGO ARMANDO
           </span>
-          <span class="block text-[11px] font-semibold tracking-widest text-[#c98a4b] uppercase -mt-1">
-            Muebles a Medida
-          </span>
+          <div class="flex items-center gap-1 text-[11px] font-bold tracking-widest text-[#e0b142] uppercase -mt-0.5">
+            <span>MUEBLES A MEDIDA</span>
+            <span class="text-white/40">•</span>
+            <span class="text-gray-400 font-semibold">TALLER</span>
+          </div>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
-        <a href="#servicios" class="hover:text-[#1e3a2b] transition">¿Qué Fabricamos?</a>
-        <a href="#trabajos" class="hover:text-[#1e3a2b] transition">Trabajos Reales</a>
-        <a href="#cotizador" class="hover:text-[#1e3a2b] transition text-[#1e3a2b] flex items-center gap-1 font-bold">
-          <span class="w-2 h-2 rounded-full bg-[#c98a4b]"></span> Cotizador Online
+      <nav class="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-gray-300 font-heading">
+        <a href="#servicios" class="hover:text-[#e0b142] transition">¿Qué Fabricamos?</a>
+        <a href="#trabajos" class="hover:text-[#e0b142] transition">Trabajos Reales</a>
+        <a href="#cotizador" class="text-[#e0b142] hover:text-white transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#e0b142]"></span> Cotizador
         </a>
-        <a href="#proceso" class="hover:text-[#1e3a2b] transition">¿Cómo Funciona?</a>
-        <a href="#nosotros" class="hover:text-[#1e3a2b] transition">Por Qué Nosotros</a>
+        <a href="#proceso" class="hover:text-[#e0b142] transition">¿Cómo Funciona?</a>
+        <a href="#nosotros" class="hover:text-[#e0b142] transition">Por Qué Nosotros</a>
       </nav>
 
       <!-- Desktop Header CTA -->
       <div class="hidden lg:flex items-center gap-3">
-        <a href="#cotizador" class="px-5 py-2.5 rounded-xl bg-[#1e3a2b] hover:bg-[#2c533e] text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center gap-2">
-          <i data-lucide="calculator" class="w-4 h-4 text-amber-300"></i>
-          <span>Cotizar mi Mueble</span>
+        <a href="#cotizador" class="px-5 py-2.5 rounded-lg bg-[#e0b142] hover:bg-[#f0c242] text-black font-heading font-bold text-xs uppercase tracking-wider shadow transition flex items-center gap-2">
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+          <span>Cotizar Mueble</span>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none">
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 focus:outline-none">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-5 space-y-3">
-      <a href="#servicios" class="block py-2 text-sm font-semibold text-gray-700 hover:text-[#1e3a2b]">¿Qué Fabricamos?</a>
-      <a href="#trabajos" class="block py-2 text-sm font-semibold text-gray-700 hover:text-[#1e3a2b]">Trabajos Reales</a>
-      <a href="#cotizador" class="block py-2 text-sm font-bold text-[#1e3a2b]">⚡ Cotizador Online</a>
-      <a href="#proceso" class="block py-2 text-sm font-semibold text-gray-700 hover:text-[#1e3a2b]">¿Cómo Funciona?</a>
-      <a href="#nosotros" class="block py-2 text-sm font-semibold text-gray-700 hover:text-[#1e3a2b]">Por Qué Elegirnos</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#171a18] border-b border-[#e0b142]/30 px-4 pt-3 pb-5 space-y-3 font-heading uppercase text-xs">
+      <a href="#servicios" class="block py-2 text-gray-300 hover:text-[#e0b142]">¿Qué Fabricamos?</a>
+      <a href="#trabajos" class="block py-2 text-gray-300 hover:text-[#e0b142]">Trabajos Reales</a>
+      <a href="#cotizador" class="block py-2 text-[#e0b142] font-bold">⚡ Cotizador Online</a>
+      <a href="#proceso" class="block py-2 text-gray-300 hover:text-[#e0b142]">¿Cómo Funciona?</a>
+      <a href="#nosotros" class="block py-2 text-gray-300 hover:text-[#e0b142]">Por Qué Elegirnos</a>
       <div class="pt-2">
-        <a href="#cotizador" class="w-full text-center block py-3 rounded-xl bg-[#1e3a2b] text-white font-bold text-sm shadow">
+        <a href="#cotizador" class="w-full text-center block py-3 rounded-lg bg-[#e0b142] text-black font-bold text-xs shadow">
           Cotizar Proyecto en Pocos Pasos
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative hero-pattern text-white pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+  <!-- HERO SECTION (ESTILO TALLER REAL) -->
+  <section class="relative bg-[#111312] pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden border-b border-[#e0b142]/20">
+    
+    <!-- Background subtle olive tone band -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1c2419]/60 via-[#111312] to-[#111312] pointer-events-none"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         
         <!-- Left Hero Content -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold text-amber-300">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-            <span>Fabricación 100% Personalizada e Instalación</span>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#384431]/80 border border-[#e0b142]/40 text-xs font-bold uppercase tracking-wider text-[#e0b142]">
+            <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+            <span>Diseño • Creación • Instalación • Reparación</span>
           </div>
 
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-tight text-white">
-            Muebles a Medida para <span class="text-amber-400">tu Espacio</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-none">
+            MUEBLES A MEDIDA <br class="hidden sm:inline">
+            <span class="text-[#e0b142]">PARA TU ESPACIO</span>
           </h1>
 
           <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            Cocinas integrales, clósets empotrados, vanitorios y cubiertas de granito fabricados con materiales de alta durabilidad y adaptados a tus medidas exactas.
+            Cocinas integrales, clósets empotrados, vanitorios y muebles personalizados fabricados según tus medidas e instalados en tu hogar.
           </p>
 
           <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold text-base shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-              <i data-lucide="calculator" class="w-5 h-5"></i>
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1">
+            <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#e0b142] hover:bg-[#f0c242] text-black font-heading font-extrabold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
               <span>COTIZAR MI MUEBLE</span>
             </a>
-            <a href="#trabajos" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base border border-white/20 backdrop-blur-md transition flex items-center justify-center gap-2">
-              <i data-lucide="eye" class="w-5 h-5 text-gray-300"></i>
+            <a href="#trabajos" class="w-full sm:w-auto px-7 py-4 rounded-lg bg-[#1e2220] hover:bg-[#273022] text-white font-heading font-bold text-sm uppercase tracking-wider border border-[#e0b142]/40 transition flex items-center justify-center gap-2">
+              <i data-lucide="eye" class="w-4 h-4 text-[#e0b142]"></i>
               <span>VER TRABAJOS REALES</span>
             </a>
           </div>
 
-          <!-- Hero Trust Badges -->
-          <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-            <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-              <span class="text-amber-400 font-bold">✓</span>
+          <!-- Hero Trust Badges (Estilo Flyer) -->
+          <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+            <div class="p-2.5 rounded-lg bg-[#171a18] border border-[#e0b142]/30 flex items-center gap-2">
+              <span class="text-[#e0b142] font-bold">✓</span>
               <span class="text-xs text-gray-200 font-medium">Fabricación a medida</span>
             </div>
-            <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-              <span class="text-amber-400 font-bold">✓</span>
+            <div class="p-2.5 rounded-lg bg-[#171a18] border border-[#e0b142]/30 flex items-center gap-2">
+              <span class="text-[#e0b142] font-bold">✓</span>
               <span class="text-xs text-gray-200 font-medium">Instalación incluida</span>
             </div>
-            <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-              <span class="text-amber-400 font-bold">✓</span>
+            <div class="p-2.5 rounded-lg bg-[#171a18] border border-[#e0b142]/30 flex items-center gap-2">
+              <span class="text-[#e0b142] font-bold">✓</span>
               <span class="text-xs text-gray-200 font-medium">Reparaciones</span>
             </div>
-            <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-              <span class="text-amber-400 font-bold">✓</span>
-              <span class="text-xs text-gray-200 font-medium">Santiago & Regiones</span>
+            <div class="p-2.5 rounded-lg bg-[#171a18] border border-[#e0b142]/30 flex items-center gap-2">
+              <span class="text-[#e0b142] font-bold">✓</span>
+              <span class="text-xs text-gray-200 font-medium">Atención en Santiago</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Hero Visual Collage (Real Photos) -->
+        <!-- Right Hero Visual Collage (Fotos Limpias con marco dorado) -->
         <div class="lg:col-span-5 relative">
           <div class="relative mx-auto max-w-md lg:max-w-none">
             
-            <!-- Main Hero Image (Cocina Verde) -->
-            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/15 bg-gray-900 group">
-              <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina a medida terminada en Algarrobo" class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 right-4 text-white">
-                <span class="inline-block px-2.5 py-1 rounded-md bg-[#1e3a2b] text-amber-300 text-xs font-bold uppercase tracking-wider mb-1">
-                  Trabajo Real
+            <!-- Main Hero Image (Cocina Verde en Algarrobo) -->
+            <div class="portfolio-frame rounded-2xl overflow-hidden bg-[#171a18] shadow-2xl relative group">
+              <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina a medida terminada en Algarrobo" class="w-full h-80 sm:h-96 object-cover">
+              <div class="absolute bottom-3 left-3 right-3 bg-[#111312]/90 border border-[#e0b142]/40 rounded-xl p-3 backdrop-blur-sm flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-[#e0b142] block">Trabajo Real en Terreno</span>
+                  <p class="font-heading font-bold text-sm text-white">Cocina Verde Olivo & Granito Negro</p>
+                </div>
+                <span class="location-badge px-2.5 py-1 rounded-md text-[11px] font-bold flex items-center gap-1 font-heading">
+                  <i data-lucide="map-pin" class="w-3 h-3 text-[#e0b142]"></i> Algarrobo
                 </span>
-                <p class="font-bold text-sm sm:text-base">Cocina Verde Olivo con Granito Negro — Algarrobo</p>
               </div>
             </div>
 
-            <!-- Floating Overlay Card (Closet) -->
-            <div class="absolute -bottom-6 -left-6 sm:-left-8 w-44 sm:w-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-gray-900 hidden sm:block">
-              <img src="assets/images/closet_empotrado.png" alt="Clóset empotrado a medida" class="w-full h-40 object-cover">
-              <div class="p-2.5 bg-[#151917] text-white">
-                <p class="text-[11px] font-bold text-amber-400">Clóset Empotrado</p>
-                <p class="text-[10px] text-gray-400">Distribución interior a medida</p>
+            <!-- Floating Clóset Card Bottom Left -->
+            <div class="absolute -bottom-5 -left-5 sm:-left-6 w-44 sm:w-48 rounded-xl overflow-hidden border-2 border-[#e0b142] bg-[#111312] shadow-2xl hidden sm:block">
+              <img src="assets/images/closet_empotrado.png" alt="Clóset empotrado a medida" class="w-full h-32 object-cover">
+              <div class="p-2 bg-[#171a18] text-left">
+                <p class="text-[11px] font-heading font-bold text-[#e0b142]">Clóset Empotrado</p>
+                <p class="text-[10px] text-gray-300">Puente Alto / Santiago</p>
               </div>
             </div>
 
-            <!-- Floating Rating/Experience Badge -->
-            <div class="absolute -top-4 -right-4 p-3.5 rounded-2xl glass-dark text-white shadow-xl flex items-center gap-3 border border-white/20">
-              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
-                <i data-lucide="shield-check" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <p class="text-xs font-bold">100% Garantizado</p>
-                <p class="text-[11px] text-gray-300">Quincallería de primera</p>
+            <!-- Experience Badge Top Right -->
+            <div class="absolute -top-3 -right-3 px-3.5 py-2 rounded-xl bg-[#384431] border border-[#e0b142] text-white shadow-xl flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#e0b142]"></i>
+              <div class="text-left">
+                <p class="text-[11px] font-heading font-bold leading-tight text-white">100% GARANTIZADO</p>
+                <p class="text-[9px] text-gray-300">Quincallería de primera</p>
               </div>
             </div>
 
@@ -215,299 +233,302 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION: ¿QUÉ PODEMOS FABRICAR? -->
-  <section id="servicios" class="py-20 bg-white">
+  <!-- SERVICES SECTION (INSPIRADO DIRECTAMENTE EN EL FLYER) -->
+  <section id="servicios" class="py-16 bg-[#171a18] border-b border-[#e0b142]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-[#c98a4b] block mb-2">Servicios Especializados</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-[#12241b]">
-          ¿Qué Podemos Fabricar para Ti?
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block mb-1">Especialidades de Taller</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+          ¿QUÉ PODEMOS FABRICAR?
         </h2>
-        <p class="text-gray-600 mt-3 text-sm sm:text-base">
-          Diseñamos soluciones personalizadas que aprovechan cada centímetro de tu hogar con la mejor calidad en maderas, melaminas y cubiertas.
+        <p class="text-gray-400 mt-2 text-sm max-w-xl mx-auto">
+          Fabricación de muebles a medida, confección e instalación de cubiertas y reparación especializada.
         </p>
       </div>
 
-      <!-- Services Grid (6 Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        
-        <!-- Card 1: Cocinas -->
-        <div class="p-6 rounded-2xl bg-[#faf9f6] border border-[#e6e3da] hover:border-[#1e3a2b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center shadow-md">
-              <i data-lucide="utensils" class="w-6 h-6"></i>
+      <!-- Flyer Layout (3 Columns with Gold Dividers) -->
+      <div class="rounded-2xl bg-[#111312] border-2 border-[#e0b142]/40 overflow-hidden shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#e0b142]/30">
+          
+          <!-- Column 1: MUEBLES A MEDIDA -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-gradient-to-b from-[#1e241c] to-[#111312]">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full border-2 border-[#e0b142] bg-[#111312] text-[#e0b142] flex items-center justify-center">
+                  <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-heading font-bold text-[#e0b142]">MUEBLES A MEDIDA</h3>
+                  <p class="text-[11px] text-gray-400">Diseño según tu espacio</p>
+                </div>
+              </div>
+
+              <ul class="space-y-3 text-sm text-gray-200">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Cocinas Integrales</strong> (Base, aéreos, islas)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Clósets & Vestidores</strong> (Empotrados)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Vanitorios</strong> (Baños a medida)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Muebles de TV & Hogar</strong> (Paneles y repisas)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <span class="text-gray-300">Escritorios y muebles especiales</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-xl font-bold font-heading text-[#12241b] group-hover:text-[#1e3a2b]">Cocinas Integrales</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Diseño y fabricación según tu espacio. Muebles base, aéreos, torres para hornos, islas y despensas con amortiguación suave.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-gray-500">A medida</span>
-            <button onclick="startCotizarWithService('cocina')" class="px-4 py-2 rounded-lg bg-[#1e3a2b] text-white hover:bg-[#2c533e] text-xs font-bold transition flex items-center gap-1">
-              <span>Cotizar Cocina</span>
+
+            <button onclick="startCotizarWithService('cocina')" class="w-full py-3 rounded-lg bg-[#384431] hover:bg-[#4c5c43] text-[#e0b142] font-heading font-bold text-xs uppercase tracking-wider border border-[#e0b142]/40 transition flex items-center justify-center gap-1.5">
+              <span>Cotizar Mueble a Medida</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
-        </div>
 
-        <!-- Card 2: Clósets -->
-        <div class="p-6 rounded-2xl bg-[#faf9f6] border border-[#e6e3da] hover:border-[#1e3a2b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center shadow-md">
-              <i data-lucide="door-closed" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold font-heading text-[#12241b] group-hover:text-[#1e3a2b]">Clósets & Vestidores</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Empotrados de suelo a cielo, independientes o walk-in closets. Puertas correderas o abatibles, cajoneras y zapateros optimizados.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-gray-500">A medida</span>
-            <button onclick="startCotizarWithService('closet')" class="px-4 py-2 rounded-lg bg-[#1e3a2b] text-white hover:bg-[#2c533e] text-xs font-bold transition flex items-center gap-1">
-              <span>Cotizar Clóset</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
+          <!-- Column 2: CUBIERTAS -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-gradient-to-b from-[#1e241c] to-[#111312]">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full border-2 border-[#e0b142] bg-[#111312] text-[#e0b142] flex items-center justify-center">
+                  <i data-lucide="layers" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-heading font-bold text-[#e0b142]">CUBIERTAS</h3>
+                  <p class="text-[11px] text-gray-400">Materiales nobles e impermeables</p>
+                </div>
+              </div>
 
-        <!-- Card 3: Vanitorios -->
-        <div class="p-6 rounded-2xl bg-[#faf9f6] border border-[#e6e3da] hover:border-[#1e3a2b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center shadow-md">
-              <i data-lucide="bath" class="w-6 h-6"></i>
+              <ul class="space-y-3 text-sm text-gray-200">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Granito Natural</strong> (Alta resistencia al calor)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Cuarzo Silestone</strong> (Calacatta, Blanco, etc.)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <strong class="text-white">Mármol Clásico</strong> (Elegancia con vetas)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <span class="text-gray-300">Zócalos, rebajes y sellado profesional</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-xl font-bold font-heading text-[#12241b] group-hover:text-[#1e3a2b]">Vanitorios de Baño</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Diseños suspendidos o a piso con melamina hidrófuga resistente a la humedad. Compatibles con bachas sobrepuestas o empotradas.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-gray-500">A medida</span>
-            <button onclick="startCotizarWithService('vanitorio')" class="px-4 py-2 rounded-lg bg-[#1e3a2b] text-white hover:bg-[#2c533e] text-xs font-bold transition flex items-center gap-1">
-              <span>Cotizar Vanitorio</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
 
-        <!-- Card 4: Muebles TV & Home Office -->
-        <div class="p-6 rounded-2xl bg-[#faf9f6] border border-[#e6e3da] hover:border-[#1e3a2b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center shadow-md">
-              <i data-lucide="tv" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold font-heading text-[#12241b] group-hover:text-[#1e3a2b]">Muebles de TV & Hogar</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Centros de entretenimiento con panel mural flotante, repisas suspendidas, racks de audio y escritorios de trabajo ergonómicos.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-gray-500">A medida</span>
-            <button onclick="startCotizarWithService('mueble_tv')" class="px-4 py-2 rounded-lg bg-[#1e3a2b] text-white hover:bg-[#2c533e] text-xs font-bold transition flex items-center gap-1">
-              <span>Cotizar Mueble TV</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Card 5: Cubiertas -->
-        <div class="p-6 rounded-2xl bg-[#faf9f6] border border-[#e6e3da] hover:border-[#1e3a2b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center shadow-md">
-              <i data-lucide="layers" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-xl font-bold font-heading text-[#12241b] group-hover:text-[#1e3a2b]">Cubiertas de Alto Estándar</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Suministro, corte e instalación de cubiertas en <strong>Granito Natural, Cuarzo y Mármol</strong> con zócalos y sellado impermeable.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-gray-500">Granito · Cuarzo</span>
-            <button onclick="startCotizarWithService('cubierta')" class="px-4 py-2 rounded-lg bg-[#1e3a2b] text-white hover:bg-[#2c533e] text-xs font-bold transition flex items-center gap-1">
+            <button onclick="startCotizarWithService('cubierta')" class="w-full py-3 rounded-lg bg-[#384431] hover:bg-[#4c5c43] text-[#e0b142] font-heading font-bold text-xs uppercase tracking-wider border border-[#e0b142]/40 transition flex items-center justify-center gap-1.5">
               <span>Cotizar Cubierta</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
-        </div>
 
-        <!-- Card 6: Reparaciones -->
-        <div class="p-6 rounded-2xl bg-[#faf9f6] border border-[#e6e3da] hover:border-[#1e3a2b] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center shadow-md">
-              <i data-lucide="wrench" class="w-6 h-6"></i>
+          <!-- Column 3: REPARACIONES -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-gradient-to-b from-[#1e241c] to-[#111312]">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full border-2 border-[#e0b142] bg-[#111312] text-[#e0b142] flex items-center justify-center">
+                  <i data-lucide="wrench" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-heading font-bold text-[#e0b142]">REPARACIONES</h3>
+                  <p class="text-[11px] text-gray-400">Mantención y quincallería</p>
+                </div>
+              </div>
+
+              <ul class="space-y-3 text-sm text-gray-200">
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <span>Cambio de bisagras para puertas (cierre suave)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <span>Cambio de rieles para cajones (telescópicos)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <span>Cambio de rieles para puertas de clóset</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#e0b142]"></span>
+                  <span>Cambio de tiradores, manillas y ajustes generales</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="text-xl font-bold font-heading text-[#12241b] group-hover:text-[#1e3a2b]">Reparaciones & Quincallería</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Cambio de bisagras cierre suave, rieles de cajones, rieles de puertas de clóset, tiradores y nivelación de puertas desalineadas.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-gray-500">Mantención</span>
-            <button onclick="startCotizarWithService('reparacion')" class="px-4 py-2 rounded-lg bg-[#1e3a2b] text-white hover:bg-[#2c533e] text-xs font-bold transition flex items-center gap-1">
-              <span>Cotizar Arreglo</span>
+
+            <button onclick="startCotizarWithService('reparacion')" class="w-full py-3 rounded-lg bg-[#384431] hover:bg-[#4c5c43] text-[#e0b142] font-heading font-bold text-xs uppercase tracking-wider border border-[#e0b142]/40 transition flex items-center justify-center gap-1.5">
+              <span>Cotizar Reparación</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
+
         </div>
 
+        <!-- Flyer Bottom Slogan Ribbon -->
+        <div class="bg-[#384431] border-t border-[#e0b142]/40 p-4 text-center font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-white flex flex-wrap items-center justify-center gap-6">
+          <span class="flex items-center gap-1.5 text-[#e0b142]">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> DISEÑO • CREACIÓN • INSTALACIÓN • REPARACIÓN
+          </span>
+          <span class="hidden md:inline text-white/30">•</span>
+          <span class="flex items-center gap-1.5 text-white">
+            <i data-lucide="award" class="w-4 h-4 text-[#e0b142]"></i> CALIDAD Y DURABILIDAD
+          </span>
+          <span class="hidden md:inline text-white/30">•</span>
+          <span class="flex items-center gap-1.5 text-[#e0b142]">
+            <i data-lucide="star" class="w-4 h-4"></i> ACABADOS QUE MARCAN LA DIFERENCIA
+          </span>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- PORTFOLIO / TRABAJOS REALES SECTION -->
-  <section id="trabajos" class="py-20 bg-[#f3f1ea] border-y border-[#e6e3da]">
+  <!-- PORTFOLIO SECTION (FOTOS REALES LIMPIAS) -->
+  <section id="trabajos" class="py-16 bg-[#111312] border-b border-[#e0b142]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-widest text-[#c98a4b] block mb-2">Galería de Trabajos</span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-[#12241b]">
-            Trabajos Realizados con Éxito
+          <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block mb-1">Fotos Reales de Taller</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+            TRABAJOS REALIZADOS
           </h2>
-          <p class="text-gray-600 mt-2 text-sm sm:text-base max-w-xl">
-            Proyectos reales fabricados e instalados en hogares de Santiago y la V Región. Haz clic en cada proyecto para ver detalles técnicos.
+          <p class="text-gray-400 mt-1 text-sm max-w-xl">
+            Proyectos reales terminados e instalados. Selecciona una categoría o haz clic para ver especificaciones.
           </p>
         </div>
 
         <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2">
-          <button class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#1e3a2b] text-white shadow-md transition" data-filter="all">
-            Todos
+        <div class="flex flex-wrap gap-2 font-heading text-xs">
+          <button class="portfolio-filter-btn px-4 py-2 rounded-md font-extrabold bg-[#e0b142] text-black transition" data-filter="all">
+            TODOS
           </button>
-          <button class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 hover:bg-gray-100 transition" data-filter="cocina">
-            Cocinas
+          <button class="portfolio-filter-btn px-4 py-2 rounded-md bg-[#1a1d1b] text-gray-300 hover:text-white border border-white/15 transition" data-filter="cocina">
+            COCINAS
           </button>
-          <button class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 hover:bg-gray-100 transition" data-filter="closet">
-            Clósets
+          <button class="portfolio-filter-btn px-4 py-2 rounded-md bg-[#1a1d1b] text-gray-300 hover:text-white border border-white/15 transition" data-filter="closet">
+            CLÓSETS
           </button>
-          <button class="portfolio-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-gray-700 hover:bg-gray-100 transition" data-filter="mueble_tv">
-            Muebles TV
+          <button class="portfolio-filter-btn px-4 py-2 rounded-md bg-[#1a1d1b] text-gray-300 hover:text-white border border-white/15 transition" data-filter="mueble_tv">
+            MUEBLES TV
           </button>
         </div>
       </div>
 
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Projects Grid (Limpias, sin textos invasivos sobre la foto) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- Project 1: Cocina Algarrobo -->
-        <div class="portfolio-card bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer group" data-category="cocina" onclick="openProjectModal('cocina-algarrobo')">
-          <div class="portfolio-img-wrapper h-64 relative bg-gray-100">
-            <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina Verde Olivo en Algarrobo" class="w-full h-full object-cover">
-            <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#1e3a2b]/90 text-white text-xs font-bold flex items-center gap-1">
-              <i data-lucide="map-pin" class="w-3 h-3 text-amber-300"></i> Algarrobo
-            </div>
-            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-              <span class="px-4 py-2 rounded-xl bg-white text-[#12241b] text-xs font-bold shadow-lg flex items-center gap-1.5">
-                <i data-lucide="zoom-in" class="w-4 h-4"></i> Ver Proyecto
+        <div class="portfolio-card portfolio-frame rounded-xl overflow-hidden bg-[#171a18] cursor-pointer group" data-category="cocina" onclick="openProjectModal('cocina-algarrobo')">
+          <div class="h-64 relative bg-black">
+            <img src="assets/images/cocina_verde_algarrobo.png" alt="Cocina Verde Olivo en Algarrobo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute bottom-3 left-3">
+              <span class="location-badge px-3 py-1 rounded-md text-xs font-bold flex items-center gap-1 font-heading">
+                <i data-lucide="map-pin" class="w-3 h-3 text-[#e0b142]"></i> ALGARROBO
               </span>
             </div>
           </div>
-          <div class="p-6">
-            <span class="text-xs font-bold text-[#c98a4b] uppercase tracking-wider block mb-1">Cocinas Integrales</span>
-            <h3 class="text-lg font-bold font-heading text-gray-900 group-hover:text-[#1e3a2b] transition">
-              Cocina Verde Olivo & Granito
+          <div class="p-5 border-t border-white/10">
+            <span class="text-[11px] font-heading font-bold text-[#e0b142] uppercase tracking-wider block mb-1">Cocina a Medida</span>
+            <h3 class="text-base font-heading font-bold text-white group-hover:text-[#e0b142] transition">
+              Cocina Verde Olivo con Granito Negro
             </h3>
-            <p class="text-xs text-gray-500 mt-1 line-clamp-2">
-              Muebles a medida con tiradores negros y cubierta de granito pulido con salpicadero cerámico.
+            <p class="text-xs text-gray-400 mt-1">
+              Melamina 18mm, tiradores de perfilería negra y cubierta de granito pulido con salpicadero cerámico.
             </p>
           </div>
         </div>
 
         <!-- Project 2: Cocina Alto Brillo Providencia -->
-        <div class="portfolio-card bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer group" data-category="cocina" onclick="openProjectModal('cocina-providencia')">
-          <div class="portfolio-img-wrapper h-64 relative bg-gray-100">
-            <img src="assets/images/cocina_alto_brillo.png" alt="Cocina Alto Brillo en Providencia" class="w-full h-full object-cover">
-            <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#1e3a2b]/90 text-white text-xs font-bold flex items-center gap-1">
-              <i data-lucide="map-pin" class="w-3 h-3 text-amber-300"></i> Providencia
-            </div>
-            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-              <span class="px-4 py-2 rounded-xl bg-white text-[#12241b] text-xs font-bold shadow-lg flex items-center gap-1.5">
-                <i data-lucide="zoom-in" class="w-4 h-4"></i> Ver Proyecto
+        <div class="portfolio-card portfolio-frame rounded-xl overflow-hidden bg-[#171a18] cursor-pointer group" data-category="cocina" onclick="openProjectModal('cocina-providencia')">
+          <div class="h-64 relative bg-black">
+            <img src="assets/images/cocina_alto_brillo.png" alt="Cocina Alto Brillo en Providencia" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute bottom-3 left-3">
+              <span class="location-badge px-3 py-1 rounded-md text-xs font-bold flex items-center gap-1 font-heading">
+                <i data-lucide="map-pin" class="w-3 h-3 text-[#e0b142]"></i> PROVIDENCIA
               </span>
             </div>
           </div>
-          <div class="p-6">
-            <span class="text-xs font-bold text-[#c98a4b] uppercase tracking-wider block mb-1">Cocinas Integrales</span>
-            <h3 class="text-lg font-bold font-heading text-gray-900 group-hover:text-[#1e3a2b] transition">
-              Cocina Alto Brillo con Cava
+          <div class="p-5 border-t border-white/10">
+            <span class="text-[11px] font-heading font-bold text-[#e0b142] uppercase tracking-wider block mb-1">Cocina Alto Brillo</span>
+            <h3 class="text-base font-heading font-bold text-white group-hover:text-[#e0b142] transition">
+              Cocina Alto Brillo con Cava Integrada
             </h3>
-            <p class="text-xs text-gray-500 mt-1 line-clamp-2">
-              Acabado espejo blanco con cava vertical de botellas y espacio empotrado para electrodomésticos.
+            <p class="text-xs text-gray-400 mt-1">
+              Acabado espejo High Gloss blanco con cava vertical para 14 botellas y espacio para microondas.
             </p>
           </div>
         </div>
 
         <!-- Project 3: Clóset Empotrado Puente Alto -->
-        <div class="portfolio-card bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer group" data-category="closet" onclick="openProjectModal('closet-santiago')">
-          <div class="portfolio-img-wrapper h-64 relative bg-gray-100">
-            <img src="assets/images/closet_empotrado.png" alt="Clóset empotrado a medida" class="w-full h-full object-cover">
-            <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#1e3a2b]/90 text-white text-xs font-bold flex items-center gap-1">
-              <i data-lucide="map-pin" class="w-3 h-3 text-amber-300"></i> Puente Alto
-            </div>
-            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-              <span class="px-4 py-2 rounded-xl bg-white text-[#12241b] text-xs font-bold shadow-lg flex items-center gap-1.5">
-                <i data-lucide="zoom-in" class="w-4 h-4"></i> Ver Proyecto
+        <div class="portfolio-card portfolio-frame rounded-xl overflow-hidden bg-[#171a18] cursor-pointer group" data-category="closet" onclick="openProjectModal('closet-santiago')">
+          <div class="h-64 relative bg-black">
+            <img src="assets/images/closet_empotrado.png" alt="Clóset empotrado a medida" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute bottom-3 left-3">
+              <span class="location-badge px-3 py-1 rounded-md text-xs font-bold flex items-center gap-1 font-heading">
+                <i data-lucide="map-pin" class="w-3 h-3 text-[#e0b142]"></i> PUENTE ALTO
               </span>
             </div>
           </div>
-          <div class="p-6">
-            <span class="text-xs font-bold text-[#c98a4b] uppercase tracking-wider block mb-1">Clósets & Vestidores</span>
-            <h3 class="text-lg font-bold font-heading text-gray-900 group-hover:text-[#1e3a2b] transition">
-              Clóset Empotrado Corredero
+          <div class="p-5 border-t border-white/10">
+            <span class="text-[11px] font-heading font-bold text-[#e0b142] uppercase tracking-wider block mb-1">Clóset Empotrado</span>
+            <h3 class="text-base font-heading font-bold text-white group-hover:text-[#e0b142] transition">
+              Clóset Corredero de Piso a Cielo
             </h3>
-            <p class="text-xs text-gray-500 mt-1 line-clamp-2">
-              Fabricación de suelo a cielo con zapatero lateral vertical, 5 cajones y puertas correderas de aluminio.
+            <p class="text-xs text-gray-400 mt-1">
+              Puertas correderas de aluminio, zapatero vertical de 8 niveles, 5 amplios cajones y repisas.
             </p>
           </div>
         </div>
 
         <!-- Project 4: Mueble TV Puente Alto -->
-        <div class="portfolio-card bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer group" data-category="mueble_tv" onclick="openProjectModal('tv-puente-alto')">
-          <div class="portfolio-img-wrapper h-64 relative bg-gray-100">
-            <img src="assets/images/mueble_tv_puente_alto.png" alt="Mueble TV Flotante en Puente Alto" class="w-full h-full object-cover">
-            <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#1e3a2b]/90 text-white text-xs font-bold flex items-center gap-1">
-              <i data-lucide="map-pin" class="w-3 h-3 text-amber-300"></i> Puente Alto
-            </div>
-            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-              <span class="px-4 py-2 rounded-xl bg-white text-[#12241b] text-xs font-bold shadow-lg flex items-center gap-1.5">
-                <i data-lucide="zoom-in" class="w-4 h-4"></i> Ver Proyecto
+        <div class="portfolio-card portfolio-frame rounded-xl overflow-hidden bg-[#171a18] cursor-pointer group" data-category="mueble_tv" onclick="openProjectModal('tv-puente-alto')">
+          <div class="h-64 relative bg-black">
+            <img src="assets/images/mueble_tv_puente_alto.png" alt="Mueble TV Flotante en Puente Alto" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute bottom-3 left-3">
+              <span class="location-badge px-3 py-1 rounded-md text-xs font-bold flex items-center gap-1 font-heading">
+                <i data-lucide="map-pin" class="w-3 h-3 text-[#e0b142]"></i> PUENTE ALTO
               </span>
             </div>
           </div>
-          <div class="p-6">
-            <span class="text-xs font-bold text-[#c98a4b] uppercase tracking-wider block mb-1">Muebles de TV & Hogar</span>
-            <h3 class="text-lg font-bold font-heading text-gray-900 group-hover:text-[#1e3a2b] transition">
+          <div class="p-5 border-t border-white/10">
+            <span class="text-[11px] font-heading font-bold text-[#e0b142] uppercase tracking-wider block mb-1">Mueble de Televisor</span>
+            <h3 class="text-base font-heading font-bold text-white group-hover:text-[#e0b142] transition">
               Panel Mural Flotante con Repisas
             </h3>
-            <p class="text-xs text-gray-500 mt-1 line-clamp-2">
-              Centro de entretenimiento suspendido con repisas decorativas y módulo inferior de cajones.
+            <p class="text-xs text-gray-400 mt-1">
+              Centro de entretenimiento suspendido con pasacables oculto y cajoneras inferiores.
             </p>
           </div>
         </div>
 
-        <!-- Project 5: Taller Oficial Flyer -->
-        <div class="portfolio-card bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer group" data-category="cocina" onclick="openProjectModal('flyer-oficial')">
-          <div class="portfolio-img-wrapper h-64 relative bg-gray-100">
-            <img src="assets/images/flyer_brand.png" alt="Flyer Diego Armando Muebles" class="w-full h-full object-cover">
-            <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#c98a4b] text-white text-xs font-bold flex items-center gap-1">
-              <i data-lucide="shield-check" class="w-3 h-3"></i> Taller Oficial
-            </div>
-            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-              <span class="px-4 py-2 rounded-xl bg-white text-[#12241b] text-xs font-bold shadow-lg flex items-center gap-1.5">
-                <i data-lucide="zoom-in" class="w-4 h-4"></i> Ver Información
+        <!-- Project 5: Flyer Oficial & Certificación -->
+        <div class="portfolio-card portfolio-frame rounded-xl overflow-hidden bg-[#171a18] cursor-pointer group" data-category="cocina" onclick="openProjectModal('flyer-oficial')">
+          <div class="h-64 relative bg-black">
+            <img src="assets/images/flyer_brand.png" alt="Flyer Diego Armando Muebles" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute bottom-3 left-3">
+              <span class="location-badge px-3 py-1 rounded-md text-xs font-bold flex items-center gap-1 font-heading">
+                <i data-lucide="shield-check" class="w-3 h-3 text-[#e0b142]"></i> TALLER OFICIAL
               </span>
             </div>
           </div>
-          <div class="p-6">
-            <span class="text-xs font-bold text-[#c98a4b] uppercase tracking-wider block mb-1">Garantía & Taller</span>
-            <h3 class="text-lg font-bold font-heading text-gray-900 group-hover:text-[#1e3a2b] transition">
+          <div class="p-5 border-t border-white/10">
+            <span class="text-[11px] font-heading font-bold text-[#e0b142] uppercase tracking-wider block mb-1">Garantía de Calidad</span>
+            <h3 class="text-base font-heading font-bold text-white group-hover:text-[#e0b142] transition">
               Diego Armando Muebles
             </h3>
-            <p class="text-xs text-gray-500 mt-1 line-clamp-2">
-              Diseño, Creación, Instalación y Reparación con atención personalizada directa de taller.
+            <p class="text-xs text-gray-400 mt-1">
+              Diseño, Creación, Instalación y Reparación con trato directo y acabados que marcan la diferencia.
             </p>
           </div>
         </div>
@@ -517,123 +538,123 @@
     </div>
   </section>
 
-  <!-- COTIZADOR SECTION (THE ENGINE OF HIGH CONVERSION) -->
-  <section id="cotizador" class="py-20 bg-white relative">
+  <!-- COTIZADOR SECTION (ESTILO TALLER INTEGRADO) -->
+  <section id="cotizador" class="py-16 bg-[#171a18] border-b border-[#e0b142]/20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
+      <!-- Header -->
       <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1e3a2b]/10 border border-[#1e3a2b]/20 text-[#1e3a2b] text-xs font-bold mb-3">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#c98a4b]"></i>
-          <span>Cotizador Interactivo por Pasos</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#384431] border border-[#e0b142]/40 text-[#e0b142] text-xs font-heading font-bold uppercase tracking-wider mb-2">
+          <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+          <span>Herramienta de Presupuesto</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-[#12241b]">
-          Cotiza tu Proyecto a Medida
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+          COTIZA TU PROYECTO A MEDIDA
         </h2>
-        <p class="text-gray-600 mt-2 text-sm sm:text-base max-w-xl mx-auto">
-          Selecciona tu tipo de mueble, ingresa medidas aproximadas o fotos del espacio y recibe una estimación al instante con envío directo a WhatsApp.
+        <p class="text-gray-400 mt-1 text-sm max-w-xl mx-auto">
+          Selecciona tu mueble, ingresa medidas o fotos y recibe tu estimación con envío directo a WhatsApp.
         </p>
       </div>
 
-      <!-- Cotizador Card Container -->
-      <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl border border-gray-200">
+      <!-- Cotizador Card (Estilo Carbón + Borde Dorado) -->
+      <div class="rounded-2xl bg-[#111312] border-2 border-[#e0b142]/40 p-6 sm:p-9 shadow-2xl">
         
-        <!-- Step Progress Indicators -->
+        <!-- Step Indicators -->
         <div class="flex items-center justify-between max-w-xl mx-auto mb-8 relative">
-          <div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-1 bg-gray-200 -z-0"></div>
+          <div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-0.5 bg-white/10 -z-0"></div>
           
-          <button onclick="goToStep(1)" class="relative z-10 flex flex-col items-center group">
-            <span id="step-indicator-1" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e3a2b] text-white ring-4 ring-[#1e3a2b]/20">1</span>
-            <span class="text-[10px] font-bold text-gray-500 mt-1 hidden sm:block">Proyecto</span>
+          <button onclick="goToStep(1)" class="relative z-10 flex flex-col items-center">
+            <span id="step-indicator-1" class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#e0b142] text-black ring-4 ring-[#e0b142]/30 font-heading">1</span>
+            <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-gray-400 mt-1 hidden sm:block">Proyecto</span>
           </button>
 
-          <button onclick="goToStep(2)" class="relative z-10 flex flex-col items-center group">
-            <span id="step-indicator-2" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600">2</span>
-            <span class="text-[10px] font-bold text-gray-500 mt-1 hidden sm:block">Medidas</span>
+          <button onclick="goToStep(2)" class="relative z-10 flex flex-col items-center">
+            <span id="step-indicator-2" class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e2220] text-gray-400 border border-white/10 font-heading">2</span>
+            <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-gray-400 mt-1 hidden sm:block">Medidas</span>
           </button>
 
-          <button onclick="goToStep(3)" class="relative z-10 flex flex-col items-center group">
-            <span id="step-indicator-3" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600">3</span>
-            <span class="text-[10px] font-bold text-gray-500 mt-1 hidden sm:block">Detalles</span>
+          <button onclick="goToStep(3)" class="relative z-10 flex flex-col items-center">
+            <span id="step-indicator-3" class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e2220] text-gray-400 border border-white/10 font-heading">3</span>
+            <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-gray-400 mt-1 hidden sm:block">Detalles</span>
           </button>
 
-          <button onclick="goToStep(4)" class="relative z-10 flex flex-col items-center group">
-            <span id="step-indicator-4" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600">4</span>
-            <span class="text-[10px] font-bold text-gray-500 mt-1 hidden sm:block">Material</span>
+          <button onclick="goToStep(4)" class="relative z-10 flex flex-col items-center">
+            <span id="step-indicator-4" class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e2220] text-gray-400 border border-white/10 font-heading">4</span>
+            <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-gray-400 mt-1 hidden sm:block">Material</span>
           </button>
 
-          <button onclick="goToStep(5)" class="relative z-10 flex flex-col items-center group">
-            <span id="step-indicator-5" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600">5</span>
-            <span class="text-[10px] font-bold text-gray-500 mt-1 hidden sm:block">Fotos</span>
+          <button onclick="goToStep(5)" class="relative z-10 flex flex-col items-center">
+            <span id="step-indicator-5" class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e2220] text-gray-400 border border-white/10 font-heading">5</span>
+            <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-gray-400 mt-1 hidden sm:block">Fotos</span>
           </button>
 
-          <button onclick="goToStep(6)" class="relative z-10 flex flex-col items-center group">
-            <span id="step-indicator-6" class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600">6</span>
-            <span class="text-[10px] font-bold text-gray-500 mt-1 hidden sm:block">WhatsApp</span>
+          <button onclick="goToStep(6)" class="relative z-10 flex flex-col items-center">
+            <span id="step-indicator-6" class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e2220] text-gray-400 border border-white/10 font-heading">6</span>
+            <span class="text-[10px] font-heading font-bold uppercase tracking-wider text-gray-400 mt-1 hidden sm:block">WhatsApp</span>
           </button>
         </div>
 
         <!-- Dynamic Step Title -->
-        <h3 id="step-current-title" class="text-xl sm:text-2xl font-bold font-heading text-[#12241b] mb-6 pb-3 border-b border-gray-100">
-          Paso 1: ¿Qué tipo de proyecto deseas fabricar?
+        <h3 id="step-current-title" class="text-lg sm:text-xl font-heading font-bold text-white mb-6 pb-3 border-b border-white/10">
+          PASO 1: ¿QUÉ TIPO DE PROYECTO DESEAS FABRICAR?
         </h3>
 
         <!-- ================= STEP 1 ================= -->
         <div id="step-pane-1" class="step-pane active">
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             
-            <div class="type-card option-card p-4 rounded-2xl selected" data-type="cocina">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center mb-3">
+            <div class="type-card option-card p-4 rounded-xl selected" data-type="cocina">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center mb-3">
                 <i data-lucide="utensils" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-bold text-gray-900 text-sm sm:text-base">Cocina a Medida</h4>
-              <p class="text-xs text-gray-500 mt-0.5">Base, aéreos, islas</p>
-              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <h4 class="font-heading font-bold text-white text-sm sm:text-base">Cocina a Medida</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Base, aéreos, islas</p>
+              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#e0b142] text-black font-bold flex items-center justify-center text-xs">✓</span>
             </div>
 
-            <div class="type-card option-card p-4 rounded-2xl" data-type="closet">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center mb-3">
+            <div class="type-card option-card p-4 rounded-xl" data-type="closet">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center mb-3">
                 <i data-lucide="door-closed" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-bold text-gray-900 text-sm sm:text-base">Clóset / Vestidor</h4>
-              <p class="text-xs text-gray-500 mt-0.5">Empotrado o modular</p>
-              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <h4 class="font-heading font-bold text-white text-sm sm:text-base">Clóset / Vestidor</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Empotrado o modular</p>
+              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#e0b142] text-black font-bold flex items-center justify-center text-xs">✓</span>
             </div>
 
-            <div class="type-card option-card p-4 rounded-2xl" data-type="vanitorio">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center mb-3">
+            <div class="type-card option-card p-4 rounded-xl" data-type="vanitorio">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center mb-3">
                 <i data-lucide="bath" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-bold text-gray-900 text-sm sm:text-base">Vanitorio Baño</h4>
-              <p class="text-xs text-gray-500 mt-0.5">Suspendido o a piso</p>
-              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <h4 class="font-heading font-bold text-white text-sm sm:text-base">Vanitorio Baño</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Suspendido o a piso</p>
+              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#e0b142] text-black font-bold flex items-center justify-center text-xs">✓</span>
             </div>
 
-            <div class="type-card option-card p-4 rounded-2xl" data-type="mueble_tv">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center mb-3">
+            <div class="type-card option-card p-4 rounded-xl" data-type="mueble_tv">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center mb-3">
                 <i data-lucide="tv" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-bold text-gray-900 text-sm sm:text-base">Mueble de TV / Rack</h4>
-              <p class="text-xs text-gray-500 mt-0.5">Paneles flotantes, repisas</p>
-              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <h4 class="font-heading font-bold text-white text-sm sm:text-base">Mueble TV / Rack</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Paneles y repisas</p>
+              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#e0b142] text-black font-bold flex items-center justify-center text-xs">✓</span>
             </div>
 
-            <div class="type-card option-card p-4 rounded-2xl" data-type="cubierta">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center mb-3">
+            <div class="type-card option-card p-4 rounded-xl" data-type="cubierta">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center mb-3">
                 <i data-lucide="layers" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-bold text-gray-900 text-sm sm:text-base">Cubiertas Especiales</h4>
-              <p class="text-xs text-gray-500 mt-0.5">Granito, Cuarzo, Mármol</p>
-              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <h4 class="font-heading font-bold text-white text-sm sm:text-base">Cubiertas</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Granito, Cuarzo, Mármol</p>
+              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#e0b142] text-black font-bold flex items-center justify-center text-xs">✓</span>
             </div>
 
-            <div class="type-card option-card p-4 rounded-2xl" data-type="reparacion">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center mb-3">
+            <div class="type-card option-card p-4 rounded-xl" data-type="reparacion">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center mb-3">
                 <i data-lucide="wrench" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-bold text-gray-900 text-sm sm:text-base">Reparación / Ajuste</h4>
-              <p class="text-xs text-gray-500 mt-0.5">Bisagras, rieles, tiradores</p>
-              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <h4 class="font-heading font-bold text-white text-sm sm:text-base">Reparación</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Bisagras, rieles, tiradores</p>
+              <span class="check-badge absolute top-3 right-3 w-5 h-5 rounded-full bg-[#e0b142] text-black font-bold flex items-center justify-center text-xs">✓</span>
             </div>
 
           </div>
@@ -642,40 +663,40 @@
         <!-- ================= STEP 2 ================= -->
         <div id="step-pane-2" class="step-pane">
           <div class="space-y-6">
-            <p class="text-sm text-gray-600">
-              Ingresa las dimensiones aproximadas del espacio en centímetros (cm). Si no estás seguro, marca la casilla inferior y te asesoramos en terreno.
+            <p class="text-sm text-gray-300">
+              Ingresa las dimensiones aproximadas en centímetros (cm). Si no conoces las medidas exactas, marca la opción inferior.
             </p>
 
             <div id="dimensions-inputs-box" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Ancho (Largo) cm</label>
+                <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2">Ancho (Largo) cm</label>
                 <div class="relative">
-                  <input type="number" id="dim-width" value="240" class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] focus:border-transparent outline-none font-bold text-gray-800 text-lg">
+                  <input type="number" id="dim-width" value="240" class="w-full px-4 py-3.5 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none font-bold text-white text-lg">
                   <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold text-sm">cm</span>
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Alto (Altura) cm</label>
+                <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2">Alto (Altura) cm</label>
                 <div class="relative">
-                  <input type="number" id="dim-height" value="220" class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] focus:border-transparent outline-none font-bold text-gray-800 text-lg">
+                  <input type="number" id="dim-height" value="220" class="w-full px-4 py-3.5 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none font-bold text-white text-lg">
                   <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold text-sm">cm</span>
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Profundidad cm</label>
+                <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2">Profundidad cm</label>
                 <div class="relative">
-                  <input type="number" id="dim-depth" value="60" class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] focus:border-transparent outline-none font-bold text-gray-800 text-lg">
+                  <input type="number" id="dim-depth" value="60" class="w-full px-4 py-3.5 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none font-bold text-white text-lg">
                   <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold text-sm">cm</span>
                 </div>
               </div>
             </div>
 
-            <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200/80 flex items-start gap-3">
-              <input type="checkbox" id="dim-unknown" class="mt-1 accent-[#1e3a2b] w-4 h-4 cursor-pointer">
-              <label for="dim-unknown" class="text-xs sm:text-sm text-gray-800 cursor-pointer">
-                <strong>No conozco las medidas exactas.</strong> No te preocupes: Diego Armando realiza la rectificación técnica milimétrica en terreno antes de fabricar.
+            <div class="p-4 bg-[#1e241c] rounded-xl border border-[#e0b142]/40 flex items-start gap-3">
+              <input type="checkbox" id="dim-unknown" class="mt-1 accent-[#e0b142] w-4 h-4 cursor-pointer">
+              <label for="dim-unknown" class="text-xs sm:text-sm text-gray-200 cursor-pointer leading-relaxed">
+                <strong class="text-[#e0b142]">No conozco las medidas exactas.</strong> Diego Armando realiza la rectificación técnica en tu domicilio antes de comenzar la fabricación.
               </label>
             </div>
           </div>
@@ -684,40 +705,40 @@
         <!-- ================= STEP 3 ================= -->
         <div id="step-pane-3" class="step-pane">
           <div id="step3-dynamic-content">
-            <!-- Injected by cotizador.js based on project type -->
+            <!-- Dynamic Step 3 -->
           </div>
         </div>
 
         <!-- ================= STEP 4 ================= -->
         <div id="step-pane-4" class="step-pane">
           <div id="step4-dynamic-content">
-            <!-- Injected by cotizador.js -->
+            <!-- Dynamic Step 4 -->
           </div>
         </div>
 
         <!-- ================= STEP 5 ================= -->
         <div id="step-pane-5" class="step-pane">
           <div class="space-y-6">
-            <div class="bg-[#1e3a2b]/5 border border-[#1e3a2b]/20 p-4 rounded-2xl flex items-start gap-3">
-              <i data-lucide="camera" class="w-6 h-6 text-[#1e3a2b] flex-shrink-0 mt-0.5"></i>
-              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                <strong>¿Tienes una foto del lugar actual? Súbela aquí.</strong><br>
-                Una foto le permite a Diego evaluar muros, enchufes, cañerías y ventanas para entregarte una propuesta técnica mucho más certera.
+            <div class="bg-[#1e241c] border border-[#e0b142]/40 p-4 rounded-xl flex items-start gap-3">
+              <i data-lucide="camera" class="w-6 h-6 text-[#e0b142] flex-shrink-0 mt-0.5"></i>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong class="text-[#e0b142]">¿Tienes una foto del lugar actual? Súbela aquí.</strong><br>
+                Una fotografía permite evaluar muros, enchufes, cañerías y ventanas para entregarte una propuesta técnica mucho más certera.
               </p>
             </div>
 
             <!-- Drag & Drop Zone -->
-            <div id="photo-dropzone" class="drag-drop-area rounded-3xl p-8 text-center cursor-pointer bg-white">
+            <div id="photo-dropzone" class="drag-drop-area rounded-2xl p-8 text-center cursor-pointer">
               <input type="file" id="photo-input" multiple accept="image/*" class="hidden">
               <div onclick="document.getElementById('photo-input').click()" class="space-y-3">
-                <div class="w-14 h-14 mx-auto rounded-full bg-[#1e3a2b]/10 text-[#1e3a2b] flex items-center justify-center">
+                <div class="w-14 h-14 mx-auto rounded-full bg-[#384431] text-[#e0b142] flex items-center justify-center">
                   <i data-lucide="upload-cloud" class="w-7 h-7"></i>
                 </div>
                 <div>
-                  <p class="font-bold text-gray-800 text-sm sm:text-base">Haz clic para seleccionar fotos o arrástralas aquí</p>
+                  <p class="font-heading font-bold text-white text-sm sm:text-base">Haz clic para seleccionar fotos o arrástralas aquí</p>
                   <p class="text-xs text-gray-400 mt-1">Formatos JPG, PNG o HEIC desde tu teléfono o computadora</p>
                 </div>
-                <button type="button" class="px-5 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold transition">
+                <button type="button" class="px-4 py-2 rounded-lg bg-[#1e2220] hover:bg-[#273022] text-[#e0b142] text-xs font-bold border border-[#e0b142]/40 transition">
                   + Agregar Fotos del Espacio
                 </button>
               </div>
@@ -725,14 +746,14 @@
 
             <!-- Preview Grid -->
             <div>
-              <span id="photos-count-badge" class="hidden text-xs font-bold text-[#1e3a2b] block mb-2">0 fotos seleccionadas</span>
+              <span id="photos-count-badge" class="hidden text-xs font-bold text-[#e0b142] block mb-2">0 fotos seleccionadas</span>
               <div id="photos-preview" class="flex flex-wrap gap-3">
                 <!-- Preview Thumbnails -->
               </div>
             </div>
 
-            <p class="text-xs text-gray-500 italic">
-              * Nota: Las fotos también podrás adjuntarlas directamente por WhatsApp al momento de enviar tu solicitud.
+            <p class="text-xs text-gray-400 italic">
+              * Nota: También podrás adjuntarlas directamente por WhatsApp al momento de enviar tu solicitud.
             </p>
           </div>
         </div>
@@ -742,24 +763,24 @@
           <div class="space-y-6">
             
             <!-- Referential Price Estimation Banner -->
-            <div class="rounded-3xl p-6 bg-gradient-to-br from-[#1e3a2b] to-[#12241b] text-white shadow-xl">
+            <div class="rounded-2xl p-6 bg-gradient-to-r from-[#2e3829] to-[#1e241c] border-2 border-[#e0b142] text-white shadow-xl">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <span class="text-xs font-bold uppercase tracking-widest text-amber-300 block mb-1">
+                  <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block mb-1">
                     Estimación Referencial
                   </span>
-                  <p id="step6-price-range" class="text-2xl sm:text-3xl font-heading font-extrabold text-white">
+                  <p id="step6-price-range" class="text-3xl sm:text-4xl font-heading font-extrabold text-[#e0b142]">
                     $850.000 – $1.350.000 CLP
                   </p>
                 </div>
                 <div class="text-left sm:text-right">
-                  <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-gray-200">
+                  <span class="inline-block px-3 py-1 rounded-md bg-[#111312] border border-[#e0b142]/40 text-xs font-semibold text-gray-200">
                     Incluye fabricación + instalación
                   </span>
                 </div>
               </div>
-              <p class="text-[11px] text-gray-300 mt-3 pt-3 border-t border-white/15">
-                * El valor definitivo se confirma tras revisar condiciones específicas en terreno, tipo de cantos y quincallería seleccionada.
+              <p class="text-[11px] text-gray-300 mt-3 pt-3 border-t border-white/10">
+                * El valor final se confirma tras rectificar condiciones específicas en terreno y quincallería seleccionada.
               </p>
             </div>
 
@@ -770,24 +791,24 @@
 
             <!-- Contact Inputs -->
             <div class="space-y-4 pt-2">
-              <h4 class="font-bold text-sm text-[#12241b] uppercase tracking-wider">¿Dónde te enviamos la cotización definitiva?</h4>
+              <h4 class="font-heading font-bold text-sm text-[#e0b142] uppercase tracking-wider">¿A quién dirigimos la cotización?</h4>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-xs font-bold text-gray-700 mb-1">Nombre Completo *</label>
-                  <input type="text" id="contact-name" placeholder="Ej: Marcela González" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] outline-none text-sm font-medium">
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Nombre Completo *</label>
+                  <input type="text" id="contact-name" placeholder="Ej: Marcela González" class="w-full px-4 py-3 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none text-sm text-white font-medium">
                 </div>
 
                 <div>
-                  <label class="block text-xs font-bold text-gray-700 mb-1">Teléfono / WhatsApp</label>
-                  <input type="tel" id="contact-phone" placeholder="Ej: +56 9 9231 7042" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] outline-none text-sm font-medium">
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Teléfono / WhatsApp</label>
+                  <input type="tel" id="contact-phone" placeholder="Ej: +56 9 9231 7042" class="w-full px-4 py-3 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none text-sm text-white font-medium">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-xs font-bold text-gray-700 mb-1">Comuna o Ciudad de Instalación *</label>
-                  <select id="contact-commune" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] outline-none text-sm font-medium bg-white">
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Comuna o Ciudad de Instalación *</label>
+                  <select id="contact-commune" class="w-full px-4 py-3 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none text-sm text-white font-medium">
                     <option value="Santiago Centro">Santiago Centro</option>
                     <option value="Providencia">Providencia</option>
                     <option value="Las Condes">Las Condes</option>
@@ -805,19 +826,19 @@
                 </div>
 
                 <div>
-                  <label class="block text-xs font-bold text-gray-700 mb-1">Comentarios o requerimientos adicionales</label>
-                  <input type="text" id="contact-notes" placeholder="Ej: Necesito coordinar visita este fin de semana" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#1e3a2b] outline-none text-sm font-medium">
+                  <label class="block text-xs font-bold text-gray-300 mb-1">Comentarios adicionales</label>
+                  <input type="text" id="contact-notes" placeholder="Ej: Requiero visita este sábado" class="w-full px-4 py-3 rounded-xl bg-[#1e2220] border border-white/20 focus:border-[#e0b142] focus:ring-1 focus:ring-[#e0b142] outline-none text-sm text-white font-medium">
                 </div>
               </div>
             </div>
 
             <!-- WhatsApp Conversion Button -->
             <div class="pt-4">
-              <button onclick="sendToWhatsApp()" class="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3 animate-pulse-subtle">
+              <button onclick="sendToWhatsApp()" class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-extrabold text-base tracking-wider uppercase shadow-xl transition flex items-center justify-center gap-3">
                 <i data-lucide="message-circle" class="w-6 h-6"></i>
                 <span>ENVIAR COTIZACIÓN POR WHATSAPP (+569 9231 7042)</span>
               </button>
-              <p class="text-center text-xs text-gray-500 mt-2">
+              <p class="text-center text-xs text-gray-400 mt-2">
                 Se abrirá tu WhatsApp con el mensaje estructurado listo para enviar en 1 toque.
               </p>
             </div>
@@ -826,13 +847,13 @@
         </div>
 
         <!-- Navigation Buttons Bottom -->
-        <div class="mt-8 pt-6 border-t border-gray-200 flex items-center justify-between">
-          <button id="btn-step-prev" type="button" class="px-5 py-2.5 rounded-xl border border-gray-300 hover:bg-gray-100 text-gray-700 font-bold text-xs sm:text-sm transition flex items-center gap-1.5">
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between font-heading text-xs sm:text-sm uppercase tracking-wider">
+          <button id="btn-step-prev" type="button" class="px-5 py-2.5 rounded-lg bg-[#1e2220] border border-white/20 hover:bg-[#273022] text-gray-300 font-bold transition flex items-center gap-1.5">
             <i data-lucide="chevron-left" class="w-4 h-4"></i>
             <span>Volver</span>
           </button>
 
-          <button id="btn-step-next" type="button" class="px-7 py-3 rounded-xl bg-[#1e3a2b] hover:bg-[#2c533e] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition flex items-center gap-1.5 ml-auto">
+          <button id="btn-step-next" type="button" class="px-7 py-3 rounded-lg bg-[#e0b142] hover:bg-[#f0c242] text-black font-extrabold shadow-md transition flex items-center gap-1.5 ml-auto">
             <span>Continuar</span>
             <i data-lucide="chevron-right" class="w-4 h-4"></i>
           </button>
@@ -843,64 +864,64 @@
     </div>
   </section>
 
-  <!-- PROCESS SECTION: ¿CÓMO FUNCIONA? -->
-  <section id="proceso" class="py-20 bg-[#f8f7f4] border-t border-[#e6e3da]">
+  <!-- PROCESS SECTION (¿CÓMO TRABAJAMOS?) -->
+  <section id="proceso" class="py-16 bg-[#111312] border-b border-[#e0b142]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-[#c98a4b] block mb-2">Transparencia y Calidad</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-[#12241b]">
-          ¿Cómo Funciona el Proceso?
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block mb-1">Paso a Paso</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+          ¿CÓMO FUNCIONA EL PROCESO?
         </h2>
-        <p class="text-gray-600 mt-3 text-sm sm:text-base">
-          Cero complicaciones. Desde la primera idea hasta la instalación final en 4 pasos claros.
+        <p class="text-gray-400 mt-1 text-sm">
+          Transparencia y coordinación directa desde el presupuesto inicial hasta la instalación final.
         </p>
       </div>
 
       <!-- 4 Steps -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm relative">
-          <span class="text-3xl font-black text-[#c98a4b]/30 absolute top-4 right-4">01</span>
-          <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center font-bold mb-4">
+        <div class="p-6 rounded-xl bg-[#171a18] border border-[#e0b142]/30 relative">
+          <span class="text-4xl font-heading font-extrabold text-[#e0b142]/20 absolute top-4 right-4">01</span>
+          <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center font-bold mb-4">
             <i data-lucide="file-text" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-bold text-gray-900 text-base mb-2">Cuéntanos tu Proyecto</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            Completa el cotizador en línea y envíanos fotos o medidas aproximadas de tu espacio por WhatsApp.
+          <h3 class="font-heading font-bold text-white text-base mb-2">Cuéntanos tu Proyecto</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Completa el cotizador en línea o envíanos fotos y medidas aproximadas por WhatsApp.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm relative">
-          <span class="text-3xl font-black text-[#c98a4b]/30 absolute top-4 right-4">02</span>
-          <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center font-bold mb-4">
+        <div class="p-6 rounded-xl bg-[#171a18] border border-[#e0b142]/30 relative">
+          <span class="text-4xl font-heading font-extrabold text-[#e0b142]/20 absolute top-4 right-4">02</span>
+          <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center font-bold mb-4">
             <i data-lucide="ruler" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-bold text-gray-900 text-base mb-2">Visita y Rectificación</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            Visitamos tu domicilio para medir milimétricamente, revisar enchufes, muros y mostrarte muestras de melaminas y cubiertas.
+          <h3 class="font-heading font-bold text-white text-base mb-2">Visita y Rectificación</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Visitamos tu domicilio para medir con exactitud, revisar muros y mostrarte muestras de melaminas y cubiertas.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm relative">
-          <span class="text-3xl font-black text-[#c98a4b]/30 absolute top-4 right-4">03</span>
-          <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center font-bold mb-4">
+        <div class="p-6 rounded-xl bg-[#171a18] border border-[#e0b142]/30 relative">
+          <span class="text-4xl font-heading font-extrabold text-[#e0b142]/20 absolute top-4 right-4">03</span>
+          <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center font-bold mb-4">
             <i data-lucide="hammer" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-bold text-gray-900 text-base mb-2">Fabricación en Taller</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            Cortamos y ensamblamos cada módulo con cantos sellados en PVC, bisagras con freno y control de calidad riguroso.
+          <h3 class="font-heading font-bold text-white text-base mb-2">Fabricación en Taller</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Cortamos y ensamblamos cada módulo con cantos sellados en PVC y quincallería de primera calidad.
           </p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm relative">
-          <span class="text-3xl font-black text-[#c98a4b]/30 absolute top-4 right-4">04</span>
-          <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center font-bold mb-4">
+        <div class="p-6 rounded-xl bg-[#171a18] border border-[#e0b142]/30 relative">
+          <span class="text-4xl font-heading font-extrabold text-[#e0b142]/20 absolute top-4 right-4">04</span>
+          <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center font-bold mb-4">
             <i data-lucide="check-circle" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-bold text-gray-900 text-base mb-2">Instalación Garantizada</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            Montaje limpio y puntual en tu casa, dejando todo nivelado, funcionando a la perfección y listo para usar.
+          <h3 class="font-heading font-bold text-white text-base mb-2">Instalación Garantizada</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Montaje en tu domicilio, dejando todo nivelado, funcionando a la perfección y listo para usar.
           </p>
         </div>
 
@@ -909,50 +930,50 @@
     </div>
   </section>
 
-  <!-- TRUST & VALUE SECTION: ¿POR QUÉ ELEGIRNOS? -->
-  <section id="nosotros" class="py-20 bg-white">
+  <!-- TRUST & VALUE SECTION (¿POR QUÉ ELEGIRNOS?) -->
+  <section id="nosotros" class="py-16 bg-[#171a18] border-b border-[#e0b142]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-[#c98a4b] block">Compromiso y Garantía</span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-[#12241b]">
-            ¿Por Qué Elegir a Diego Armando Muebles?
+          <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block">Compromiso de Taller</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+            ¿POR QUÉ ELEGIR A DIEGO ARMANDO MUEBLES?
           </h2>
-          <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-            A diferencia de las grandes tiendas con muebles en serie de baja durabilidad, nosotros construimos piezas exclusivas que duran décadas y se adaptan a tu vida.
+          <p class="text-gray-300 text-sm leading-relaxed">
+            A diferencia de los muebles en serie de grandes tiendas, construimos piezas a medida exacta con maderas resistentes y quincallería reforzada.
           </p>
 
-          <div class="space-y-4 pt-2">
+          <div class="space-y-3.5 pt-1">
             
-            <div class="flex items-start gap-4 p-4 rounded-2xl bg-[#faf9f6] border border-gray-200">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-[#111312] border border-[#e0b142]/30">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center flex-shrink-0">
                 <i data-lucide="maximize" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-bold text-gray-900 text-sm">Aprovechamiento 100% del Espacio</h4>
-                <p class="text-xs text-gray-600 mt-0.5">Diseño a medida exacta sin espacios muertos ni esquinas inutilizadas.</p>
+                <h4 class="font-heading font-bold text-white text-sm">Aprovechamiento 100% del Espacio</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Diseño a medida exacta sin espacios muertos ni esquinas inutilizadas.</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 p-4 rounded-2xl bg-[#faf9f6] border border-gray-200">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-[#111312] border border-[#e0b142]/30">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center flex-shrink-0">
                 <i data-lucide="shield" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-bold text-gray-900 text-sm">Quincallería de Alta Resistencia</h4>
-                <p class="text-xs text-gray-600 mt-0.5">Bisagras cierre suave, rieles telescópicos pesados y tiradores metálicos duraderos.</p>
+                <h4 class="font-heading font-bold text-white text-sm">Quincallería de Alta Resistencia</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Bisagras cierre suave, rieles telescópicos pesados y tiradores metálicos duraderos.</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 p-4 rounded-2xl bg-[#faf9f6] border border-gray-200">
-              <div class="w-10 h-10 rounded-xl bg-[#1e3a2b] text-amber-300 flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-[#111312] border border-[#e0b142]/30">
+              <div class="w-10 h-10 rounded-lg bg-[#384431] text-[#e0b142] flex items-center justify-center flex-shrink-0">
                 <i data-lucide="user-check" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-bold text-gray-900 text-sm">Atención Personalizada Directa</h4>
-                <p class="text-xs text-gray-600 mt-0.5">Trato directo con el maestro mueblista, sin intermediarios ni demoras burocráticas.</p>
+                <h4 class="font-heading font-bold text-white text-sm">Atención Personalizada Directa</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Trato directo con el maestro mueblista, sin intermediarios ni demoras.</p>
               </div>
             </div>
 
@@ -960,33 +981,31 @@
         </div>
 
         <div class="lg:col-span-6">
-          <div class="p-8 sm:p-10 rounded-3xl bg-[#16261d] text-white shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-[#c98a4b]/20 blur-2xl"></div>
-            
-            <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2">Contacto Directo</span>
+          <div class="p-8 sm:p-10 rounded-2xl bg-[#111312] border-2 border-[#e0b142] text-white shadow-2xl relative">
+            <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block mb-2">Contacto Directo</span>
             <h3 class="text-2xl sm:text-3xl font-heading font-extrabold mb-4">
-              ¿Listo para dar vida a tu próximo proyecto?
+              ¿Listo para coordinar tu próximo mueble?
             </h3>
             <p class="text-sm text-gray-300 mb-6 leading-relaxed">
               Escríbenos directamente por WhatsApp para coordinar tu presupuesto y resolver cualquier duda sobre materiales o diseño.
             </p>
 
-            <div class="space-y-3 mb-8">
-              <div class="flex items-center gap-3 text-sm">
-                <i data-lucide="phone" class="w-5 h-5 text-amber-400"></i>
-                <span class="font-semibold">+56 9 9231 7042</span>
+            <div class="space-y-3 mb-8 text-sm">
+              <div class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-[#e0b142]"></i>
+                <span class="font-bold text-white">+56 9 9231 7042</span>
               </div>
-              <div class="flex items-center gap-3 text-sm">
-                <i data-lucide="instagram" class="w-5 h-5 text-amber-400"></i>
-                <span class="font-semibold">@diegoarmandomuebles</span>
+              <div class="flex items-center gap-3">
+                <i data-lucide="instagram" class="w-5 h-5 text-[#e0b142]"></i>
+                <span class="font-bold text-white">@diegoarmandomuebles</span>
               </div>
-              <div class="flex items-center gap-3 text-sm">
-                <i data-lucide="map-pin" class="w-5 h-5 text-amber-400"></i>
+              <div class="flex items-center gap-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-[#e0b142]"></i>
                 <span class="text-gray-300">Santiago, Providencia, Puente Alto, Algarrobo y Regiones</span>
               </div>
             </div>
 
-            <a href="https://wa.me/56992317042?text=Hola%20Diego,%20quiero%20cotizar%20un%20mueble%20a%20medida." target="_blank" class="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2">
+            <a href="https://wa.me/56992317042?text=Hola%20Diego,%20quiero%20cotizar%20un%20mueble%20a%20medida." target="_blank" class="w-full py-4 px-6 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-extrabold text-sm uppercase tracking-wider shadow-lg transition flex items-center justify-center gap-2">
               <i data-lucide="message-circle" class="w-5 h-5"></i>
               <span>Abrir Chat de WhatsApp</span>
             </a>
@@ -999,54 +1018,54 @@
   </section>
 
   <!-- FAQ SECTION -->
-  <section class="py-20 bg-[#faf9f6] border-t border-[#e6e3da]">
+  <section class="py-16 bg-[#111312] border-b border-[#e0b142]/20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-12">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-[#c98a4b] block mb-2">Preguntas Frecuentes</span>
-        <h2 class="text-3xl font-heading font-extrabold text-[#12241b]">
-          Dudas Habituales sobre el Servicio
+      <div class="text-center mb-10">
+        <span class="text-xs font-heading font-bold uppercase tracking-widest text-[#e0b142] block mb-1">Dudas Habituales</span>
+        <h2 class="text-3xl font-heading font-extrabold text-white">
+          PREGUNTAS FRECUENTES
         </h2>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3.5">
         
-        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-          <button class="faq-trigger w-full p-5 text-left font-bold text-sm sm:text-base text-gray-900 flex items-center justify-between">
+        <div class="faq-item bg-[#171a18] rounded-xl border border-white/15 overflow-hidden">
+          <button class="faq-trigger w-full p-5 text-left font-heading font-bold text-sm sm:text-base text-white flex items-center justify-between">
             <span>¿Realizan visitas a domicilio para tomar medidas exactas?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e0b142] transition-transform duration-200"></i>
           </button>
-          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
-            Sí. Primero te entregamos una estimación con el cotizador online o fotos del lugar. Una vez que apruebas la propuesta base, coordinamos una visita técnica a tu domicilio en Santiago o la V Región para rectificar medidas exactas y llevarte muestras físicas de materiales.
+          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-3">
+            Sí. Primero te entregamos una estimación referencial. Al aprobar la propuesta base, coordinamos la visita técnica a tu domicilio en Santiago o la V Región para rectificar medidas exactas y llevarte muestras físicas de melaminas y cubiertas.
           </div>
         </div>
 
-        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-          <button class="faq-trigger w-full p-5 text-left font-bold text-sm sm:text-base text-gray-900 flex items-center justify-between">
+        <div class="faq-item bg-[#171a18] rounded-xl border border-white/15 overflow-hidden">
+          <button class="faq-trigger w-full p-5 text-left font-heading font-bold text-sm sm:text-base text-white flex items-center justify-between">
             <span>¿Qué comunas y sectores atienden?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e0b142] transition-transform duration-200"></i>
           </button>
-          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
-            Trabajamos en toda la Región Metropolitana (Providencia, Las Condes, Vitacura, Ñuñoa, Santiago Centro, Puente Alto, La Florida, Maipú, etc.) y también atendemos la Quinta Región Costa (Algarrobo, El Quisco, Viña del Mar, Valparaíso).
+          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-3">
+            Trabajamos en toda la Región Metropolitana (Providencia, Puente Alto, Las Condes, Vitacura, Ñuñoa, Santiago Centro, La Florida, Maipú, etc.) y también atendemos la Quinta Región Costa (Algarrobo, El Quisco, Viña del Mar, Valparaíso).
           </div>
         </div>
 
-        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-          <button class="faq-trigger w-full p-5 text-left font-bold text-sm sm:text-base text-gray-900 flex items-center justify-between">
+        <div class="faq-item bg-[#171a18] rounded-xl border border-white/15 overflow-hidden">
+          <button class="faq-trigger w-full p-5 text-left font-heading font-bold text-sm sm:text-base text-white flex items-center justify-between">
             <span>¿También realizan reparaciones de muebles ya existentes?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e0b142] transition-transform duration-200"></i>
           </button>
-          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
-            Por supuesto. Cambiamos bisagras vencidas por sistemas modernos de cierre suave, reemplazamos rieles de cajones trabados, arreglamos guías de clóset y nivelamos puertas caídas.
+          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-3">
+            Por supuesto. Cambiamos bisagras vencidas por sistemas de cierre suave, reemplazamos rieles de cajones trabados, arreglamos correderas de clóset y nivelamos puertas caídas.
           </div>
         </div>
 
-        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-          <button class="faq-trigger w-full p-5 text-left font-bold text-sm sm:text-base text-gray-900 flex items-center justify-between">
+        <div class="faq-item bg-[#171a18] rounded-xl border border-white/15 overflow-hidden">
+          <button class="faq-trigger w-full p-5 text-left font-heading font-bold text-sm sm:text-base text-white flex items-center justify-between">
             <span>¿Cuánto demora la fabricación e instalación?</span>
-            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e0b142] transition-transform duration-200"></i>
           </button>
-          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+          <div class="faq-answer hidden px-5 pb-5 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-3">
             El plazo habitual va de 7 a 15 días hábiles dependiendo de la complejidad y de si incluye cubiertas de piedra (granito o cuarzo). La instalación en terreno suele completarse en 1 a 2 jornadas.
           </div>
         </div>
@@ -1057,19 +1076,19 @@
   </section>
 
   <!-- FINAL CTA BANNER -->
-  <section class="py-16 bg-[#12241b] text-white text-center">
+  <section class="py-16 bg-[#171a18] text-white text-center">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold mb-4">
-        ¿Tienes un espacio que quieres aprovechar mejor?
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold mb-3">
+        ¿TIENES UN ESPACIO QUE QUIERES APROVECHAR MEJOR?
       </h2>
       <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
         Cuéntanos qué necesitas y recibe una cotización personalizada para tu hogar en minutos.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold text-sm shadow-xl transition">
+        <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#e0b142] hover:bg-[#f0c242] text-black font-heading font-extrabold text-sm uppercase tracking-wider shadow-xl transition">
           COTIZAR MI MUEBLE AHORA
         </a>
-        <a href="https://wa.me/56992317042" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl transition flex items-center justify-center gap-2">
+        <a href="https://wa.me/56992317042" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-extrabold text-sm uppercase tracking-wider shadow-xl transition flex items-center justify-center gap-2">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>WHATSAPP (+569 9231 7042)</span>
         </a>
@@ -1077,32 +1096,32 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#0b1410] text-gray-400 text-xs py-12 border-t border-white/10">
+  <!-- FOOTER (OFICIAL DIEGO ARMANDO MUEBLES) -->
+  <footer class="bg-[#0c0e0d] text-gray-400 text-xs py-12 border-t border-[#e0b142]/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[#1e3a2b] text-amber-300 flex items-center justify-center font-black text-sm">
+          <div class="w-11 h-11 rounded-full bg-[#171a18] border border-[#e0b142] text-[#e0b142] flex items-center justify-center font-heading font-bold text-sm">
             DA
           </div>
           <div>
-            <p class="font-bold text-white text-sm">DIEGO ARMANDO MUEBLES</p>
-            <p class="text-gray-500 text-xs">Diseño · Creación · Instalación · Reparación</p>
+            <p class="font-heading font-bold text-white text-sm tracking-wider">DIEGO ARMANDO MUEBLES</p>
+            <p class="text-gray-400 text-xs">Diseño • Creación • Instalación • Reparación</p>
           </div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-300 font-medium">
-          <a href="#servicios" class="hover:text-white transition">Servicios</a>
-          <a href="#trabajos" class="hover:text-white transition">Portafolio</a>
-          <a href="#cotizador" class="hover:text-white transition text-amber-400">Cotizador</a>
-          <a href="https://instagram.com/diegoarmandomuebles" target="_blank" class="hover:text-white transition">Instagram</a>
-          <a href="https://wa.me/56992317042" target="_blank" class="hover:text-white transition">WhatsApp</a>
+        <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-300 font-heading uppercase tracking-wider">
+          <a href="#servicios" class="hover:text-[#e0b142] transition">Servicios</a>
+          <a href="#trabajos" class="hover:text-[#e0b142] transition">Portafolio</a>
+          <a href="#cotizador" class="text-[#e0b142] hover:text-white transition">Cotizador</a>
+          <a href="https://instagram.com/diegoarmandomuebles" target="_blank" class="hover:text-[#e0b142] transition">Instagram</a>
+          <a href="https://wa.me/56992317042" target="_blank" class="hover:text-emerald-400 transition">WhatsApp</a>
         </div>
 
         <div class="text-center md:text-right text-[11px] text-gray-500">
           <p>© 2026 Diego Armando Muebles. Todos los derechos reservados.</p>
-          <p class="mt-1 text-gray-600">Desarrollado para alta conversión comercial · DigitalizaLAB</p>
+          <p class="mt-1 text-gray-600">Santiago • Puente Alto • Providencia • Algarrobo</p>
         </div>
 
       </div>
@@ -1111,45 +1130,45 @@
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <div class="whatsapp-float">
-    <a href="https://wa.me/56992317042?text=Hola%20Diego,%20vengo%20de%20la%20web%20y%20quiero%20cotizar%20un%20mueble." target="_blank" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-full shadow-2xl transition border-2 border-white/80 animate-pulse-subtle">
+    <a href="https://wa.me/56992317042?text=Hola%20Diego,%20vengo%20de%20la%20web%20y%20quiero%20cotizar%20un%20mueble." target="_blank" class="flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-heading font-bold uppercase tracking-wider text-xs sm:text-sm rounded-full shadow-2xl transition border-2 border-white/80 animate-pulse">
       <i data-lucide="message-circle" class="w-6 h-6"></i>
-      <span class="text-xs sm:text-sm pr-1">¿Cotizar por WhatsApp?</span>
+      <span class="pr-1">¿Cotizar por WhatsApp?</span>
     </a>
   </div>
 
   <!-- LIGHTBOX / PROJECT MODAL -->
-  <div id="project-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
+  <div id="project-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[#171a18] border-2 border-[#e0b142] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col">
       
-      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition">
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black transition border border-white/20">
         ✕
       </button>
 
-      <div class="h-64 sm:h-80 relative bg-gray-900 flex-shrink-0">
+      <div class="h-64 sm:h-80 relative bg-black flex-shrink-0">
         <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
         <div class="absolute bottom-3 left-4">
-          <span id="modal-category" class="inline-block px-3 py-1 rounded-full bg-[#1e3a2b] text-amber-300 text-xs font-bold mb-1"></span>
+          <span id="modal-category" class="inline-block px-3 py-1 rounded-md bg-[#384431] border border-[#e0b142]/40 text-[#e0b142] text-xs font-heading font-bold mb-1"></span>
         </div>
       </div>
 
       <div class="p-6 sm:p-8 overflow-y-auto space-y-4">
         <div>
-          <span id="modal-location" class="text-xs font-bold text-gray-500"></span>
-          <h3 id="modal-title" class="text-xl sm:text-2xl font-bold font-heading text-gray-900"></h3>
+          <span id="modal-location" class="text-xs font-heading font-bold text-[#e0b142] block mb-1"></span>
+          <h3 id="modal-title" class="text-xl sm:text-2xl font-heading font-bold text-white"></h3>
         </div>
 
-        <p id="modal-description" class="text-xs sm:text-sm text-gray-600 leading-relaxed"></p>
+        <p id="modal-description" class="text-xs sm:text-sm text-gray-300 leading-relaxed"></p>
 
         <div>
-          <h4 class="text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Especificaciones Técnicas:</h4>
-          <ul id="modal-specs" class="space-y-1.5 bg-gray-50 p-4 rounded-xl border border-gray-200">
+          <h4 class="text-xs font-heading font-bold text-[#e0b142] uppercase tracking-wider mb-2">Especificaciones Técnicas:</h4>
+          <ul id="modal-specs" class="space-y-1.5 bg-[#111312] p-4 rounded-xl border border-white/10">
             <!-- specs -->
           </ul>
         </div>
 
-        <div class="pt-4 flex gap-3">
-          <button id="modal-cotizar-btn" class="w-full py-3.5 rounded-xl bg-[#1e3a2b] hover:bg-[#2c533e] text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
-            <i data-lucide="calculator" class="w-4 h-4 text-amber-300"></i>
+        <div class="pt-2 flex gap-3">
+          <button id="modal-cotizar-btn" class="w-full py-3.5 rounded-lg bg-[#e0b142] hover:bg-[#f0c242] text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md transition flex items-center justify-center gap-2">
+            <i data-lucide="calculator" class="w-4 h-4"></i>
             <span>Cotizar un Proyecto Similar</span>
           </button>
         </div>

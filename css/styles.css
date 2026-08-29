@@ -1,32 +1,35 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --color-primary: #1e3a2b;       /* Verde Olivo Bosque Profundo */
-  --color-primary-light: #2c533e;
-  --color-primary-dark: #12241b;
-  --color-accent: #c98a4b;        /* Tono Dorado / Madera Cálida */
-  --color-accent-hover: #b37537;
-  --color-accent-light: #f7ede2;
-  --color-dark: #151917;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f8f7f4;
-  --color-border: #e6e3da;
-  --color-text-main: #1f2923;
-  --color-text-muted: #59655f;
-  --font-heading: 'Outfit', sans-serif;
+  --color-bg-dark: #111312;       /* Negro Taller */
+  --color-bg-panel: #171a18;      /* Fondo de paneles y tarjetas */
+  --color-bg-panel-2: #1e2220;
+  --color-olive: #384431;         /* Verde Oliva Militar */
+  --color-olive-dark: #273022;
+  --color-olive-light: #4c5c43;
+  --color-gold: #e0b142;          /* Amarillo Dorado de la gráfica */
+  --color-gold-hover: #f0c242;
+  --color-gold-muted: #caa035;
+  --color-border-gold: rgba(224, 177, 66, 0.4);
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+  --color-text-white: #ffffff;
+  --color-text-muted: #b8c0b5;
+  --font-heading: 'Oswald', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--color-text-main);
-  background-color: #faf9f6;
+  color: var(--color-text-white);
+  background-color: var(--color-bg-dark);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 /* Custom Scrollbar */
@@ -34,87 +37,56 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1efe9;
+  background: #111312;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2c533e;
+  background: var(--color-olive);
+  border: 1px solid var(--color-border-gold);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e3a2b;
+  background: var(--color-gold-muted);
 }
 
-/* Glassmorphism */
-.glass-header {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(230, 227, 218, 0.8);
+/* Borders & Dividers inspired by the Flyer */
+.gold-border {
+  border: 1px solid var(--color-border-gold);
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(230, 227, 218, 0.9);
+.gold-border-2 {
+  border: 2px solid var(--color-gold-muted);
 }
 
-.glass-dark {
-  background: rgba(21, 25, 23, 0.92);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.gold-divider {
+  border-color: rgba(224, 177, 66, 0.35);
 }
 
-/* Hero Background Pattern */
-.hero-pattern {
-  background-color: #16261d;
-  background-image: radial-gradient(rgba(201, 138, 75, 0.14) 1px, transparent 0);
-  background-size: 32px 32px;
+.olive-gradient {
+  background: linear-gradient(180deg, #384431 0%, #273022 100%);
 }
 
-/* Animations */
-@keyframes pulse-subtle {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
-  }
-  50% {
-    transform: scale(1.04);
-    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
-  }
-}
-
-.animate-pulse-subtle {
-  animation: pulse-subtle 2.2s infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+.dark-gradient {
+  background: linear-gradient(180deg, #171a18 0%, #111312 100%);
 }
 
 /* Stepper & Cotizador Options */
 .option-card {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 2px solid var(--color-border);
-  background-color: #ffffff;
+  transition: all 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  background-color: var(--color-bg-panel);
   cursor: pointer;
   position: relative;
 }
 
 .option-card:hover {
-  border-color: #2c533e;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(30, 58, 43, 0.1);
+  border-color: var(--color-gold);
+  background-color: #1f2521;
 }
 
 .option-card.selected {
-  border-color: #1e3a2b;
-  background-color: #f0f7f3;
-  box-shadow: 0 0 0 1px #1e3a2b, 0 12px 24px -6px rgba(30, 58, 43, 0.18);
+  border-color: var(--color-gold);
+  background-color: #273325;
+  box-shadow: 0 0 0 1px var(--color-gold);
 }
 
 .option-card.selected .check-badge {
@@ -125,56 +97,71 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .check-badge {
   opacity: 0;
   transform: scale(0.4);
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.2s ease;
 }
 
 /* Steps Transition */
 .step-pane {
   display: none;
   opacity: 0;
-  transform: translateX(16px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .step-pane.active {
   display: block;
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
-/* Custom Image Upload Drag Area */
+/* Drag & Drop Area */
 .drag-drop-area {
-  border: 2px dashed #cfc9be;
+  border: 2px dashed rgba(224, 177, 66, 0.4);
+  background-color: #171a18;
   transition: all 0.2s ease;
 }
 
 .drag-drop-area:hover, .drag-drop-area.drag-over {
-  border-color: #1e3a2b;
-  background-color: #f0f7f3;
+  border-color: var(--color-gold);
+  background-color: #232c21;
 }
 
-/* WhatsApp Floating Button */
+/* Floating WhatsApp Button */
 .whatsapp-float {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 999;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s ease;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.08) translateY(-4px);
-}
-
-/* Portfolio Hover Effects */
-.portfolio-img-wrapper {
-  overflow: hidden;
-}
-
-.portfolio-img-wrapper img {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.portfolio-card:hover .portfolio-img-wrapper img {
   transform: scale(1.05);
+}
+
+/* Subtle Pulse */
+@keyframes gold-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 177, 66, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(224, 177, 66, 0); }
+}
+
+.animate-gold-glow {
+  animation: gold-glow 2.5s infinite;
+}
+
+/* Portfolio Image Frames */
+.portfolio-frame {
+  border: 1px solid rgba(224, 177, 66, 0.3);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.portfolio-frame:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.location-badge {
+  background-color: rgba(17, 19, 18, 0.88);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-gold);
 }

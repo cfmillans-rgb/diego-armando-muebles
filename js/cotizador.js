@@ -97,7 +97,6 @@ function selectProjectType(type) {
   state.projectType = type;
   state.projectTypeName = PROJECT_TYPES[type]?.name || 'Mueble a Medida';
   
-  // Set default dims
   if (PROJECT_TYPES[type]?.defaultDims) {
     state.dimensions.width = PROJECT_TYPES[type].defaultDims.width;
     state.dimensions.height = PROJECT_TYPES[type].defaultDims.height;
@@ -111,7 +110,6 @@ function selectProjectType(type) {
     if (dInput) dInput.value = state.dimensions.depth || '';
   }
 
-  // Update UI selection
   document.querySelectorAll('.type-card').forEach(card => {
     if (card.dataset.type === type) {
       card.classList.add('selected');
@@ -163,7 +161,7 @@ function setupDimensionsListeners() {
       state.dimensions.unknown = e.target.checked;
       const dimsBox = document.getElementById('dimensions-inputs-box');
       if (dimsBox) {
-        dimsBox.style.opacity = e.target.checked ? '0.4' : '1';
+        dimsBox.style.opacity = e.target.checked ? '0.35' : '1';
         dimsBox.style.pointerEvents = e.target.checked ? 'none' : 'auto';
       }
       calculateEstimation();
@@ -171,7 +169,7 @@ function setupDimensionsListeners() {
   }
 }
 
-// Step 3: Dynamic Features based on project type
+// Step 3: Dynamic Features
 function setupDynamicStep3() {
   const container = document.getElementById('step3-dynamic-content');
   if (!container) return;
@@ -182,70 +180,70 @@ function setupDynamicStep3() {
     container.innerHTML = `
       <div class="space-y-6">
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Tipo de Clóset</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Tipo de Clóset</label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="structure" data-val="empotrado" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Empotrado a Muro</p>
-                <p class="text-xs text-gray-500">De suelo a cielo y entre muros</p>
+                <p class="font-bold text-white text-sm">Empotrado a Muro</p>
+                <p class="text-xs text-gray-400">De suelo a cielo y entre muros</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="independiente" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Independiente / Modular</p>
-                <p class="text-xs text-gray-500">Mueble exento con costados visibles</p>
+                <p class="font-bold text-white text-sm">Independiente / Modular</p>
+                <p class="text-xs text-gray-400">Mueble exento con costados visibles</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Tipo de Puertas</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Tipo de Puertas</label>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div class="option-card p-3.5 rounded-xl flex items-center justify-between selected" data-group="doors" data-val="correderas" onclick="selectOptionCard(this, 'doors')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Correderas</p>
-                <p class="text-xs text-gray-500">Riel suave de aluminio</p>
+                <p class="font-bold text-white text-sm">Correderas</p>
+                <p class="text-xs text-gray-400">Riel suave de aluminio</p>
               </div>
-              <span class="check-badge w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-5 h-5 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-3.5 rounded-xl flex items-center justify-between" data-group="doors" data-val="abatibles" onclick="selectOptionCard(this, 'doors')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Abatibles</p>
-                <p class="text-xs text-gray-500">Bisagras cierre suave</p>
+                <p class="font-bold text-white text-sm">Abatibles</p>
+                <p class="text-xs text-gray-400">Bisagras cierre suave</p>
               </div>
-              <span class="check-badge w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-5 h-5 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-3.5 rounded-xl flex items-center justify-between" data-group="doors" data-val="sin_puertas" onclick="selectOptionCard(this, 'doors')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Sin Puertas</p>
-                <p class="text-xs text-gray-500">Estilo Walk-in</p>
+                <p class="font-bold text-white text-sm">Sin Puertas</p>
+                <p class="text-xs text-gray-400">Estilo Walk-in</p>
               </div>
-              <span class="check-badge w-5 h-5 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-5 h-5 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Distribución Interior</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Distribución Interior</label>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" checked class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('cajones', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Cajoneras</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" checked class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('cajones', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Cajoneras</span>
             </label>
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" checked class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('repisas', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Repisas</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" checked class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('repisas', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Repisas</span>
             </label>
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" checked class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('barra', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Barra colgar</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" checked class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('barra', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Barra colgar</span>
             </label>
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('zapatero', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Zapatero</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('zapatero', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Zapatero</span>
             </label>
           </div>
         </div>
@@ -255,50 +253,50 @@ function setupDynamicStep3() {
     container.innerHTML = `
       <div class="space-y-6">
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Forma de la Cocina</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Forma de la Cocina</label>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="structure" data-val="lineal" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Lineal Recta</p>
-                <p class="text-xs text-gray-500">Muebles base + aéreos</p>
+                <p class="font-bold text-white text-sm">Lineal Recta</p>
+                <p class="text-xs text-gray-400">Muebles base + aéreos</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="en_l" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">En "L" / Esquinera</p>
-                <p class="text-xs text-gray-500">Aprovecha dos muros contiguos</p>
+                <p class="font-bold text-white text-sm">En "L" / Esquinera</p>
+                <p class="text-xs text-gray-400">Aprovecha dos muros</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="isla" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Con Isla / Península</p>
-                <p class="text-xs text-gray-500">Módulo central o desayunador</p>
+                <p class="font-bold text-white text-sm">Con Isla / Península</p>
+                <p class="text-xs text-gray-400">Módulo desayunador</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Módulos Especiales Deseados</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Módulos Especiales Deseados</label>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" checked class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('torre_hornos', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Torre Hornos</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" checked class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('torre_hornos', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Torre Hornos</span>
             </label>
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" checked class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('cajoneras_soft', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Cajones Freno</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" checked class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('cajoneras_soft', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Cajones Freno</span>
             </label>
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('cava_vinos', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Cava Vinos</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('cava_vinos', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Cava Vinos</span>
             </label>
-            <label class="p-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#1e3a2b] transition">
-              <input type="checkbox" class="accent-[#1e3a2b] w-4 h-4" onchange="toggleFeatureOption('despensa_extraible', this.checked)">
-              <span class="text-xs sm:text-sm font-semibold text-gray-800">Despensa Alta</span>
+            <label class="p-3 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-2 cursor-pointer hover:border-[#e0b142] transition">
+              <input type="checkbox" class="accent-[#e0b142] w-4 h-4" onchange="toggleFeatureOption('despensa_extraible', this.checked)">
+              <span class="text-xs sm:text-sm font-semibold text-gray-200">Despensa Alta</span>
             </label>
           </div>
         </div>
@@ -308,41 +306,41 @@ function setupDynamicStep3() {
     container.innerHTML = `
       <div class="space-y-6">
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Montaje</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Tipo de Montaje</label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="structure" data-val="suspendido" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Suspendido / Flotante</p>
-                <p class="text-xs text-gray-500">Diseño limpio y moderno</p>
+                <p class="font-bold text-white text-sm">Suspendido / Flotante</p>
+                <p class="text-xs text-gray-400">Diseño limpio y moderno</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="a_piso" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">A Piso con Zócalo</p>
-                <p class="text-xs text-gray-500">Mayor capacidad de almacenamiento</p>
+                <p class="font-bold text-white text-sm">A Piso con Zócalo</p>
+                <p class="text-xs text-gray-400">Mayor almacenamiento</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Bacha / Lavamanos</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Bacha / Lavamanos</label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="doors" data-val="sobrepuesta" onclick="selectOptionCard(this, 'doors')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Bacha Sobrepuesta</p>
-                <p class="text-xs text-gray-500">Bowl apoyado sobre la cubierta</p>
+                <p class="font-bold text-white text-sm">Bacha Sobrepuesta</p>
+                <p class="text-xs text-gray-400">Bowl sobre la cubierta</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="doors" data-val="bajo_cubierta" onclick="selectOptionCard(this, 'doors')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Bajo Cubierta / Integrada</p>
-                <p class="text-xs text-gray-500">Línea continua elegante</p>
+                <p class="font-bold text-white text-sm">Bajo Cubierta / Integrada</p>
+                <p class="text-xs text-gray-400">Línea continua sin uniones</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
@@ -352,28 +350,28 @@ function setupDynamicStep3() {
     container.innerHTML = `
       <div class="space-y-6">
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Configuración del Mueble de TV</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Diseño del Mueble de TV</label>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="structure" data-val="panel_flotante" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Panel Flotante + Repisas</p>
-                <p class="text-xs text-gray-500">Panel mural con soporte y repisas</p>
+                <p class="font-bold text-white text-sm">Panel Flotante + Repisas</p>
+                <p class="text-xs text-gray-400">Panel mural con soporte</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="rack_cajones" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Rack Bajo con Cajones</p>
-                <p class="text-xs text-gray-500">Módulo inferior para consolas y audio</p>
+                <p class="font-bold text-white text-sm">Rack Bajo con Cajones</p>
+                <p class="text-xs text-gray-400">Módulo inferior de audio</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="centro_integral" onclick="selectOptionCard(this, 'structure')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Centro Integral Completo</p>
-                <p class="text-xs text-gray-500">Mueble de piso a techo con vitrina</p>
+                <p class="font-bold text-white text-sm">Centro Integral de Muro</p>
+                <p class="text-xs text-gray-400">Mueble de piso a techo</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
@@ -382,34 +380,34 @@ function setupDynamicStep3() {
   } else if (type === 'reparacion') {
     container.innerHTML = `
       <div class="space-y-4">
-        <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Servicios de Reparación o Mantención Requeridos</label>
+        <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Servicios de Reparación o Mantención Requeridos</label>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <label class="p-3.5 bg-white border border-gray-200 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#1e3a2b] transition">
-            <input type="checkbox" checked class="accent-[#1e3a2b] w-5 h-5" onchange="toggleFeatureOption('bisagras', this.checked)">
+          <label class="p-3.5 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#e0b142] transition">
+            <input type="checkbox" checked class="accent-[#e0b142] w-5 h-5" onchange="toggleFeatureOption('bisagras', this.checked)">
             <div>
-              <p class="font-bold text-gray-800 text-sm">Cambio de bisagras (cierre suave)</p>
-              <p class="text-xs text-gray-500">Alineación y regulación de puertas caídas</p>
+              <p class="font-bold text-white text-sm">Cambio de bisagras (cierre suave)</p>
+              <p class="text-xs text-gray-400">Alineación y regulación de puertas caídas</p>
             </div>
           </label>
-          <label class="p-3.5 bg-white border border-gray-200 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#1e3a2b] transition">
-            <input type="checkbox" checked class="accent-[#1e3a2b] w-5 h-5" onchange="toggleFeatureOption('rieles_cajones', this.checked)">
+          <label class="p-3.5 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#e0b142] transition">
+            <input type="checkbox" checked class="accent-[#e0b142] w-5 h-5" onchange="toggleFeatureOption('rieles_cajones', this.checked)">
             <div>
-              <p class="font-bold text-gray-800 text-sm">Cambio de rieles de cajones</p>
-              <p class="text-xs text-gray-500">Rieles telescópicos metálicos reforzados</p>
+              <p class="font-bold text-white text-sm">Cambio de rieles de cajones</p>
+              <p class="text-xs text-gray-400">Rieles telescópicos metálicos reforzados</p>
             </div>
           </label>
-          <label class="p-3.5 bg-white border border-gray-200 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#1e3a2b] transition">
-            <input type="checkbox" class="accent-[#1e3a2b] w-5 h-5" onchange="toggleFeatureOption('rieles_closet', this.checked)">
+          <label class="p-3.5 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#e0b142] transition">
+            <input type="checkbox" class="accent-[#e0b142] w-5 h-5" onchange="toggleFeatureOption('rieles_closet', this.checked)">
             <div>
-              <p class="font-bold text-gray-800 text-sm">Rieles de puertas de clóset</p>
-              <p class="text-xs text-gray-500">Ruedas y guías de puertas correderas</p>
+              <p class="font-bold text-white text-sm">Rieles de puertas de clóset</p>
+              <p class="text-xs text-gray-400">Ruedas y guías de puertas correderas</p>
             </div>
           </label>
-          <label class="p-3.5 bg-white border border-gray-200 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#1e3a2b] transition">
-            <input type="checkbox" class="accent-[#1e3a2b] w-5 h-5" onchange="toggleFeatureOption('tiradores_ajuste', this.checked)">
+          <label class="p-3.5 bg-[#1e2220] border border-white/15 rounded-xl flex items-center gap-3 cursor-pointer hover:border-[#e0b142] transition">
+            <input type="checkbox" class="accent-[#e0b142] w-5 h-5" onchange="toggleFeatureOption('tiradores_ajuste', this.checked)">
             <div>
-              <p class="font-bold text-gray-800 text-sm">Cambio de tiradores y manillas</p>
-              <p class="text-xs text-gray-500">Modernización y nivelación general</p>
+              <p class="font-bold text-white text-sm">Cambio de tiradores y manillas</p>
+              <p class="text-xs text-gray-400">Modernización y nivelación general</p>
             </div>
           </label>
         </div>
@@ -418,28 +416,28 @@ function setupDynamicStep3() {
   } else {
     container.innerHTML = `
       <div class="space-y-4">
-        <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Selecciona el material de la cubierta</label>
+        <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Material de la Cubierta</label>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="structure" data-val="granito" onclick="selectOptionCard(this, 'structure')">
             <div>
-              <p class="font-bold text-[#151917] text-sm">Granito Natural</p>
-              <p class="text-xs text-gray-500">Máxima dureza al calor y corte</p>
+              <p class="font-bold text-white text-sm">Granito Natural</p>
+              <p class="text-xs text-gray-400">Máxima dureza al calor y corte</p>
             </div>
-            <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+            <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
           </div>
           <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="cuarzo" onclick="selectOptionCard(this, 'structure')">
             <div>
-              <p class="font-bold text-[#151917] text-sm">Cuarzo Diseñado</p>
-              <p class="text-xs text-gray-500">Acabado pulido sin poros</p>
+              <p class="font-bold text-white text-sm">Cuarzo Diseñado</p>
+              <p class="text-xs text-gray-400">Acabado pulido sin poros</p>
             </div>
-            <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+            <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
           </div>
           <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="structure" data-val="marmol" onclick="selectOptionCard(this, 'structure')">
             <div>
-              <p class="font-bold text-[#151917] text-sm">Mármol Clásico</p>
-              <p class="text-xs text-gray-500">Elegancia con vetas naturales</p>
+              <p class="font-bold text-white text-sm">Mármol Clásico</p>
+              <p class="text-xs text-gray-400">Elegancia con vetas naturales</p>
             </div>
-            <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+            <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
           </div>
         </div>
       </div>
@@ -457,57 +455,57 @@ function setupDynamicStep4() {
   container.innerHTML = `
     <div class="space-y-6">
       <div>
-        <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Material de Fabricación</label>
+        <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Material de Fabricación</label>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="material" data-val="melamina-18" onclick="selectOptionCard(this, 'material')">
             <div>
-              <p class="font-bold text-[#151917] text-sm">Melamina 18mm</p>
-              <p class="text-xs text-gray-500">Cantos PVC sellados y alta resistencia</p>
+              <p class="font-bold text-white text-sm">Melamina 18mm</p>
+              <p class="text-xs text-gray-400">Cantos PVC sellados y alta resistencia</p>
             </div>
-            <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+            <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
           </div>
           <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="material" data-val="alto-brillo" onclick="selectOptionCard(this, 'material')">
             <div>
-              <p class="font-bold text-[#151917] text-sm">Alto Brillo (High Gloss)</p>
-              <p class="text-xs text-gray-500">Acabado espejo ultra moderno</p>
+              <p class="font-bold text-white text-sm">Alto Brillo (High Gloss)</p>
+              <p class="text-xs text-gray-400">Acabado espejo ultra moderno</p>
             </div>
-            <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+            <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
           </div>
           <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="material" data-val="hidrofuga" onclick="selectOptionCard(this, 'material')">
             <div>
-              <p class="font-bold text-[#151917] text-sm">Melamina Hidrófuga (RH)</p>
-              <p class="text-xs text-gray-500">Ideal para zonas húmedas</p>
+              <p class="font-bold text-white text-sm">Melamina Hidrófuga (RH)</p>
+              <p class="text-xs text-gray-400">Ideal para zonas húmedas</p>
             </div>
-            <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+            <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
           </div>
         </div>
       </div>
 
       <div>
-        <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Tonalidad / Color Deseado</label>
+        <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Tonalidad / Color Deseado</label>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div class="option-card p-3 rounded-xl flex items-center gap-3 selected" data-group="color" data-val="blanco-neutro" onclick="selectOptionCard(this, 'color')">
-            <span class="w-6 h-6 rounded-full bg-white border border-gray-300 shadow-inner flex-shrink-0"></span>
+            <span class="w-6 h-6 rounded-full bg-white border border-gray-400 flex-shrink-0"></span>
             <div>
-              <p class="font-bold text-xs text-gray-800">Blanco / Neutros</p>
+              <p class="font-bold text-xs text-white">Blanco / Neutros</p>
             </div>
           </div>
           <div class="option-card p-3 rounded-xl flex items-center gap-3" data-group="color" data-val="verde-olivo" onclick="selectOptionCard(this, 'color')">
-            <span class="w-6 h-6 rounded-full bg-[#4c6355] shadow-inner flex-shrink-0"></span>
+            <span class="w-6 h-6 rounded-full bg-[#384431] border border-[#e0b142] flex-shrink-0"></span>
             <div>
-              <p class="font-bold text-xs text-gray-800">Verde Olivo / Salvia</p>
+              <p class="font-bold text-xs text-white">Verde Olivo / Salvia</p>
             </div>
           </div>
           <div class="option-card p-3 rounded-xl flex items-center gap-3" data-group="color" data-val="madera-roble" onclick="selectOptionCard(this, 'color')">
-            <span class="w-6 h-6 rounded-full bg-[#a06f47] shadow-inner flex-shrink-0"></span>
+            <span class="w-6 h-6 rounded-full bg-[#a06f47] border border-amber-300 flex-shrink-0"></span>
             <div>
-              <p class="font-bold text-xs text-gray-800">Madera / Roble</p>
+              <p class="font-bold text-xs text-white">Madera / Roble</p>
             </div>
           </div>
           <div class="option-card p-3 rounded-xl flex items-center gap-3" data-group="color" data-val="grafito-negro" onclick="selectOptionCard(this, 'color')">
-            <span class="w-6 h-6 rounded-full bg-[#272b2e] shadow-inner flex-shrink-0"></span>
+            <span class="w-6 h-6 rounded-full bg-[#111312] border border-gray-500 flex-shrink-0"></span>
             <div>
-              <p class="font-bold text-xs text-gray-800">Grafito / Negro</p>
+              <p class="font-bold text-xs text-white">Grafito / Negro</p>
             </div>
           </div>
         </div>
@@ -515,28 +513,28 @@ function setupDynamicStep4() {
 
       ${showCountertop ? `
         <div>
-          <label class="block text-xs font-bold text-[#1e3a2b] uppercase tracking-wider mb-2">Tipo de Cubierta</label>
+          <label class="block text-xs font-bold text-[#e0b142] uppercase tracking-wider mb-2.5">Tipo de Cubierta</label>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div class="option-card p-4 rounded-xl flex items-center justify-between selected" data-group="countertop" data-val="granito" onclick="selectOptionCard(this, 'countertop')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Granito Natural</p>
-                <p class="text-xs text-gray-500">Negro San Gabriel, Gris Mara, etc.</p>
+                <p class="font-bold text-white text-sm">Granito Natural</p>
+                <p class="text-xs text-gray-400">Negro San Gabriel, Gris Mara, etc.</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="countertop" data-val="cuarzo" onclick="selectOptionCard(this, 'countertop')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Cuarzo Silestone / Calacatta</p>
-                <p class="text-xs text-gray-500">Diseño premium sin poros</p>
+                <p class="font-bold text-white text-sm">Cuarzo Diseñado</p>
+                <p class="text-xs text-gray-400">Diseño sin poros (Calacatta, Blanco)</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
             <div class="option-card p-4 rounded-xl flex items-center justify-between" data-group="countertop" data-val="postformado" onclick="selectOptionCard(this, 'countertop')">
               <div>
-                <p class="font-bold text-[#151917] text-sm">Cubierta Postformada</p>
-                <p class="text-xs text-gray-500">Económica y resistente</p>
+                <p class="font-bold text-white text-sm">Cubierta Postformada</p>
+                <p class="text-xs text-gray-400">Económica y versátil</p>
               </div>
-              <span class="check-badge w-6 h-6 rounded-full bg-[#1e3a2b] text-white flex items-center justify-center text-xs">✓</span>
+              <span class="check-badge w-6 h-6 rounded-full bg-[#e0b142] text-black font-extrabold flex items-center justify-center text-xs">✓</span>
             </div>
           </div>
         </div>
@@ -572,7 +570,7 @@ function toggleFeatureOption(opt, checked) {
   calculateEstimation();
 }
 
-// Photo Uploader Drag & Drop + Input
+// Photo Uploader
 function setupPhotoUploader() {
   const dropArea = document.getElementById('photo-dropzone');
   const fileInput = document.getElementById('photo-input');
@@ -628,13 +626,13 @@ function renderPhotoPreviews() {
 
   container.innerHTML = '';
   if (countBadge) {
-    countBadge.textContent = `${state.photos.length} foto(s) seleccionada(s)`;
+    countBadge.textContent = `${state.photos.length} foto(s) del espacio lista(s)`;
     countBadge.classList.toggle('hidden', state.photos.length === 0);
   }
 
   state.photos.forEach((photo, index) => {
     const div = document.createElement('div');
-    div.className = 'relative w-20 h-20 rounded-xl overflow-hidden border-2 border-[#1e3a2b] shadow-sm group';
+    div.className = 'relative w-20 h-20 rounded-xl overflow-hidden border border-[#e0b142] shadow-sm group';
     div.innerHTML = `
       <img src="${photo.dataUrl}" alt="${photo.name}" class="w-full h-full object-cover">
       <button type="button" onclick="removePhoto(${index})" class="absolute top-1 right-1 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-90 hover:opacity-100 transition shadow">
@@ -700,13 +698,13 @@ function updateStepView() {
 
     if (indicator) {
       if (num === state.currentStep) {
-        indicator.className = 'w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e3a2b] text-white ring-4 ring-[#1e3a2b]/20 transition-all';
+        indicator.className = 'w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#e0b142] text-black ring-4 ring-[#e0b142]/30 transition-all font-heading';
         indicator.innerHTML = num;
       } else if (num < state.currentStep) {
-        indicator.className = 'w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-[#c98a4b] text-white transition-all';
+        indicator.className = 'w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#384431] text-[#e0b142] border border-[#e0b142]/60 transition-all font-heading';
         indicator.innerHTML = '✓';
       } else {
-        indicator.className = 'w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600 transition-all';
+        indicator.className = 'w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[#1e2220] text-gray-400 border border-white/10 transition-all font-heading';
         indicator.innerHTML = num;
       }
     }
@@ -821,32 +819,32 @@ function renderStep6Summary() {
     };
 
     summaryBox.innerHTML = `
-      <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-3 text-sm">
-        <div class="flex justify-between border-b border-gray-200 pb-2">
-          <span class="text-gray-500 font-medium">Proyecto:</span>
-          <span class="font-bold text-[#1e3a2b]">${state.projectTypeName}</span>
+      <div class="bg-[#1e2220] border border-white/15 rounded-2xl p-5 space-y-3 text-sm">
+        <div class="flex justify-between border-b border-white/10 pb-2">
+          <span class="text-gray-400 font-medium">Proyecto:</span>
+          <span class="font-bold text-[#e0b142]">${state.projectTypeName}</span>
         </div>
-        <div class="flex justify-between border-b border-gray-200 pb-2">
-          <span class="text-gray-500 font-medium">Dimensiones:</span>
-          <span class="font-semibold text-gray-800 text-right">${dimText}</span>
+        <div class="flex justify-between border-b border-white/10 pb-2">
+          <span class="text-gray-400 font-medium">Dimensiones:</span>
+          <span class="font-semibold text-white text-right">${dimText}</span>
         </div>
-        <div class="flex justify-between border-b border-gray-200 pb-2">
-          <span class="text-gray-500 font-medium">Material principal:</span>
-          <span class="font-semibold text-gray-800">${matLabels[state.materials.mainMaterial] || 'Melamina 18mm'}</span>
+        <div class="flex justify-between border-b border-white/10 pb-2">
+          <span class="text-gray-400 font-medium">Material principal:</span>
+          <span class="font-semibold text-white">${matLabels[state.materials.mainMaterial] || 'Melamina 18mm'}</span>
         </div>
-        <div class="flex justify-between border-b border-gray-200 pb-2">
-          <span class="text-gray-500 font-medium">Tono preferido:</span>
-          <span class="font-semibold text-gray-800">${colorLabels[state.materials.colorGroup] || 'A elección'}</span>
+        <div class="flex justify-between border-b border-white/10 pb-2">
+          <span class="text-gray-400 font-medium">Tono preferido:</span>
+          <span class="font-semibold text-white">${colorLabels[state.materials.colorGroup] || 'A elección'}</span>
         </div>
         ${['cocina', 'vanitorio', 'cubierta'].includes(state.projectType) ? `
-        <div class="flex justify-between border-b border-gray-200 pb-2">
-          <span class="text-gray-500 font-medium">Cubierta:</span>
-          <span class="font-semibold text-gray-800">${countLabels[state.materials.countertop] || 'Granito'}</span>
+        <div class="flex justify-between border-b border-white/10 pb-2">
+          <span class="text-gray-400 font-medium">Cubierta:</span>
+          <span class="font-semibold text-white">${countLabels[state.materials.countertop] || 'Granito'}</span>
         </div>
         ` : ''}
         <div class="flex justify-between">
-          <span class="text-gray-500 font-medium">Fotos del espacio:</span>
-          <span class="font-semibold text-[#1e3a2b]">${state.photos.length > 0 ? `${state.photos.length} imagen(es) seleccionada(s)` : 'Sin fotos adjuntas'}</span>
+          <span class="text-gray-400 font-medium">Fotos del espacio:</span>
+          <span class="font-semibold text-[#e0b142]">${state.photos.length > 0 ? `${state.photos.length} imagen(es) seleccionada(s)` : 'Sin fotos adjuntas'}</span>
         </div>
       </div>
     `;
