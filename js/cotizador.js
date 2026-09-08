@@ -13,12 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Option Card Selection
   document.querySelectorAll('.option-card').forEach(card => {
     card.addEventListener('click', function() {
-      // Remove selected from siblings
       this.parentNode.querySelectorAll('.option-card').forEach(c => {
         c.classList.remove('selected');
         c.setAttribute('aria-pressed', 'false');
       });
-      // Select this
       this.classList.add('selected');
       this.setAttribute('aria-pressed', 'true');
       projectData.type = this.dataset.type;
@@ -30,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const dimHeight = document.getElementById('dim-height');
   const dimDepth = document.getElementById('dim-depth');
   
-  if (dimWidth) dimWidth.addEventListener('input', (e) => projectData.dim_width = e.target.value);
-  if (dimHeight) dimHeight.addEventListener('input', (e) => projectData.dim_height = e.target.value);
-  if (dimDepth) dimDepth.addEventListener('input', (e) => projectData.dim_depth = e.target.value);
+  if (dimWidth) dimWidth.addEventListener('input', (e) => { projectData.dim_width = e.target.value; clearDimError(); });
+  if (dimHeight) dimHeight.addEventListener('input', (e) => { projectData.dim_height = e.target.value; clearDimError(); });
+  if (dimDepth) dimDepth.addEventListener('input', (e) => { projectData.dim_depth = e.target.value; clearDimError(); });
   
   const dimUnknown = document.getElementById('dim-unknown');
   if (dimUnknown) {
@@ -44,14 +42,61 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) {
           el.disabled = e.target.checked;
           el.style.opacity = e.target.checked ? '0.5' : '1';
+          el.classList.remove('input-error');
         }
       });
+      clearDimError();
     });
   }
 });
 
+function clearDimError() {
+  const errorEl = document.getElementById('dim-error');
+  if (errorEl) errorEl.classList.add('hidden');
+  ['dim-width', 'dim-height', 'dim-depth'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('input-error');
+  });
+}
+
+function validateDimensions() {
+  if (projectData.dim_unknown) return true;
+  
+  const w = parseInt(projectData.dim_width);
+  const h = parseInt(projectData.dim_height);
+  const d = parseInt(projectData.dim_depth);
+  
+  const valid = w >= 10 && h >= 10 && d >= 10;
+  
+  if (!valid) {
+    const errorEl = document.getElementById('dim-error');
+    if (errorEl) errorEl.classList.remove('hidden');
+    
+    ['dim-width', 'dim-height', 'dim-depth'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && parseInt(el.value) < 10) {
+        el.classList.add('input-error');
+      }
+    });
+  }
+  
+  return valid;
+}
+
+function updateProgress() {
+  const label = document.getElementById('step-progress-label');
+  const bar = document.getElementById('step-progress-bar');
+  if (label) label.textContent = 'Paso ' + currentStep + ' de ' + totalSteps;
+  if (bar) bar.style.width = ((currentStep / totalSteps) * 100) + '%';
+}
+
 window.nextStep = () => {
   if (currentStep < totalSteps) {
+    // Validate step 2 (dimensions) before advancing
+    if (currentStep === 2 && !validateDimensions()) {
+      return;
+    }
+    
     if (currentStep === 2) {
       generateMaterialStep();
     }
@@ -77,12 +122,12 @@ window.nextStep = () => {
     
     updateControls();
     updateTitle();
+    updateProgress();
   }
 };
 
 window.prevStep = () => {
   if (currentStep > 1) {
-    // Hide current
     const currentPane = document.getElementById('step-pane-' + currentStep);
     if (currentPane) {
       currentPane.classList.remove('active');
@@ -91,7 +136,6 @@ window.prevStep = () => {
     
     currentStep--;
     
-    // Show previous
     const prevPane = document.getElementById('step-pane-' + currentStep);
     if (prevPane) {
       prevPane.classList.remove('hidden');
@@ -100,6 +144,7 @@ window.prevStep = () => {
     
     updateControls();
     updateTitle();
+    updateProgress();
   }
 };
 
@@ -129,7 +174,7 @@ function updateTitle() {
     '1. ¿Qué mueble necesitas?',
     '2. Dimensiones referenciales',
     '3. Selección de materialidad',
-    '4. Hoja de ruta para taller'
+    '4. Resumen y envío por WhatsApp'
   ];
   const titleEl = document.getElementById('step-current-title');
   if (titleEl) {
@@ -148,7 +193,7 @@ function generateMaterialStep() {
     { name: 'High Gloss / Pet', desc: 'Acabado brillante o mate antihuellas' },
   ];
   
-  if(projectData.type === 'cubierta') {
+  if (projectData.type === 'cubierta') {
     options.length = 0;
     options.push({ name: 'Granito', desc: 'Piedra natural de alta dureza' });
     options.push({ name: 'Cuarzo Silestone', desc: 'Colores puros, antibacteriano' });
@@ -156,7 +201,7 @@ function generateMaterialStep() {
   
   options.forEach((opt, idx) => {
     const btn = document.createElement('button');
-    btn.className = \`option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034] \${idx === 0 ? 'selected' : ''}\`;
+    btn.className = 'option-card p-4 text-left focus:outline-none focus:ring-2 focus:ring-[#d4a034]' + (idx === 0 ? ' selected' : '');
     btn.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
     btn.onclick = function() {
       document.querySelectorAll('#step3-dynamic-content .option-card').forEach(c => {
@@ -169,38 +214,41 @@ function generateMaterialStep() {
     };
     if (idx === 0) projectData.material = opt.name;
     
-    btn.innerHTML = \`
-      <h4 class="font-heading text-base font-bold text-white">\${opt.name}</h4>
-      <p class="font-tech text-[10px] text-[#9ba399] uppercase mt-1">\${opt.desc}</p>
-    \`;
+    btn.innerHTML = '<h4 class="font-heading text-base font-bold text-white">' + opt.name + '</h4>' +
+      '<p class="font-tech text-[10px] text-[#9ba399] mt-1">' + opt.desc + '</p>';
     content.appendChild(btn);
   });
 }
 
 function generateSummary() {
   const typeMap = {
-    'cocina': 'COCINA A MEDIDA',
-    'closet': 'CLÓSET / VESTIDOR',
-    'vanitorio': 'VANITORIO DE BAÑO',
-    'mueble_tv': 'MUEBLE DE SALÓN',
-    'cubierta': 'CUBIERTA DE PIEDRA',
-    'reparacion': 'MANTENCIÓN TÉCNICA'
+    'cocina': 'Cocina a medida',
+    'closet': 'Clóset / Vestidor',
+    'vanitorio': 'Vanitorio de baño',
+    'mueble_tv': 'Mueble de salón',
+    'cubierta': 'Cubierta de piedra',
+    'reparacion': 'Mantención técnica'
   };
   
   const typeEl = document.getElementById('summary-type');
-  if (typeEl) typeEl.innerText = typeMap[projectData.type] || 'PROYECTO';
+  if (typeEl) typeEl.innerText = typeMap[projectData.type] || 'Proyecto';
   
   const dimEl = document.getElementById('summary-dim');
   if (dimEl) {
-    if(projectData.dim_unknown) {
-      dimEl.innerText = 'PENDIENTE (RECTIFICACIÓN TALLER)';
+    if (projectData.dim_unknown) {
+      dimEl.innerText = 'Pendiente (rectificación taller)';
     } else {
-      dimEl.innerText = \`\${projectData.dim_width}W x \${projectData.dim_height}H x \${projectData.dim_depth}D CM\`;
+      dimEl.innerText = projectData.dim_width + ' x ' + projectData.dim_height + ' x ' + projectData.dim_depth + ' cm';
     }
   }
   
   const matEl = document.getElementById('summary-mat');
-  if (matEl) matEl.innerText = projectData.material.toUpperCase();
+  if (matEl) matEl.innerText = projectData.material;
+
+  // Re-init lucide icons for WhatsApp button icon
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }
 
 window.sendWhatsApp = () => {
@@ -214,16 +262,18 @@ window.sendWhatsApp = () => {
     'reparacion': 'Reparación / Mantención'
   };
   
-  let msg = \`Hola Diego Armando, me gustaría cotizar un proyecto.\\n\\n*Detalles del Proyecto:*\\n- Tipo: \${typeMap[projectData.type]}\\n\`;
+  var msg = 'Hola Diego Armando, me gustaría cotizar un proyecto.\n\n';
+  msg += '*Detalles del Proyecto:*\n';
+  msg += '- Tipo: ' + (typeMap[projectData.type] || 'Proyecto') + '\n';
   
   if (projectData.dim_unknown) {
-    msg += \`- Dimensiones: No estoy seguro, necesito rectificación.\\n\`;
+    msg += '- Dimensiones: No estoy seguro, necesito rectificación.\n';
   } else {
-    msg += \`- Dimensiones aprox: \${projectData.dim_width}cm ancho x \${projectData.dim_height}cm alto x \${projectData.dim_depth}cm prof.\\n\`;
+    msg += '- Dimensiones aprox: ' + projectData.dim_width + 'cm ancho x ' + projectData.dim_height + 'cm alto x ' + projectData.dim_depth + 'cm prof.\n';
   }
   
-  msg += \`- Materialidad: \${projectData.material}\\n\\nQuedo atento(a) para coordinar.\`;
+  msg += '- Materialidad: ' + projectData.material + '\n\nQuedo atento(a) para coordinar.';
   
-  const encodedMsg = encodeURIComponent(msg);
-  window.open(\`https://wa.me/\${phone}?text=\${encodedMsg}\`, '_blank');
+  var encodedMsg = encodeURIComponent(msg);
+  window.open('https://wa.me/' + phone + '?text=' + encodedMsg, '_blank');
 };

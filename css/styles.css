@@ -123,3 +123,30 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     opacity: 1 !important;
   }
 }
+
+/* ==========================================================================
+   SERVICE TABS
+   ========================================================================== */
+.service-tab {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.service-tab.active {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-left-color: var(--color-gold) !important;
+}
+
+.service-tab.active h3 {
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   INPUT VALIDATION
+   ========================================================================== */
+input[type="number"].input-error {
+  border-color: #f87171 !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 0.5;
+}

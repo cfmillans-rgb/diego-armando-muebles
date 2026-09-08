@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (header) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        header.classList.add('bg-[#0c0d0c]/95', 'border-b', 'border-[#d4a034]/20', 'shadow-md');
+        header.classList.add('bg-[#0c0d0c]', 'backdrop-blur-none', 'border-b', 'border-[#d4a034]/20');
+        header.classList.remove('bg-[#0c0d0c]/70', 'backdrop-blur-sm');
       } else {
-        header.classList.remove('bg-[#0c0d0c]/95', 'border-b', 'border-[#d4a034]/20', 'shadow-md');
+        header.classList.remove('bg-[#0c0d0c]', 'backdrop-blur-none', 'border-b', 'border-[#d4a034]/20');
+        header.classList.add('bg-[#0c0d0c]/70', 'backdrop-blur-sm');
       }
     });
   }
